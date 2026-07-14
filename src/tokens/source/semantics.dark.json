@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "semantic",
+  "mode": "dark",
+  "groups": [
+    {
+      "name": "color.surfaces-and-text",
+      "domain": "color",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "3 Semantic Token Mapping and 5.1 Dark Flagship", "normalization": "mapped" },
+      "tokens": {
+        "--azw-color-canvas": { "type": "color", "value": "{--azw-p-base-black}", "classification": "mapped", "description": "Outermost page canvas." },
+        "--azw-color-surface-primary": { "type": "color", "value": "{--azw-p-sage-900}", "classification": "mapped", "description": "Primary reading and work surface." },
+        "--azw-color-surface-alternate": { "type": "color", "value": "{--azw-p-sage-950}", "classification": "mapped", "description": "Alternate structural surface." },
+        "--azw-color-surface-raised": { "type": "color", "value": "{--azw-p-surface-raised}", "classification": "mapped", "description": "Genuinely raised surface." },
+        "--azw-color-surface-inset": { "type": "color", "value": "{--azw-p-chrome-950}", "classification": "mapped", "description": "Inset technical surface." },
+        "--azw-color-surface-code": { "type": "color", "value": "{--azw-p-chrome-950}", "classification": "mapped", "description": "Code and data surface." },
+        "--azw-color-surface-art-neutral": { "type": "color", "value": "{--azw-p-base-black}", "classification": "mapped", "description": "Neutral surround that protects artwork color." },
+        "--azw-color-text-primary": { "type": "color", "value": "{--azw-p-dark-text-primary}", "classification": "mapped", "description": "Primary readable text." },
+        "--azw-color-text-secondary": { "type": "color", "value": "{--azw-p-sage-600}", "classification": "mapped", "description": "Secondary text." },
+        "--azw-color-text-muted": { "type": "color", "value": "{--azw-p-sage-600}", "classification": "mapped", "description": "Muted text that remains AA readable." },
+        "--azw-color-text-faint": { "type": "color", "value": "{--azw-p-chrome-400}", "classification": "mapped", "description": "Faint nonessential text." },
+        "--azw-color-text-inverse": { "type": "color", "value": "{--azw-p-light-text-heading}", "classification": "mapped", "description": "Text on light inverse surfaces." }
+      }
+    },
+    {
+      "name": "color.structure-and-interaction",
+      "domain": "interaction",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "3.2 Borders and Dividers and 4.1 Interaction States", "normalization": "mapped" },
+      "tokens": {
+        "--azw-color-border-subtle": { "type": "color", "value": "{--azw-p-chrome-800}", "classification": "mapped", "description": "Decorative structural seam." },
+        "--azw-color-border-default": { "type": "color", "value": "{--azw-p-chrome-700}", "classification": "mapped", "description": "Default control and surface border." },
+        "--azw-color-border-strong": { "type": "color", "value": "{--azw-p-chrome-600}", "classification": "mapped", "description": "Strong boundary." },
+        "--azw-color-divider": { "type": "color", "value": "{--azw-p-chrome-800}", "classification": "mapped", "description": "Divider line." },
+        "--azw-color-link-default": { "type": "color", "value": "{--azw-p-radium-300}", "classification": "mapped", "description": "Default link." },
+        "--azw-color-link-hover": { "type": "color", "value": "{--azw-p-radium-200}", "classification": "mapped", "description": "Hovered link." },
+        "--azw-color-link-active": { "type": "color", "value": "{--azw-p-radium-400}", "classification": "mapped", "description": "Active link." },
+        "--azw-color-link-visited": { "type": "color", "value": "{--azw-p-info-200}", "classification": "derived", "description": "Visited link remains distinct and readable." },
+        "--azw-color-action-primary": { "type": "color", "value": "{--azw-p-radium-400}", "classification": "mapped", "description": "Primary action fill." },
+        "--azw-color-action-primary-hover": { "type": "color", "value": "{--azw-p-radium-300}", "classification": "mapped", "description": "Primary action hover fill." },
+        "--azw-color-action-primary-active": { "type": "color", "value": "{--azw-p-radium-500}", "classification": "mapped", "description": "Primary action active fill." },
+        "--azw-color-action-primary-text": { "type": "color", "value": "{--azw-p-base-black}", "classification": "mapped", "description": "Primary action text." },
+        "--azw-color-action-secondary": { "type": "color", "value": "{--azw-p-surface-soft}", "classification": "mapped", "description": "Secondary action surface." },
+        "--azw-color-action-secondary-text": { "type": "color", "value": "{--azw-p-dark-text-primary}", "classification": "mapped", "description": "Secondary action text." },
+        "--azw-color-action-disabled": { "type": "color", "value": "{--azw-p-chrome-500}", "classification": "mapped", "description": "Disabled control boundary." },
+        "--azw-focus-ring": { "type": "color", "value": "{--azw-p-radium-300}", "classification": "mapped", "description": "High-contrast keyboard focus ring." },
+        "--azw-focus-ring-offset": { "type": "color", "value": "{--azw-p-base-black}", "classification": "mapped", "description": "Focus separation color." },
+        "--azw-color-selection-background": { "type": "color", "value": "{--azw-p-radium-500}", "classification": "mapped", "description": "Text selection background." },
+        "--azw-color-selection-text": { "type": "color", "value": "{--azw-p-base-black}", "classification": "mapped", "description": "Text selection foreground." }
+      }
+    },
+    {
+      "name": "state.lifecycle",
+      "domain": "lifecycle-state",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "4.2 Fill, Line, and Tint", "normalization": "mapped" },
+      "tokens": {
+        "--azw-state-info": { "type": "color", "value": "{--azw-p-info-200}", "classification": "mapped", "description": "Information foreground." },
+        "--azw-state-info-surface": { "type": "color", "value": "{--azw-p-info-950}", "classification": "mapped", "description": "Information tint surface." },
+        "--azw-state-success": { "type": "color", "value": "{--azw-p-success-300}", "classification": "mapped", "description": "Success foreground." },
+        "--azw-state-success-surface": { "type": "color", "value": "{--azw-p-success-950}", "classification": "mapped", "description": "Success tint surface." },
+        "--azw-state-warning": { "type": "color", "value": "{--azw-p-warning-200}", "classification": "mapped", "description": "Warning foreground." },
+        "--azw-state-warning-surface": { "type": "color", "value": "{--azw-p-warning-950}", "classification": "mapped", "description": "Warning tint surface." },
+        "--azw-state-danger": { "type": "color", "value": "{--azw-p-danger-200}", "classification": "mapped", "description": "Danger foreground." },
+        "--azw-state-danger-surface": { "type": "color", "value": "{--azw-p-danger-950}", "classification": "mapped", "description": "Danger tint surface." },
+        "--azw-state-experimental": { "type": "color", "value": "{--azw-p-info-300}", "classification": "mapped", "description": "Experimental lifecycle foreground." },
+        "--azw-state-archived": { "type": "color", "value": "{--azw-p-chrome-300}", "classification": "mapped", "description": "Archived lifecycle foreground." }
+      }
+    },
+    {
+      "name": "trust.provenance",
+      "domain": "trust",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "4.3 Trust Ladder", "normalization": "mapped" },
+      "tokens": {
+        "--azw-trust-verified": { "type": "color", "value": "{--azw-p-success-300}", "classification": "mapped", "description": "Verified evidence." },
+        "--azw-trust-reviewed": { "type": "color", "value": "{--azw-p-info-300}", "classification": "mapped", "description": "Reviewed evidence." },
+        "--azw-trust-unverified": { "type": "color", "value": "{--azw-p-warning-200}", "classification": "mapped", "description": "Unverified or candidate evidence." },
+        "--azw-trust-private": { "type": "color", "value": "{--azw-p-chrome-300}", "classification": "mapped", "description": "Private evidence." },
+        "--azw-trust-unavailable": { "type": "color", "value": "{--azw-p-chrome-400}", "classification": "mapped", "description": "Unavailable evidence." }
+      }
+    },
+    {
+      "name": "atlas.roles",
+      "domain": "atlas",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "State Behavior and System Surfaces", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-color-atlas-node": { "type": "color", "value": "{--azw-p-chrome-300}", "classification": "portfolio-alias", "description": "Inactive atlas node." },
+        "--azw-color-atlas-node-active": { "type": "color", "value": "{--azw-p-radium-300}", "classification": "portfolio-alias", "description": "Active atlas node." },
+        "--azw-color-atlas-relation": { "type": "color", "value": "{--azw-p-chrome-400}", "classification": "portfolio-alias", "description": "Atlas relation line." },
+        "--azw-color-atlas-relation-muted": { "type": "color", "value": "{--azw-p-chrome-500}", "classification": "portfolio-alias", "description": "Muted but meaningful atlas relation line." }
+      }
+    }
+  ]
+}

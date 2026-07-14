@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "portfolio",
+  "groups": [
+    {
+      "name": "portfolio.surfaces",
+      "domain": "portfolio-shell",
+      "evidence": { "documentId": "brand-product-v1.5", "heading": "Product Structure, Surface Hierarchy, and Context-Aware Expression", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-portfolio-shell-canvas": { "type": "color", "value": "{--azw-color-canvas}", "classification": "portfolio-alias", "description": "Portfolio shell canvas." },
+        "--azw-portfolio-shell-surface": { "type": "color", "value": "{--azw-color-surface-alternate}", "classification": "portfolio-alias", "description": "Portfolio shell surface." },
+        "--azw-portfolio-reading-surface": { "type": "color", "value": "{--azw-color-surface-primary}", "classification": "portfolio-alias", "description": "Editorial reading surface." },
+        "--azw-portfolio-alternate-surface": { "type": "color", "value": "{--azw-color-surface-alternate}", "classification": "portfolio-alias", "description": "Alternate portfolio surface." },
+        "--azw-portfolio-raised-surface": { "type": "color", "value": "{--azw-color-surface-raised}", "classification": "portfolio-alias", "description": "Focused or raised portfolio surface." },
+        "--azw-portfolio-code-surface": { "type": "color", "value": "{--azw-color-surface-code}", "classification": "portfolio-alias", "description": "Code and data surface." },
+        "--azw-portfolio-art-surface": { "type": "color", "value": "{--azw-color-surface-art-neutral}", "classification": "portfolio-alias", "description": "Artwork-neutral surface." }
+      }
+    },
+    {
+      "name": "portfolio.content",
+      "domain": "portfolio-shell",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "Typography, Responsive Behavior, and Content Hierarchy", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-portfolio-reading-measure": { "type": "dimension", "value": "{--azw-size-reading-measure}", "classification": "portfolio-alias", "description": "Portfolio long-form measure." },
+        "--azw-portfolio-technical-measure": { "type": "dimension", "value": "{--azw-size-technical-measure}", "classification": "portfolio-alias", "description": "Portfolio technical measure." },
+        "--azw-portfolio-media-measure": { "type": "dimension", "value": "{--azw-size-media-frame}", "classification": "portfolio-alias", "description": "Portfolio media measure." },
+        "--azw-portfolio-density-compact": { "type": "dimension", "value": "{--azw-space-component}", "classification": "portfolio-alias", "description": "Compact shell density." },
+        "--azw-portfolio-density-register": { "type": "dimension", "value": "{--azw-space-section}", "classification": "portfolio-alias", "description": "Moderate register density." },
+        "--azw-portfolio-rhythm-editorial": { "type": "dimension", "value": "{--azw-space-chapter}", "classification": "portfolio-alias", "description": "Editorial project rhythm." },
+        "--azw-portfolio-rhythm-art": { "type": "dimension", "value": "{--azw-space-scene}", "classification": "portfolio-alias", "description": "Generous art and reflection rhythm." }
+      }
+    },
+    {
+      "name": "portfolio.atlas",
+      "domain": "atlas",
+      "evidence": { "documentId": "brand-product-v1.5", "heading": "System Surfaces and Trust", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-portfolio-atlas-surface": { "type": "color", "value": "{--azw-color-surface-inset}", "classification": "portfolio-alias", "description": "Future atlas structural surface." },
+        "--azw-portfolio-atlas-node": { "type": "color", "value": "{--azw-color-atlas-node}", "classification": "portfolio-alias", "description": "Future atlas node." },
+        "--azw-portfolio-atlas-node-active": { "type": "color", "value": "{--azw-color-atlas-node-active}", "classification": "portfolio-alias", "description": "Future active atlas node." },
+        "--azw-portfolio-atlas-relation": { "type": "color", "value": "{--azw-color-atlas-relation}", "classification": "portfolio-alias", "description": "Future atlas relation." },
+        "--azw-portfolio-atlas-relation-muted": { "type": "color", "value": "{--azw-color-atlas-relation-muted}", "classification": "portfolio-alias", "description": "Future muted atlas relation." }
+      }
+    }
+  ]
+}

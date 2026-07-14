@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "semantic",
+  "groups": [
+    {
+      "name": "spacing.roles",
+      "domain": "spacing",
+      "evidence": { "documentId": "design-token-v1.5", "heading": "9 Spacing Tokens", "normalization": "derived" },
+      "tokens": {
+        "--azw-space-tight": { "type": "dimension", "value": "{--azw-p-space-1}", "classification": "derived", "description": "Tight internal separation." },
+        "--azw-space-inline": { "type": "dimension", "value": "{--azw-p-space-2}", "classification": "derived", "description": "Inline item gap." },
+        "--azw-space-control": { "type": "dimension", "value": "{--azw-p-space-3}", "classification": "derived", "description": "Control padding rhythm." },
+        "--azw-space-component": { "type": "dimension", "value": "{--azw-p-space-4}", "classification": "derived", "description": "Component separation." },
+        "--azw-space-section": { "type": "dimension", "value": "{--azw-p-space-8}", "classification": "derived", "description": "Section separation." },
+        "--azw-space-chapter": { "type": "dimension", "value": "{--azw-p-space-12}", "classification": "derived", "description": "Chapter rhythm." },
+        "--azw-space-scene": { "type": "dimension", "value": "{--azw-p-space-16}", "classification": "derived", "description": "Editorial scene separation." },
+        "--azw-space-gutter": { "type": "dimension", "value": "clamp(1rem, 3.5vw, 2rem)", "classification": "derived", "description": "Page gutter with 16px small-screen edge." }
+      }
+    },
+    {
+      "name": "sizing.controls-and-identity",
+      "domain": "sizing",
+      "evidence": { "documentId": "wordmark-v1.2", "heading": "Scale and Responsive Behavior", "normalization": "derived" },
+      "tokens": {
+        "--azw-size-control-min": { "type": "dimension", "value": "2.75rem", "classification": "derived", "description": "Minimum 44px primary interactive target." },
+        "--azw-size-wordmark-reference-min": { "type": "dimension", "value": "5.625rem", "classification": "derived", "description": "Approximate 90px wordmark QA threshold hook." },
+        "--azw-size-wordmark-clear-space": { "type": "dimension", "value": "1em", "classification": "derived", "description": "One-dot-diameter clear-space hook resolved by the future asset." },
+        "--azw-size-shell-compact": { "type": "dimension", "value": "3.5rem", "classification": "derived", "description": "Future compact-shell sizing hook." }
+      }
+    },
+    {
+      "name": "layout.measures",
+      "domain": "content-widths",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "Responsive Behavior and Content Hierarchy", "normalization": "derived" },
+      "tokens": {
+        "--azw-size-reading-measure": { "type": "dimension", "value": "68ch", "classification": "derived", "description": "Long-form reading measure within 60–75ch." },
+        "--azw-size-reading-measure-mobile": { "type": "dimension", "value": "54ch", "classification": "derived", "description": "Mobile reading measure within 35–60ch." },
+        "--azw-size-technical-measure": { "type": "dimension", "value": "70rem", "classification": "derived", "description": "Wider technical region." },
+        "--azw-size-media-frame": { "type": "dimension", "value": "90rem", "classification": "derived", "description": "Bounded media frame." },
+        "--azw-size-full-bleed-limit": { "type": "dimension", "value": "100rem", "classification": "derived", "description": "Full-bleed upper bound." },
+        "--azw-size-code-table-width": { "type": "dimension", "value": "70rem", "classification": "derived", "description": "Code and table width." }
+      }
+    },
+    {
+      "name": "layout.breakpoints",
+      "domain": "breakpoints",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "Responsive Behavior", "normalization": "derived" },
+      "tokens": {
+        "--azw-breakpoint-compact": { "type": "dimension", "value": "20rem", "classification": "derived", "description": "320px compact review boundary." },
+        "--azw-breakpoint-handset": { "type": "dimension", "value": "23.4375rem", "classification": "derived", "description": "375px handset review boundary." },
+        "--azw-breakpoint-tablet": { "type": "dimension", "value": "48rem", "classification": "derived", "description": "768px tablet review boundary." },
+        "--azw-breakpoint-workspace": { "type": "dimension", "value": "64rem", "classification": "derived", "description": "1024px workspace review boundary." },
+        "--azw-breakpoint-wide": { "type": "dimension", "value": "90rem", "classification": "derived", "description": "1440px wide review boundary." }
+      }
+    },
+    {
+      "name": "media.ratios",
+      "domain": "media-ratios",
+      "evidence": { "documentId": "asset-palette-map-v1.4", "heading": "Asset-Class Profiles and Composition Rules", "normalization": "derived" },
+      "tokens": {
+        "--azw-size-ratio-square": { "type": "ratio", "value": "1 / 1", "classification": "derived", "description": "Square intrinsic ratio." },
+        "--azw-size-ratio-landscape": { "type": "ratio", "value": "16 / 9", "classification": "derived", "description": "Landscape intrinsic ratio." },
+        "--azw-size-ratio-editorial": { "type": "ratio", "value": "4 / 3", "classification": "derived", "description": "Editorial intrinsic ratio." },
+        "--azw-size-ratio-portrait": { "type": "ratio", "value": "4 / 5", "classification": "derived", "description": "Portrait intrinsic ratio." },
+        "--azw-space-caption-gap": { "type": "dimension", "value": "{--azw-p-space-2}", "classification": "derived", "description": "Caption-to-media gap." },
+        "--azw-space-art-plate-surround": { "type": "dimension", "value": "clamp(1rem, 5vw, 4rem)", "classification": "derived", "description": "Artwork-neutral surround." }
+      }
+    }
+  ]
+}
