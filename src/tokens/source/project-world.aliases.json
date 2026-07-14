@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "world",
+  "groups": [
+    {
+      "name": "world.software",
+      "domain": "project-worlds",
+      "evidence": { "documentId": "brand-product-v1.5", "heading": "Context Profiles / Operational Product", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-world-software-canvas": { "type": "color", "value": "{--azw-portfolio-reading-surface}", "classification": "portfolio-alias", "description": "Inspectable software canvas." },
+        "--azw-world-software-surface-emphasis": { "type": "color", "value": "{--azw-portfolio-code-surface}", "classification": "portfolio-alias", "description": "Interface and code emphasis." },
+        "--azw-world-software-media-surround": { "type": "color", "value": "{--azw-color-surface-inset}", "classification": "portfolio-alias", "description": "Software media surround." },
+        "--azw-world-software-density": { "type": "dimension", "value": "{--azw-portfolio-density-register}", "classification": "portfolio-alias", "description": "Inspectable software density." },
+        "--azw-world-software-measure": { "type": "dimension", "value": "{--azw-portfolio-technical-measure}", "classification": "portfolio-alias", "description": "Software content measure." },
+        "--azw-world-software-mark-intensity": { "type": "number", "value": "{--azw-mark-intensity-1}", "classification": "portfolio-alias", "description": "Subtle mark allowance." },
+        "--azw-world-software-type-emphasis": { "type": "font-family", "value": "{--azw-type-family-mono}", "classification": "portfolio-alias", "description": "Technical metadata emphasis." }
+      }
+    },
+    {
+      "name": "world.visual-system",
+      "domain": "project-worlds",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "System Surfaces and Components", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-world-visual-system-canvas": { "type": "color", "value": "{--azw-portfolio-alternate-surface}", "classification": "portfolio-alias", "description": "Visual-system canvas." },
+        "--azw-world-visual-system-surface-emphasis": { "type": "color", "value": "{--azw-portfolio-raised-surface}", "classification": "portfolio-alias", "description": "Specimen surface emphasis." },
+        "--azw-world-visual-system-media-surround": { "type": "color", "value": "{--azw-color-surface-inset}", "classification": "portfolio-alias", "description": "Specimen media surround." },
+        "--azw-world-visual-system-density": { "type": "dimension", "value": "{--azw-portfolio-density-register}", "classification": "portfolio-alias", "description": "Specimen density." },
+        "--azw-world-visual-system-measure": { "type": "dimension", "value": "{--azw-portfolio-technical-measure}", "classification": "portfolio-alias", "description": "Visual-system measure." },
+        "--azw-world-visual-system-mark-intensity": { "type": "number", "value": "{--azw-mark-intensity-2}", "classification": "portfolio-alias", "description": "Contextual mark allowance." },
+        "--azw-world-visual-system-type-emphasis": { "type": "font-family", "value": "{--azw-type-family-sans}", "classification": "portfolio-alias", "description": "System-label emphasis." }
+      }
+    },
+    {
+      "name": "world.art",
+      "domain": "project-worlds",
+      "evidence": { "documentId": "asset-palette-map-v1.4", "heading": "Artwork and Asset-Class Profiles", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-world-art-canvas": { "type": "color", "value": "{--azw-portfolio-art-surface}", "classification": "portfolio-alias", "description": "Artwork-neutral canvas." },
+        "--azw-world-art-surface-emphasis": { "type": "color", "value": "{--azw-portfolio-art-surface}", "classification": "portfolio-alias", "description": "Neutral art plate." },
+        "--azw-world-art-media-surround": { "type": "color", "value": "{--azw-portfolio-art-surface}", "classification": "portfolio-alias", "description": "Untinted artwork surround." },
+        "--azw-world-art-density": { "type": "dimension", "value": "{--azw-portfolio-rhythm-art}", "classification": "portfolio-alias", "description": "Generous art rhythm." },
+        "--azw-world-art-measure": { "type": "dimension", "value": "{--azw-portfolio-media-measure}", "classification": "portfolio-alias", "description": "Artwork media measure." },
+        "--azw-world-art-mark-intensity": { "type": "number", "value": "{--azw-mark-intensity-0}", "classification": "portfolio-alias", "description": "Marks removed around artwork by default." },
+        "--azw-world-art-type-emphasis": { "type": "font-family", "value": "{--azw-type-family-serif}", "classification": "portfolio-alias", "description": "Optional editorial emphasis." }
+      }
+    },
+    {
+      "name": "world.technical-system",
+      "domain": "project-worlds",
+      "evidence": { "documentId": "brand-product-v1.5", "heading": "Context Profiles / Operational Product and Archives", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-world-technical-system-canvas": { "type": "color", "value": "{--azw-portfolio-reading-surface}", "classification": "portfolio-alias", "description": "Technical-system canvas." },
+        "--azw-world-technical-system-surface-emphasis": { "type": "color", "value": "{--azw-portfolio-code-surface}", "classification": "portfolio-alias", "description": "Diagram, code, and data surface." },
+        "--azw-world-technical-system-media-surround": { "type": "color", "value": "{--azw-color-surface-inset}", "classification": "portfolio-alias", "description": "Technical media surround." },
+        "--azw-world-technical-system-density": { "type": "dimension", "value": "{--azw-portfolio-density-compact}", "classification": "portfolio-alias", "description": "Dense technical rhythm." },
+        "--azw-world-technical-system-measure": { "type": "dimension", "value": "{--azw-portfolio-technical-measure}", "classification": "portfolio-alias", "description": "Technical content measure." },
+        "--azw-world-technical-system-mark-intensity": { "type": "number", "value": "{--azw-mark-intensity-1}", "classification": "portfolio-alias", "description": "Subtle technical mark allowance." },
+        "--azw-world-technical-system-type-emphasis": { "type": "font-family", "value": "{--azw-type-family-mono}", "classification": "portfolio-alias", "description": "Code and data emphasis." }
+      }
+    },
+    {
+      "name": "world.limited-media",
+      "domain": "project-worlds",
+      "evidence": { "documentId": "brand-product-v1.5", "heading": "Content Hierarchy and Context Profiles", "normalization": "portfolio-alias" },
+      "tokens": {
+        "--azw-world-limited-media-canvas": { "type": "color", "value": "{--azw-portfolio-reading-surface}", "classification": "portfolio-alias", "description": "Type-led canvas." },
+        "--azw-world-limited-media-surface-emphasis": { "type": "color", "value": "{--azw-portfolio-alternate-surface}", "classification": "portfolio-alias", "description": "Intentional no-image surface." },
+        "--azw-world-limited-media-media-surround": { "type": "color", "value": "{--azw-portfolio-alternate-surface}", "classification": "portfolio-alias", "description": "No-image media placeholder surface." },
+        "--azw-world-limited-media-density": { "type": "dimension", "value": "{--azw-portfolio-rhythm-editorial}", "classification": "portfolio-alias", "description": "Type-led editorial rhythm." },
+        "--azw-world-limited-media-measure": { "type": "dimension", "value": "{--azw-portfolio-reading-measure}", "classification": "portfolio-alias", "description": "Type-led reading measure." },
+        "--azw-world-limited-media-mark-intensity": { "type": "number", "value": "{--azw-mark-intensity-1}", "classification": "portfolio-alias", "description": "Subtle mark allowance." },
+        "--azw-world-limited-media-type-emphasis": { "type": "font-family", "value": "{--azw-type-family-serif}", "classification": "portfolio-alias", "description": "Editorial type emphasis." }
+      }
+    }
+  ]
+}

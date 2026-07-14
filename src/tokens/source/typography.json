@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "semantic",
+  "groups": [
+    {
+      "name": "typography.families",
+      "domain": "typography",
+      "evidence": { "documentId": "design-token-v1.5", "heading": "8 Typography Tokens", "normalization": "derived" },
+      "tokens": {
+        "--azw-type-family-sans": { "type": "font-family", "value": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif", "classification": "derived", "description": "Licensed-system sans fallback role." },
+        "--azw-type-family-serif": { "type": "font-family", "value": "ui-serif, Georgia, Cambria, \"Times New Roman\", serif", "classification": "derived", "description": "Optional editorial system-serif role." },
+        "--azw-type-family-mono": { "type": "font-family", "value": "ui-monospace, SFMono-Regular, Consolas, \"Liberation Mono\", monospace", "classification": "derived", "description": "System monospace role." }
+      }
+    },
+    {
+      "name": "typography.roles",
+      "domain": "typography",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "Typography System and Responsive Behavior", "normalization": "derived" },
+      "tokens": {
+        "--azw-type-size-display": { "type": "font-size", "value": "clamp(2.5rem, 7vw, 5.5rem)", "classification": "derived", "description": "Bounded display scale." },
+        "--azw-type-size-project-title": { "type": "font-size", "value": "clamp(2rem, 5vw, 4rem)", "classification": "derived", "description": "Bounded project-title scale." },
+        "--azw-type-size-section-heading": { "type": "font-size", "value": "clamp(1.5rem, 3vw, 2.25rem)", "classification": "derived", "description": "Section heading scale." },
+        "--azw-type-size-body": { "type": "font-size", "value": "1rem", "classification": "derived", "description": "Minimum 16px body size." },
+        "--azw-type-size-body-compact": { "type": "font-size", "value": "0.9375rem", "classification": "derived", "description": "Compact supporting body size." },
+        "--azw-type-size-metadata": { "type": "font-size", "value": "0.875rem", "classification": "derived", "description": "Metadata and status size." },
+        "--azw-type-size-caption": { "type": "font-size", "value": "0.875rem", "classification": "derived", "description": "Readable caption size." },
+        "--azw-type-size-code": { "type": "font-size", "value": "0.9375rem", "classification": "derived", "description": "Code and tabular-data size." },
+        "--azw-type-size-navigation": { "type": "font-size", "value": "0.9375rem", "classification": "derived", "description": "Global navigation size hook." },
+        "--azw-type-line-display": { "type": "line-height", "value": "1.05", "classification": "derived", "description": "Unclipped display line height." },
+        "--azw-type-line-heading": { "type": "line-height", "value": "1.2", "classification": "derived", "description": "Heading line height." },
+        "--azw-type-line-body": { "type": "line-height", "value": "1.65", "classification": "derived", "description": "Long-form reading line height." },
+        "--azw-type-line-compact": { "type": "line-height", "value": "1.45", "classification": "derived", "description": "Compact interface line height." },
+        "--azw-type-weight-regular": { "type": "font-weight", "value": "400", "classification": "derived", "description": "Regular text weight." },
+        "--azw-type-weight-medium": { "type": "font-weight", "value": "550", "classification": "derived", "description": "Interface emphasis weight." },
+        "--azw-type-weight-strong": { "type": "font-weight", "value": "700", "classification": "derived", "description": "Heading emphasis weight." },
+        "--azw-type-tracking-label": { "type": "letter-spacing", "value": "0.04em", "classification": "derived", "description": "Restrained metadata-label tracking." }
+      }
+    }
+  ]
+}

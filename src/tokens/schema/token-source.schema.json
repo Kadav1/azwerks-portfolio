@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://azwerks.example/schemas/portfolio-token-source-v1.json",
+  "title": "azwerks portfolio token source",
+  "type": "object",
+  "required": ["schemaVersion", "layer", "groups"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "layer": {
+      "enum": ["primitive", "semantic", "portfolio", "world"]
+    },
+    "mode": { "enum": ["dark", "light"] },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "domain", "evidence", "tokens"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "domain": { "type": "string", "minLength": 1 },
+          "evidence": {
+            "type": "object",
+            "required": ["documentId", "heading", "normalization"],
+            "properties": {
+              "documentId": { "type": "string", "minLength": 1 },
+              "heading": { "type": "string", "minLength": 1 },
+              "normalization": {
+                "enum": ["direct", "mapped", "derived", "portfolio-alias"]
+              }
+            },
+            "additionalProperties": false
+          },
+          "tokens": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "required": ["type", "value", "classification", "description"],
+              "properties": {
+                "type": { "type": "string", "minLength": 1 },
+                "value": { "type": ["string", "number"] },
+                "classification": {
+                  "enum": ["direct", "mapped", "derived", "portfolio-alias"]
+                },
+                "description": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "implementation": "azwerks portfolio token foundation",
+  "implementationVersion": "0.1.0",
+  "generatorVersion": "1.0.0",
+  "generatorSha256": "4d7d6dc31bd6a51084d74271fe97c2ed94a4aa56878e818d6176b15dacce5100",
+  "sourceManifestSha256": "dafddc12bd011c9f7aa132d51f922b9b50ae9f20a3b0aab45628f257c2f49c64",
+  "acceptedDocumentHashes": {
+    "radium-palette-v1.4": "d8d63f9a4b2255978e0e1893fad46c2607852b6f8390b0ac5063c47180d70fc9",
+    "design-token-v1.5": "918a20e8ffd25bd1b058456226f647a7524b552b519ab796188ad85792814db4",
+    "asset-palette-map-v1.4": "90d0fa5b3330510e878beef98e7752d67cf950d03974966b1a6607b42d082648",
+    "universal-theme-v1.2": "f13e7e969c3695791c0af754843ce0137e144f3e938d3c9c65bf3e315fe6f98e",
+    "visual-system-v1.6": "ab800a65b6cd7d9fd682b6b34d840c5e5f207bf78e8f9c42033e384167ed7cf0",
+    "brand-product-v1.5": "4b0949a111df9278ec455f431a8e210305e86a4e116d884348bbc9f4dd1ac3b1",
+    "wordmark-v1.2": "90b2400e7fc200c1190cc63bf15bfc2bcc728c530a2b6df5b434e68563372e34",
+    "authored-marks-v1.2": "54b79efeb636a4b95cdc4239a886dafec719716b264653c0a7077dab15802e7c",
+    "iconography-v1.2": "110cf3b30ba6ba0e148bcbb102366d8d329a04bd2fbf63f59dbac52f27e7e88d"
+  },
+  "tokenCount": 365,
+  "uniqueTokenNameCount": 322,
+  "tokenCountByLayer": {
+    "portfolio": 19,
+    "primitive": 107,
+    "semantic": 204,
+    "world": 35
+  },
+  "tokenCountByDomain": {
+    "atlas": 13,
+    "authored-marks": 13,
+    "border": 3,
+    "breakpoints": 5,
+    "color": 122,
+    "content-widths": 6,
+    "elevation": 2,
+    "focus": 4,
+    "iconography": 10,
+    "interaction": 38,
+    "lifecycle-state": 20,
+    "media-ratios": 6,
+    "motion": 8,
+    "opacity": 5,
+    "portfolio-shell": 14,
+    "project-worlds": 35,
+    "radius": 3,
+    "sizing": 4,
+    "spacing": 17,
+    "trust": 10,
+    "typography": 20,
+    "z-index": 7
+  },
+  "themeModes": [
+    "system",
+    "dark",
+    "light"
+  ],
+  "projectWorlds": [
+    "software",
+    "visual-system",
+    "art",
+    "technical-system",
+    "limited-media"
+  ],
+  "themeMappingCount": 100,
+  "contrastPairCount": 62,
+  "generatedFileHashes": {
+    "token-names.ts": "1513549fc087be03988d1d297b2232e2662092b9554a3083891ea6889d78b66c",
+    "tokens.css": "65b97dfb3c3dd5d93e96d971bfa252185580d7d141ea0d63edff8e8a615dbd39",
+    "tokens.ts": "519520b184890ee0290c3013413d0543e11ae33f3ba6e5785293b37cbcd1a707"
+  },
+  "timestampPolicy": "No generated timestamp; identical sources and generator produce identical bytes."
+}

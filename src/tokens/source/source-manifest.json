@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0.0",
+  "system": "azwerks",
+  "implementationName": "azwerks portfolio token foundation",
+  "implementationVersion": "0.1.0",
+  "authorityModel": "current canonical local azwerks documents only",
+  "ownerAuthorization": "portfolio-specific normalization authorized by superseding token foundation prompt v0.2",
+  "acceptedDocuments": [
+    {
+      "id": "radium-palette-v1.4",
+      "title": "azwerks Radium Color Palette Spec",
+      "version": "1.4",
+      "status": "canonical",
+      "classification": "canonical-value-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/radium-color-palette-spec-v1.4.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/radium-color-palette-spec-v1.4.md",
+      "sha256": "d8d63f9a4b2255978e0e1893fad46c2607852b6f8390b0ac5063c47180d70fc9"
+    },
+    {
+      "id": "design-token-v1.5",
+      "title": "azwerks Design Token Spec",
+      "version": "1.5",
+      "status": "canonical",
+      "classification": "canonical-role-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/design-token-spec-v1.5.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/design-token-spec-v1.5.md",
+      "sha256": "918a20e8ffd25bd1b058456226f647a7524b552b519ab796188ad85792814db4"
+    },
+    {
+      "id": "asset-palette-map-v1.4",
+      "title": "AZWERKS Asset Palette Application Map",
+      "version": "1.4",
+      "status": "canonical",
+      "classification": "canonical-application-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/asset-palette-application-map-v1.4.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/asset-palette-application-map-v1.4.md",
+      "sha256": "90d0fa5b3330510e878beef98e7752d67cf950d03974966b1a6607b42d082648"
+    },
+    {
+      "id": "universal-theme-v1.2",
+      "title": "AZWERKS Universal Theme Spec",
+      "version": "1.2",
+      "status": "canonical",
+      "classification": "canonical-mode-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/universal-theme-spec-v1.2.md",
+      "sha256": "f13e7e969c3695791c0af754843ce0137e144f3e938d3c9c65bf3e315fe6f98e"
+    },
+    {
+      "id": "visual-system-v1.6",
+      "title": "azwerks Visual System Spec",
+      "version": "1.6",
+      "status": "canonical",
+      "classification": "canonical-role-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/visual-system-spec-v1.6.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/visual-system-spec-v1.6.md",
+      "sha256": "ab800a65b6cd7d9fd682b6b34d840c5e5f207bf78e8f9c42033e384167ed7cf0"
+    },
+    {
+      "id": "brand-product-v1.5",
+      "title": "AZWERKS Brand Product Design Spec",
+      "version": "1.5",
+      "status": "canonical",
+      "classification": "canonical-application-authority",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/brand-product-design-spec-v1.5.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/brand-product-design-spec-v1.5.md",
+      "sha256": "4b0949a111df9278ec455f431a8e210305e86a4e116d884348bbc9f4dd1ac3b1"
+    },
+    {
+      "id": "wordmark-v1.2",
+      "title": "azwerks Wordmark and Identity Record",
+      "version": "1.2",
+      "status": "canonical",
+      "classification": "canonical-identity-boundary",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/wordmark-direction-spec-v1.2.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/wordmark-direction-spec-v1.2.md",
+      "sha256": "90b2400e7fc200c1190cc63bf15bfc2bcc728c530a2b6df5b434e68563372e34"
+    },
+    {
+      "id": "authored-marks-v1.2",
+      "title": "azwerks Authored Mark Language Spec",
+      "version": "1.2",
+      "status": "canonical",
+      "classification": "canonical-mark-boundary",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/authored-mark-language-spec-v1.2.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/authored-mark-language-spec-v1.2.md",
+      "sha256": "54b79efeb636a4b95cdc4239a886dafec719716b264653c0a7077dab15802e7c"
+    },
+    {
+      "id": "iconography-v1.2",
+      "title": "AZWERKS Iconography System Spec",
+      "version": "1.2",
+      "status": "canonical",
+      "classification": "canonical-icon-boundary",
+      "reference": "<approved-brand-vault>/10_Brand/00_Standards/iconography-system-spec-v1.2.md",
+      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/iconography-system-spec-v1.2.md",
+      "sha256": "110cf3b30ba6ba0e148bcbb102366d8d329a04bd2fbf63f59dbac52f27e7e88d"
+    }
+  ],
+  "documentHashes": {
+    "radium-palette-v1.4": "d8d63f9a4b2255978e0e1893fad46c2607852b6f8390b0ac5063c47180d70fc9",
+    "design-token-v1.5": "918a20e8ffd25bd1b058456226f647a7524b552b519ab796188ad85792814db4",
+    "asset-palette-map-v1.4": "90d0fa5b3330510e878beef98e7752d67cf950d03974966b1a6607b42d082648",
+    "universal-theme-v1.2": "f13e7e969c3695791c0af754843ce0137e144f3e938d3c9c65bf3e315fe6f98e",
+    "visual-system-v1.6": "ab800a65b6cd7d9fd682b6b34d840c5e5f207bf78e8f9c42033e384167ed7cf0",
+    "brand-product-v1.5": "4b0949a111df9278ec455f431a8e210305e86a4e116d884348bbc9f4dd1ac3b1",
+    "wordmark-v1.2": "90b2400e7fc200c1190cc63bf15bfc2bcc728c530a2b6df5b434e68563372e34",
+    "authored-marks-v1.2": "54b79efeb636a4b95cdc4239a886dafec719716b264653c0a7077dab15802e7c",
+    "iconography-v1.2": "110cf3b30ba6ba0e148bcbb102366d8d329a04bd2fbf63f59dbac52f27e7e88d"
+  },
+  "normalizationEvidence": "docs/portfolio/architecture/token-normalization-evidence-matrix-v0.2.md",
+  "removedPackage": {
+    "status": "not-removed-owner-scope-restricted-to-portfolio-repository",
+    "manifestSha256": "974d50877f40994fbbb6e478fc6c8a33864141cc488a112e97735be780a45bbf",
+    "authority": false,
+    "usedForValues": false,
+    "usedForImplementation": false,
+    "note": "The later owner instruction limits all work to this repository; the external package remains untouched and excluded."
+  },
+  "universalThemeResolution": "A: canonical Universal Theme Spec v1.2 was previously verified and is reaccepted through its preserved title, status, logical reference, and byte hash; current repository documents provide the implemented mode details.",
+  "supersededInputs": [
+    "token-source-resolution-block-v0.1 package-first conclusion",
+    "all package-shaped Radium implementations",
+    "Candidate A/B/C/D CSS",
+    "prototype CSS and screenshots",
+    "superseded specifications"
+  ],
+  "generatorVersion": "1.0.0",
+  "portfolioAliasVersion": "1.0.0",
+  "projectWorldAliasVersion": "1.0.0"
+}

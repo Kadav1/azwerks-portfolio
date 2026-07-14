@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "layer": "semantic",
+  "groups": [
+    {
+      "name": "shape.radius",
+      "domain": "radius",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "11 Sizing and Rhythm", "normalization": "direct" },
+      "tokens": {
+        "--azw-radius-small": { "type": "dimension", "value": "0.25rem", "classification": "direct", "description": "4px small radius." },
+        "--azw-radius-medium": { "type": "dimension", "value": "0.5rem", "classification": "direct", "description": "8px medium radius." },
+        "--azw-radius-large": { "type": "dimension", "value": "0.75rem", "classification": "direct", "description": "12px large radius." }
+      }
+    },
+    {
+      "name": "shape.border",
+      "domain": "border",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "5.1 Dark Flagship and 11 Sizing and Rhythm", "normalization": "direct" },
+      "tokens": {
+        "--azw-border-hairline": { "type": "dimension", "value": "0.0625rem", "classification": "direct", "description": "1px structural seam." },
+        "--azw-border-control": { "type": "dimension", "value": "0.0625rem", "classification": "direct", "description": "1px control border." },
+        "--azw-border-focus": { "type": "dimension", "value": "0.125rem", "classification": "direct", "description": "2px focus ring." }
+      }
+    },
+    {
+      "name": "elevation.overlay",
+      "domain": "elevation",
+      "evidence": { "documentId": "radium-palette-v1.4", "heading": "5.1 Dark Flagship and 7.1 Overlays and Scrims", "normalization": "derived" },
+      "tokens": {
+        "--azw-elevation-none": { "type": "shadow", "value": "none", "classification": "derived", "description": "Flat structural surfaces." },
+        "--azw-elevation-overlay": { "type": "shadow", "value": "0 1rem 3rem rgba(0, 0, 0, 0.4)", "classification": "derived", "description": "Reserved dialog or overlay elevation." }
+      }
+    },
+    {
+      "name": "layering.system",
+      "domain": "z-index",
+      "evidence": { "documentId": "design-token-v1.5", "heading": "Shape, Border, Elevation, and Motion Tokens", "normalization": "derived" },
+      "tokens": {
+        "--azw-z-base": { "type": "number", "value": 0, "classification": "derived", "description": "Base content layer." },
+        "--azw-z-sticky-shell": { "type": "number", "value": 10, "classification": "derived", "description": "Future sticky shell." },
+        "--azw-z-disclosed-filter": { "type": "number", "value": 20, "classification": "derived", "description": "Future disclosed filter." },
+        "--azw-z-backdrop": { "type": "number", "value": 30, "classification": "derived", "description": "Future dialog or drawer backdrop." },
+        "--azw-z-dialog": { "type": "number", "value": 40, "classification": "derived", "description": "Future dialog or drawer." },
+        "--azw-z-route-overlay": { "type": "number", "value": 50, "classification": "derived", "description": "Reserved route-continuity overlay." },
+        "--azw-z-status": { "type": "number", "value": 60, "classification": "derived", "description": "Reserved future status layer." }
+      }
+    },
+    {
+      "name": "motion.roles",
+      "domain": "motion",
+      "evidence": { "documentId": "visual-system-v1.6", "heading": "Motion Behavior", "normalization": "derived" },
+      "tokens": {
+        "--azw-motion-duration-micro": { "type": "duration", "value": "120ms", "classification": "direct", "description": "Canonical fast UI state transition." },
+        "--azw-motion-duration-route": { "type": "duration", "value": "300ms", "classification": "derived", "description": "Route continuity duration." },
+        "--azw-motion-duration-navigation": { "type": "duration", "value": "220ms", "classification": "derived", "description": "Mobile navigation duration." },
+        "--azw-motion-duration-reduced": { "type": "duration", "value": "0ms", "classification": "derived", "description": "Reduced-motion transition duration." },
+        "--azw-motion-easing-enter": { "type": "cubic-bezier", "value": "cubic-bezier(0.2, 0, 0, 1)", "classification": "direct", "description": "Canonical UI enter easing." },
+        "--azw-motion-easing-exit": { "type": "cubic-bezier", "value": "cubic-bezier(0.4, 0, 1, 1)", "classification": "derived", "description": "Restrained exit easing." },
+        "--azw-motion-distance-continuity": { "type": "dimension", "value": "1rem", "classification": "derived", "description": "Route continuity distance." },
+        "--azw-motion-distance-local": { "type": "dimension", "value": "0.25rem", "classification": "derived", "description": "Local state distance." }
+      }
+    },
+    {
+      "name": "interaction.geometry",
+      "domain": "focus",
+      "evidence": { "documentId": "design-token-v1.5", "heading": "15 Focus and Keyboard Navigation", "normalization": "derived" },
+      "tokens": {
+        "--azw-focus-width": { "type": "dimension", "value": "{--azw-border-focus}", "classification": "mapped", "description": "Focus ring width." },
+        "--azw-focus-offset": { "type": "dimension", "value": "0.1875rem", "classification": "derived", "description": "3px separation between control and ring." },
+        "--azw-interaction-target-min": { "type": "dimension", "value": "{--azw-size-control-min}", "classification": "mapped", "description": "Minimum interactive target." },
+        "--azw-interaction-disabled-opacity": { "type": "number", "value": 0.72, "classification": "derived", "description": "Disabled opacity that preserves readable text." }
+      }
+    },
+    {
+      "name": "opacity.roles",
+      "domain": "opacity",
+      "evidence": { "documentId": "authored-marks-v1.2", "heading": "Usage Levels and Accessibility", "normalization": "direct" },
+      "tokens": {
+        "--azw-opacity-hidden": { "type": "number", "value": 0, "classification": "direct", "description": "Fully removed decorative layer." },
+        "--azw-opacity-subtle": { "type": "number", "value": 0.04, "classification": "direct", "description": "Level 1 authored-mark opacity." },
+        "--azw-opacity-contextual": { "type": "number", "value": 0.07, "classification": "direct", "description": "Level 2 authored-mark opacity." },
+        "--azw-opacity-expressive": { "type": "number", "value": 0.12, "classification": "direct", "description": "Level 3 authored-mark opacity." },
+        "--azw-opacity-opaque": { "type": "number", "value": 1, "classification": "derived", "description": "Opaque content." }
+      }
+    }
+  ]
+}
