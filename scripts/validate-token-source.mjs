@@ -15,6 +15,8 @@ const errors = [];
 const manifest = await readJson(join(sourceDirectory, 'source-manifest.json'));
 const { documents, entries } = await loadTokenSources();
 const accepted = new Map(manifest.acceptedDocuments.map((document) => [document.id, document]));
+let localEvidenceVerified = 0;
+let localEvidenceUnavailable = 0;
 
 assert(manifest.schemaVersion === '1.0.0', 'Unexpected source manifest schema.', errors);
 assert(manifest.authorityModel === 'current canonical local azwerks documents only', 'Authority model is not document-only.', errors);
@@ -26,9 +28,15 @@ for (const acceptedDocument of manifest.acceptedDocuments) {
   assert(acceptedDocument.status === 'canonical', `${acceptedDocument.id} is not canonical.`, errors);
   assert(/^[a-f0-9]{64}$/.test(acceptedDocument.sha256), `${acceptedDocument.id} lacks a valid SHA-256.`, errors);
   assert(!acceptedDocument.reference.startsWith('/'), `${acceptedDocument.id} exposes an absolute path.`, errors);
-  if (acceptedDocument.repositoryEvidence) {
-    const bytes = await readFile(join(repositoryRoot, acceptedDocument.repositoryEvidence));
-    assert(sha256(bytes) === acceptedDocument.sha256, `${acceptedDocument.id} repository evidence hash changed.`, errors);
+  if (acceptedDocument.localEvidence) {
+    try {
+      const bytes = await readFile(join(repositoryRoot, acceptedDocument.localEvidence));
+      assert(sha256(bytes) === acceptedDocument.sha256, `${acceptedDocument.id} local evidence hash changed.`, errors);
+      localEvidenceVerified += 1;
+    } catch (error) {
+      if (error?.code === 'ENOENT') localEvidenceUnavailable += 1;
+      else throw error;
+    }
   }
 }
 
@@ -75,4 +83,4 @@ assert(!/(?:\/home\/|\/media\/|\/mnt\/)/.test(publicInputs), 'A private absolute
 assert(!/@azwerks\/radium/.test(publicInputs), 'The excluded package name appears in token sources.', errors);
 
 failIfErrors(errors, 'Token source validation');
-console.log(`Token source validation passed: ${entries.length} scoped token declarations across ${documents.length} source files.`);
+console.log(`Token source validation passed: ${entries.length} scoped token declarations across ${documents.length} source files; local evidence ${localEvidenceVerified} verified, ${localEvidenceUnavailable} unavailable.`);

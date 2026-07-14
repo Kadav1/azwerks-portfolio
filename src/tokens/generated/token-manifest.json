@@ -4,7 +4,7 @@
   "implementationVersion": "0.1.0",
   "generatorVersion": "1.0.0",
   "generatorSha256": "4d7d6dc31bd6a51084d74271fe97c2ed94a4aa56878e818d6176b15dacce5100",
-  "sourceManifestSha256": "dafddc12bd011c9f7aa132d51f922b9b50ae9f20a3b0aab45628f257c2f49c64",
+  "sourceManifestSha256": "c68865a1617b0374d22840d8fb26103e85a56eaaa09cfeaa080c867bd2a41989",
   "acceptedDocumentHashes": {
     "radium-palette-v1.4": "d8d63f9a4b2255978e0e1893fad46c2607852b6f8390b0ac5063c47180d70fc9",
     "design-token-v1.5": "918a20e8ffd25bd1b058456226f647a7524b552b519ab796188ad85792814db4",
@@ -63,9 +63,9 @@
   "themeMappingCount": 100,
   "contrastPairCount": 62,
   "generatedFileHashes": {
-    "token-names.ts": "1513549fc087be03988d1d297b2232e2662092b9554a3083891ea6889d78b66c",
-    "tokens.css": "65b97dfb3c3dd5d93e96d971bfa252185580d7d141ea0d63edff8e8a615dbd39",
-    "tokens.ts": "519520b184890ee0290c3013413d0543e11ae33f3ba6e5785293b37cbcd1a707"
+    "token-names.ts": "b10d0df3d8f05c6ea5b9db0de0c4cafd1aafbeda803ae0e3329f3984f2bfc2e4",
+    "tokens.css": "1cdb578680088f68a539faeff69046094d8a5b6c8ecc1d3e5e959d0fd6a052ed",
+    "tokens.ts": "a74cf4f488cb56086e76351b3d4295aba11f62c271362f3ffb17752ff042eb0a"
   },
   "timestampPolicy": "No generated timestamp; identical sources and generator produce identical bytes."
 }

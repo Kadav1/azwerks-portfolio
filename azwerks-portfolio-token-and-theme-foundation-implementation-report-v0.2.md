@@ -193,9 +193,9 @@ check` and `npm run build` now enforce token gates automatically.
 
 ## 36. Document validation
 
-Accepted repository evidence hashes match; every group names an accepted
-document and heading; no private absolute path or package name appears in token
-sources.
+Available local evidence hashes match; CI uses the same pinned hashes when
+private evidence is absent. Every group names an accepted document and heading;
+no private absolute path or package name appears in token sources.
 
 ## 37. Source/reference validation
 
@@ -239,7 +239,7 @@ roles, and no required meaning depends on decoration.
 
 ## 45. Performance
 
-Generated CSS is 29,919 bytes and 4,343 bytes gzip. Built CSS is 4,604 bytes
+Generated CSS is 29,919 bytes and 4,341 bytes gzip. Built CSS is 4,604 bytes
 gzip. Bootstrap is 211 bytes. First-route HTML+CSS is 30,573 bytes uncompressed,
 approximately 5,677 bytes gzip. All budgets pass.
 

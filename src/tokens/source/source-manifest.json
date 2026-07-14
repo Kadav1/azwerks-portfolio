@@ -13,7 +13,7 @@
       "status": "canonical",
       "classification": "canonical-value-authority",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/radium-color-palette-spec-v1.4.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/radium-color-palette-spec-v1.4.md",
+      "localEvidence": "docs/portfolio/exploration/sources/30_visual_system/radium-color-palette-spec-v1.4.md",
       "sha256": "d8d63f9a4b2255978e0e1893fad46c2607852b6f8390b0ac5063c47180d70fc9"
     },
     {
@@ -23,7 +23,7 @@
       "status": "canonical",
       "classification": "canonical-role-authority",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/design-token-spec-v1.5.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/design-token-spec-v1.5.md",
+      "localEvidence": "docs/portfolio/exploration/sources/30_visual_system/design-token-spec-v1.5.md",
       "sha256": "918a20e8ffd25bd1b058456226f647a7524b552b519ab796188ad85792814db4"
     },
     {
@@ -33,7 +33,7 @@
       "status": "canonical",
       "classification": "canonical-application-authority",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/asset-palette-application-map-v1.4.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/asset-palette-application-map-v1.4.md",
+      "localEvidence": "docs/portfolio/exploration/sources/30_visual_system/asset-palette-application-map-v1.4.md",
       "sha256": "90d0fa5b3330510e878beef98e7752d67cf950d03974966b1a6607b42d082648"
     },
     {
@@ -52,7 +52,7 @@
       "status": "canonical",
       "classification": "canonical-role-authority",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/visual-system-spec-v1.6.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/visual-system-spec-v1.6.md",
+      "localEvidence": "docs/portfolio/exploration/sources/30_visual_system/visual-system-spec-v1.6.md",
       "sha256": "ab800a65b6cd7d9fd682b6b34d840c5e5f207bf78e8f9c42033e384167ed7cf0"
     },
     {
@@ -62,7 +62,7 @@
       "status": "canonical",
       "classification": "canonical-application-authority",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/brand-product-design-spec-v1.5.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/brand-product-design-spec-v1.5.md",
+      "localEvidence": "docs/portfolio/exploration/sources/10_brand_core/brand-product-design-spec-v1.5.md",
       "sha256": "4b0949a111df9278ec455f431a8e210305e86a4e116d884348bbc9f4dd1ac3b1"
     },
     {
@@ -72,7 +72,7 @@
       "status": "canonical",
       "classification": "canonical-identity-boundary",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/wordmark-direction-spec-v1.2.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/wordmark-direction-spec-v1.2.md",
+      "localEvidence": "docs/portfolio/exploration/sources/10_brand_core/wordmark-direction-spec-v1.2.md",
       "sha256": "90b2400e7fc200c1190cc63bf15bfc2bcc728c530a2b6df5b434e68563372e34"
     },
     {
@@ -82,7 +82,7 @@
       "status": "canonical",
       "classification": "canonical-mark-boundary",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/authored-mark-language-spec-v1.2.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/10_brand_core/authored-mark-language-spec-v1.2.md",
+      "localEvidence": "docs/portfolio/exploration/sources/10_brand_core/authored-mark-language-spec-v1.2.md",
       "sha256": "54b79efeb636a4b95cdc4239a886dafec719716b264653c0a7077dab15802e7c"
     },
     {
@@ -92,7 +92,7 @@
       "status": "canonical",
       "classification": "canonical-icon-boundary",
       "reference": "<approved-brand-vault>/10_Brand/00_Standards/iconography-system-spec-v1.2.md",
-      "repositoryEvidence": "docs/portfolio/exploration/sources/30_visual_system/iconography-system-spec-v1.2.md",
+      "localEvidence": "docs/portfolio/exploration/sources/30_visual_system/iconography-system-spec-v1.2.md",
       "sha256": "110cf3b30ba6ba0e148bcbb102366d8d329a04bd2fbf63f59dbac52f27e7e88d"
     }
   ],

@@ -3,9 +3,9 @@
 Status: **resolved**  
 Date: 2026-07-14
 
-Logical references redact the private vault root. Repository evidence paths are
-public historical copies used for byte verification and are never imported by
-production modules.
+Logical references redact the private vault root. Optional local-evidence paths
+identify ignored workspace snapshots used for byte verification when present;
+they are not published or imported by production modules.
 
 | Document | Version and status | Classification | SHA-256 | Headings used | Governs | Public copy |
 |---|---|---|---|---|---|---|
@@ -20,8 +20,8 @@ production modules.
 | AZWERKS Iconography System Spec | 1.2 canonical; supersedes 1.1 | canonical-icon-boundary | `110cf3b30ba6ba0e148bcbb102366d8d329a04bd2fbf63f59dbac52f27e7e88d` | Grid and Geometry; Sizing; Semantic Color; State; Accessibility | functional icon hooks | existing evidence copy only |
 
 All accepted documents use logical references beneath
-`<approved-brand-vault>/10_Brand/00_Standards/`. Exact repository-evidence paths
-and hashes are recorded in `src/tokens/source/source-manifest.json`.
+`<approved-brand-vault>/10_Brand/00_Standards/`. Exact optional local-evidence
+paths and pinned hashes are recorded in `src/tokens/source/source-manifest.json`.
 
 ## Other candidates
 

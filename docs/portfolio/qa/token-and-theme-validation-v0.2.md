@@ -8,7 +8,9 @@ Environment: Node `v24.16.0`, npm `11.13.0`, Astro `7.0.9`
 
 Nine accepted canonical documents carry titles, versions, status,
 classification, logical references, headings, and SHA-256 values in the source
-manifest and authority register. Repository evidence bytes were rehashed.
+manifest and authority register. Available ignored local-evidence bytes were
+rehashed; CI validates the same pinned hashes without requiring private source
+documents.
 Universal Theme Spec v1.2 is resolved through preserved canonical discovery
 evidence with SHA-256
 `f13e7e969c3695791c0af754843ce0137e144f3e938d3c9c65bf3e315fe6f98e`.
@@ -45,7 +47,7 @@ implementation.
 - layers: primitive 107, semantic 204, portfolio 19, world 35;
 - theme mappings: 100;
 - source-manifest SHA-256:
-  `dafddc12bd011c9f7aa132d51f922b9b50ae9f20a3b0aab45628f257c2f49c64`;
+  `c68865a1617b0374d22840d8fb26103e85a56eaaa09cfeaa080c867bd2a41989`;
 - generator SHA-256:
   `4d7d6dc31bd6a51084d74271fe97c2ed94a4aa56878e818d6176b15dacce5100`.
 
@@ -53,10 +55,10 @@ Generated hashes:
 
 | File | SHA-256 |
 |---|---|
-| `tokens.css` | `65b97dfb3c3dd5d93e96d971bfa252185580d7d141ea0d63edff8e8a615dbd39` |
-| `tokens.ts` | `519520b184890ee0290c3013413d0543e11ae33f3ba6e5785293b37cbcd1a707` |
-| `token-names.ts` | `1513549fc087be03988d1d297b2232e2662092b9554a3083891ea6889d78b66c` |
-| `token-manifest.json` | `ee85d97e188f7dcd3b6b5b7206271774dc1b71aea5e07e1d99c69bbc8c1cee40` |
+| `tokens.css` | `1cdb578680088f68a539faeff69046094d8a5b6c8ecc1d3e5e959d0fd6a052ed` |
+| `tokens.ts` | `a74cf4f488cb56086e76351b3d4295aba11f62c271362f3ffb17752ff042eb0a` |
+| `token-names.ts` | `b10d0df3d8f05c6ea5b9db0de0c4cafd1aafbeda803ae0e3329f3984f2bfc2e4` |
+| `token-manifest.json` | `8c14305dfd6142f5e5ddbc1d61f4e0d8201f9b12278559d7f816bf702d86e471` |
 
 ## Contrast results
 
@@ -148,7 +150,7 @@ CSS no-JS fallback, not claimed as a captured filmstrip.
 | Metric | Result | Gate |
 |---|---:|---:|
 | generated token CSS | 29,919 bytes | informational |
-| generated token CSS gzip `-9` | 4,343 bytes | ≤30KB compressed |
+| generated token CSS gzip `-9` | 4,341 bytes | ≤30KB compressed |
 | built route CSS | 28,317 bytes | informational |
 | built route CSS gzip `-9` | 4,604 bytes | ≤30KB compressed |
 | inline bootstrap | 211 bytes | ≤3KB minified pre-compression |
