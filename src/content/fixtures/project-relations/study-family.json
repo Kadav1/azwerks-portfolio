@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "study-family",
+  "from": "chromatic-window-study",
+  "to": "paper-signal-system",
+  "type": "family",
+  "direction": "undirected",
+  "summary": "The geometric art and visual-system fixtures share a fictional specimen family only for graph coverage.",
+  "visibility": "private",
+  "synthetic": true
+}

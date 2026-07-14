@@ -1,0 +1,3 @@
+[
+  { "id": "duplicate-navigation-order", "kind": "navigation-order", "expectedCode": "CONTENT_ORDER_DUPLICATE" }
+]

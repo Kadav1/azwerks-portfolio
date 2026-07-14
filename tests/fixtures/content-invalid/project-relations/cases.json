@@ -1,0 +1,6 @@
+[
+  { "id": "unknown-relation-target", "kind": "relation-orphan", "expectedCode": "CONTENT_RELATION_ORPHAN" },
+  { "id": "self-relation", "kind": "relation-self", "expectedCode": "CONTENT_RELATION_SELF" },
+  { "id": "duplicate-undirected-relation", "kind": "relation-duplicate", "expectedCode": "CONTENT_RELATION_DUPLICATE" },
+  { "id": "public-relation-private-target", "kind": "relation-public-private", "expectedCode": "CONTENT_RELATION_ORPHAN" }
+]

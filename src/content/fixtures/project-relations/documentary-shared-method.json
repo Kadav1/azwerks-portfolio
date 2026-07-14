@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "documentary-shared-method",
+  "from": "field-notes-index",
+  "to": "absent-image-ledger",
+  "type": "shared-method",
+  "direction": "undirected",
+  "summary": "Both fictional records use explicit documentary absence instead of invented imagery.",
+  "visibility": "private",
+  "synthetic": true
+}

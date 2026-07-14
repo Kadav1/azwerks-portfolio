@@ -1,0 +1,56 @@
+{
+  "categoryCounts": {
+    "art": 2,
+    "limited-media": 2,
+    "software": 3,
+    "technical-system": 2,
+    "visual-system": 1
+  },
+  "companionCount": 10,
+  "contentManifestSourceHash": "dae25a1f02883f029b1077f1405c2169ed22382a7b8517242d5e504f26890ac8",
+  "evidenceStateCounts": {
+    "none": 1,
+    "reviewed": 4,
+    "verified": 5
+  },
+  "fixtureVersion": "synthetic-content-fixtures-v0.1",
+  "lifecycleCounts": {
+    "approved": 0,
+    "archived": 1,
+    "candidate": 3,
+    "draft": 1,
+    "published": 0,
+    "reviewed": 5
+  },
+  "mediaStateCounts": {
+    "available": 4,
+    "not-applicable": 1,
+    "unavailable": 5
+  },
+  "navigationItemCount": 4,
+  "publicationEligibleCount": 0,
+  "relationCount": 7,
+  "relationCounts": {
+    "dependency": 1,
+    "family": 1,
+    "lineage": 1,
+    "related": 1,
+    "shared-method": 1,
+    "supersedes": 1,
+    "supports": 1
+  },
+  "sitePageCount": 4,
+  "stableIds": [
+    "absent-image-ledger",
+    "amber-console-study",
+    "chromatic-window-study",
+    "field-notes-index",
+    "folded-protocol-model",
+    "long-form-boundary-study",
+    "minimum-proof-record",
+    "paper-signal-system",
+    "quiet-workflow-study",
+    "retired-sequence-engine"
+  ],
+  "validProjectCount": 10
+}

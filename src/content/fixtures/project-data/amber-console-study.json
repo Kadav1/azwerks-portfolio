@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "project": "amber-console-study",
+  "mediaAvailability": "available",
+  "sourceAvailability": "private",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "technical",
+  "themeProfile": "system",
+  "motionProfile": "system",
+  "links": [
+    { "id": "documentation", "type": "documentation", "label": "Synthetic documentation reference", "url": "https://example.invalid/amber-console-study", "public": false }
+  ],
+  "media": [
+    {
+      "id": "interface-grid",
+      "type": "interface",
+      "source": "assets/interface-grid.svg",
+      "purpose": "interface",
+      "rights": "synthetic",
+      "availability": "available",
+      "alt": "Three outlined regions forming a fictional interface grid without real controls or data.",
+      "caption": "Repository-authored geometric fixture, not a product screenshot.",
+      "width": 640,
+      "height": 360
+    }
+  ],
+  "evidence": [
+    {
+      "id": "determinism-inspection",
+      "type": "inspection",
+      "title": "Synthetic determinism inspection",
+      "trust": "verified",
+      "availability": "private",
+      "summary": "A fixture assertion used only to exercise verified evidence structure.",
+      "artifact": "fixture-inspection-record"
+    },
+    {
+      "id": "queue-measure",
+      "type": "metric",
+      "title": "Synthetic queue completeness measure",
+      "trust": "reviewed",
+      "availability": "private",
+      "method": "Count the deterministic fixture states declared by the companion record.",
+      "result": "All declared synthetic states are represented.",
+      "limitations": "The count describes fixture structure only and no real workflow performance.",
+      "artifact": "fixture-queue-count",
+      "unit": "declared states"
+    }
+  ],
+  "process": [
+    { "id": "define", "title": "Define the fictional queue", "summary": "Declare the synthetic workflow states and their deterministic order.", "order": 1, "evidenceIds": ["determinism-inspection"] },
+    { "id": "inspect", "title": "Inspect the fixture", "summary": "Confirm that the companion record exposes the intended structural states.", "order": 2, "evidenceIds": ["queue-measure"] }
+  ],
+  "limitations": [
+    { "id": "not-operational", "summary": "The interface and outcomes are fictional and cannot demonstrate operational software.", "status": "accepted", "scope": "Entire fixture", "evidenceIds": ["determinism-inspection"] }
+  ],
+  "releases": [
+    { "id": "release-040", "version": "0.4.0-fixture", "date": "2026-06-20", "status": "candidate", "summary": "A synthetic fixture revision for schema coverage.", "evidenceIds": ["determinism-inspection"] }
+  ],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional content",
+    "sourceAvailability": "private",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-07-14",
+    "reviewedBy": "Fixture validation contract",
+    "sourceNote": "No real repository or interface supplied source material.",
+    "rightsNote": "All geometry and prose are synthetic repository fixtures."
+  }
+}

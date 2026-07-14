@@ -1,0 +1,182 @@
+{
+  "cases": [
+    {
+      "errorCode": "CONTENT_MEDIA_TRANSCRIPT_MISSING",
+      "id": "audio-without-transcript"
+    },
+    {
+      "errorCode": "CONTENT_COMPANION_DUPLICATE",
+      "id": "duplicate-companion"
+    },
+    {
+      "errorCode": "CONTENT_EVIDENCE_DUPLICATE",
+      "id": "duplicate-evidence-id"
+    },
+    {
+      "errorCode": "CONTENT_MEDIA_DUPLICATE",
+      "id": "duplicate-media-id"
+    },
+    {
+      "errorCode": "CONTENT_ORDER_DUPLICATE",
+      "id": "duplicate-navigation-order"
+    },
+    {
+      "errorCode": "CONTENT_ORDER_DUPLICATE",
+      "id": "duplicate-process-order"
+    },
+    {
+      "errorCode": "CONTENT_RELATION_DUPLICATE",
+      "id": "duplicate-undirected-relation"
+    },
+    {
+      "errorCode": "CONTENT_FILENAME_MISMATCH",
+      "id": "filename-slug-mismatch"
+    },
+    {
+      "errorCode": "CONTENT_FIXTURE_IMPORTED",
+      "id": "fixture-imported-production-helper"
+    },
+    {
+      "errorCode": "CONTENT_PROFILE_INVALID",
+      "id": "functional-theme-override"
+    },
+    {
+      "errorCode": "CONTENT_DATE_INVALID",
+      "id": "impossible-dates"
+    },
+    {
+      "errorCode": "CONTENT_MEDIA_ALT_MISSING",
+      "id": "informative-media-without-alt"
+    },
+    {
+      "errorCode": "CONTENT_LIFECYCLE_INVALID",
+      "id": "invalid-lifecycle"
+    },
+    {
+      "errorCode": "CONTENT_SLUG_INVALID",
+      "id": "invalid-slug"
+    },
+    {
+      "errorCode": "CONTENT_VISIBILITY_INVALID",
+      "id": "invalid-visibility"
+    },
+    {
+      "errorCode": "CONTENT_UNSAFE_URL",
+      "id": "javascript-url"
+    },
+    {
+      "errorCode": "CONTENT_PRIVATE_PATH",
+      "id": "local-path"
+    },
+    {
+      "errorCode": "CONTENT_UNSAFE_URL",
+      "id": "localhost-url"
+    },
+    {
+      "errorCode": "CONTENT_METRIC_INCOMPLETE",
+      "id": "metric-without-method-unit"
+    },
+    {
+      "errorCode": "CONTENT_CATEGORY_REQUIREMENT",
+      "id": "missing-category-requirement"
+    },
+    {
+      "errorCode": "CONTENT_COMPANION_MISSING",
+      "id": "missing-companion"
+    },
+    {
+      "errorCode": "CONTENT_LIMITATION_STATUS_MISSING",
+      "id": "missing-limitation-status"
+    },
+    {
+      "errorCode": "CONTENT_FRONTMATTER_NESTED",
+      "id": "nested-frontmatter"
+    },
+    {
+      "errorCode": "CONTENT_SORT_NONDETERMINISTIC",
+      "id": "non-deterministic-ordering-expectation"
+    },
+    {
+      "errorCode": "CONTENT_COMPANION_ORPHAN",
+      "id": "orphan-companion"
+    },
+    {
+      "errorCode": "CONTENT_UNSAFE_URL",
+      "id": "private-ip-url"
+    },
+    {
+      "errorCode": "CONTENT_FIXTURE_PUBLIC",
+      "id": "public-fixture"
+    },
+    {
+      "errorCode": "CONTENT_RIGHTS_UNKNOWN",
+      "id": "public-media-unknown-rights"
+    },
+    {
+      "errorCode": "CONTENT_RELATION_ORPHAN",
+      "id": "public-relation-private-target"
+    },
+    {
+      "errorCode": "CONTENT_RELATION_SELF",
+      "id": "self-relation"
+    },
+    {
+      "errorCode": "CONTENT_CATEGORY_INVALID",
+      "id": "unknown-category"
+    },
+    {
+      "errorCode": "CONTENT_PROFILE_INVALID",
+      "id": "unknown-profile"
+    },
+    {
+      "errorCode": "CONTENT_RELATION_ORPHAN",
+      "id": "unknown-relation-target"
+    },
+    {
+      "errorCode": "CONTENT_DATE_INVALID",
+      "id": "unsupported-future-release"
+    },
+    {
+      "errorCode": "CONTENT_UNSAFE_URL",
+      "id": "url-credentials"
+    },
+    {
+      "errorCode": "CONTENT_EVIDENCE_UNSUPPORTED",
+      "id": "verified-evidence-without-artifact"
+    }
+  ],
+  "contentManifestSourceHash": "dae25a1f02883f029b1077f1405c2169ed22382a7b8517242d5e504f26890ac8",
+  "errorCodeCounts": {
+    "CONTENT_CATEGORY_INVALID": 1,
+    "CONTENT_CATEGORY_REQUIREMENT": 1,
+    "CONTENT_COMPANION_DUPLICATE": 1,
+    "CONTENT_COMPANION_MISSING": 1,
+    "CONTENT_COMPANION_ORPHAN": 1,
+    "CONTENT_DATE_INVALID": 2,
+    "CONTENT_EVIDENCE_DUPLICATE": 1,
+    "CONTENT_EVIDENCE_UNSUPPORTED": 1,
+    "CONTENT_FILENAME_MISMATCH": 1,
+    "CONTENT_FIXTURE_IMPORTED": 1,
+    "CONTENT_FIXTURE_PUBLIC": 1,
+    "CONTENT_FRONTMATTER_NESTED": 1,
+    "CONTENT_LIFECYCLE_INVALID": 1,
+    "CONTENT_LIMITATION_STATUS_MISSING": 1,
+    "CONTENT_MEDIA_ALT_MISSING": 1,
+    "CONTENT_MEDIA_DUPLICATE": 1,
+    "CONTENT_MEDIA_TRANSCRIPT_MISSING": 1,
+    "CONTENT_METRIC_INCOMPLETE": 1,
+    "CONTENT_ORDER_DUPLICATE": 2,
+    "CONTENT_PRIVATE_PATH": 1,
+    "CONTENT_PROFILE_INVALID": 2,
+    "CONTENT_RELATION_DUPLICATE": 1,
+    "CONTENT_RELATION_ORPHAN": 2,
+    "CONTENT_RELATION_SELF": 1,
+    "CONTENT_RIGHTS_UNKNOWN": 1,
+    "CONTENT_SLUG_INVALID": 1,
+    "CONTENT_SORT_NONDETERMINISTIC": 1,
+    "CONTENT_UNSAFE_URL": 4,
+    "CONTENT_VISIBILITY_INVALID": 1
+  },
+  "fixtureVersion": "synthetic-content-fixtures-v0.1",
+  "invalidCaseCount": 36
+}

@@ -1,0 +1,14 @@
+[
+  { "id": "invalid-slug", "kind": "invalid-slug", "expectedCode": "CONTENT_SLUG_INVALID" },
+  { "id": "filename-slug-mismatch", "kind": "filename-mismatch", "expectedCode": "CONTENT_FILENAME_MISMATCH" },
+  { "id": "unknown-category", "kind": "unknown-category", "expectedCode": "CONTENT_CATEGORY_INVALID" },
+  { "id": "missing-category-requirement", "kind": "missing-category-requirement", "expectedCode": "CONTENT_CATEGORY_REQUIREMENT" },
+  { "id": "nested-frontmatter", "kind": "nested-frontmatter", "expectedCode": "CONTENT_FRONTMATTER_NESTED" },
+  { "id": "invalid-lifecycle", "kind": "invalid-lifecycle", "expectedCode": "CONTENT_LIFECYCLE_INVALID" },
+  { "id": "invalid-visibility", "kind": "invalid-visibility", "expectedCode": "CONTENT_VISIBILITY_INVALID" },
+  { "id": "impossible-dates", "kind": "impossible-dates", "expectedCode": "CONTENT_DATE_INVALID" },
+  { "id": "unsupported-future-release", "kind": "unsupported-future-release", "expectedCode": "CONTENT_DATE_INVALID" },
+  { "id": "public-fixture", "kind": "public-fixture", "expectedCode": "CONTENT_FIXTURE_PUBLIC" },
+  { "id": "fixture-imported-production-helper", "kind": "fixture-import", "expectedCode": "CONTENT_FIXTURE_IMPORTED" },
+  { "id": "non-deterministic-ordering-expectation", "kind": "ordering-expectation", "expectedCode": "CONTENT_SORT_NONDETERMINISTIC" }
+]

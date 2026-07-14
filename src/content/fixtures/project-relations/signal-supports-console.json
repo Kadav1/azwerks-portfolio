@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "signal-supports-console",
+  "from": "paper-signal-system",
+  "to": "amber-console-study",
+  "type": "supports",
+  "direction": "directed",
+  "summary": "The fictional visual system supplies synthetic label conventions to the console fixture.",
+  "visibility": "private",
+  "synthetic": true
+}

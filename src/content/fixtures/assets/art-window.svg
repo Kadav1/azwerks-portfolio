@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title description">
+  <title id="title">Synthetic chromatic window</title>
+  <desc id="description">Four flat geometric color fields arranged inside a neutral border.</desc>
+  <rect width="800" height="1000" fill="#f7f4ec"/>
+  <rect x="80" y="80" width="280" height="380" fill="#31473d"/>
+  <rect x="440" y="80" width="280" height="380" fill="#b45a3c"/>
+  <rect x="80" y="540" width="280" height="380" fill="#d5ad45"/>
+  <rect x="440" y="540" width="280" height="380" fill="#54728c"/>
+</svg>

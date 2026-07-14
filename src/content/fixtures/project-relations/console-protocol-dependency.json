@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "console-protocol-dependency",
+  "from": "amber-console-study",
+  "to": "folded-protocol-model",
+  "type": "dependency",
+  "direction": "directed",
+  "summary": "The fictional console depends on the protocol model solely within the synthetic relation graph.",
+  "visibility": "private",
+  "synthetic": true
+}

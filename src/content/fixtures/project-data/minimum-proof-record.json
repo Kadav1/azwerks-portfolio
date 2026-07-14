@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "project": "minimum-proof-record",
+  "mediaAvailability": "not-applicable",
+  "sourceAvailability": "not-applicable",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "document-led",
+  "themeProfile": "system",
+  "motionProfile": "none",
+  "links": [],
+  "media": [],
+  "evidence": [],
+  "process": [],
+  "limitations": [
+    { "id": "fixture-only", "summary": "This minimum record validates structure only and carries no public evidence.", "status": "accepted" }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional content",
+    "sourceAvailability": "not-applicable",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed"
+  }
+}

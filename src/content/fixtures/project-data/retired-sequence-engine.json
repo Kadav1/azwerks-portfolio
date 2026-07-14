@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "project": "retired-sequence-engine",
+  "mediaAvailability": "unavailable",
+  "sourceAvailability": "unavailable",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "technical",
+  "themeProfile": "system",
+  "motionProfile": "none",
+  "links": [],
+  "media": [],
+  "evidence": [
+    { "id": "release-record", "type": "release", "title": "Synthetic historical release record", "trust": "reviewed", "availability": "private", "version": "1.0-fixture", "date": "2021-09-14", "artifact": "fixture-release-record" }
+  ],
+  "process": [],
+  "limitations": [
+    { "id": "retired", "summary": "The fictional engine is retired and has no maintained source or executable release.", "status": "accepted", "evidenceIds": ["release-record"] }
+  ],
+  "releases": [
+    { "id": "release-10", "version": "1.0-fixture", "date": "2021-09-14", "status": "superseded", "summary": "Synthetic historical release preserved for archive coverage.", "evidenceIds": ["release-record"] }
+  ],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional archive record",
+    "sourceAvailability": "unavailable",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "sourceNote": "No historical product or repository is represented."
+  }
+}

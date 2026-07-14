@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "sequence-lineage",
+  "from": "retired-sequence-engine",
+  "to": "amber-console-study",
+  "type": "lineage",
+  "direction": "directed",
+  "summary": "The fictional console reuses a synthetic ordering premise from the archived sequence record.",
+  "visibility": "private",
+  "synthetic": true
+}

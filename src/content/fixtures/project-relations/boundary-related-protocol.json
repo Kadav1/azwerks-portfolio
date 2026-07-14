@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "boundary-related-protocol",
+  "from": "long-form-boundary-study",
+  "to": "folded-protocol-model",
+  "type": "related",
+  "direction": "undirected",
+  "summary": "The synthetic technical records are related through explicit architecture and ordering stress coverage.",
+  "visibility": "private",
+  "synthetic": true
+}
