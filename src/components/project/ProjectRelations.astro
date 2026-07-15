@@ -1,0 +1,21 @@
+---
+import type { ProjectDetailRelation } from '../../lib/project-detail/types.ts';
+
+interface Props { relations: readonly ProjectDetailRelation[] }
+const { relations } = Astro.props;
+---
+
+{relations.length > 0 && (
+  <nav class="project-section project-relations" aria-labelledby="project-relations-heading">
+    <h2 id="project-relations-heading">Related work</h2>
+    <ul>
+      {relations.map((relation) => (
+        <li>
+          <h3><a href={relation.project.href}>{relation.project.title}</a></h3>
+          <p>{relation.directionLabel ?? relation.typeLabel}</p>
+          <p>{relation.summary}</p>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

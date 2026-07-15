@@ -1,0 +1,27 @@
+---
+import type { ProjectDetailEvidence, ProjectDetailLimitation } from '../../lib/project-detail/types.ts';
+import ProjectEvidenceReferences from './ProjectEvidenceReferences.astro';
+
+interface Props {
+  limitations: readonly ProjectDetailLimitation[];
+  evidence: readonly ProjectDetailEvidence[];
+}
+const { limitations, evidence } = Astro.props;
+---
+
+{limitations.length > 0 && (
+  <section class="project-section project-limitations" aria-labelledby="project-limitations-heading">
+    <h2 id="project-limitations-heading">Limitations</h2>
+    <ul>
+      {limitations.map((item) => (
+        <li>
+          <p><strong>{item.statusLabel}:</strong> {item.summary}</p>
+          {item.scope && <p><strong>Scope:</strong> {item.scope}</p>}
+          {item.impact && <p><strong>Impact:</strong> {item.impact}</p>}
+          {item.mitigation && <p><strong>Mitigation:</strong> {item.mitigation}</p>}
+          <ProjectEvidenceReferences ids={item.evidenceIds} evidence={evidence} />
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

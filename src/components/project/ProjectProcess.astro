@@ -1,0 +1,28 @@
+---
+import type { ProjectDetailEvidence, ProjectDetailProcessItem } from '../../lib/project-detail/types.ts';
+import ProjectEvidenceReferences from './ProjectEvidenceReferences.astro';
+
+interface Props {
+  process: readonly ProjectDetailProcessItem[];
+  evidence: readonly ProjectDetailEvidence[];
+}
+const { process, evidence } = Astro.props;
+---
+
+{process.length > 0 && (
+  <section class="project-section project-process" aria-labelledby="project-process-heading">
+    <h2 id="project-process-heading">Process</h2>
+    <ol>
+      {process.map((item) => (
+        <li>
+          <h3>{item.title}</h3>
+          <p>{item.summary}</p>
+          {item.date && <p><time datetime={item.date}>{item.date}</time></p>}
+          {item.decision && <p><strong>Decision:</strong> {item.decision}</p>}
+          {item.result && <p><strong>Result:</strong> {item.result}</p>}
+          <ProjectEvidenceReferences ids={item.evidenceIds} evidence={evidence} />
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

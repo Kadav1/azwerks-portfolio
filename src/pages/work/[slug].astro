@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+import ProjectDetail from '../../components/project/ProjectDetail.astro';
+import { getPublicProjectBundles } from '../../content-model/queries.ts';
+import type { ProjectBundle } from '../../content-model/types.ts';
+import { getProjectDetailTableOfContents, validateProjectDetailHeadings } from '../../lib/project-detail/headings.ts';
+import { getProjectDetailRouteRecords } from '../../lib/project-detail/routes.ts';
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+import { createProjectDetailViewModel } from '../../lib/project-detail/view-model.ts';
+import ProjectDetailLayout from '../../layouts/ProjectDetailLayout.astro';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+  project: ProjectDetailViewModel;
+}
+
+export const getStaticPaths = (async () => {
+  const bundles = await getPublicProjectBundles();
+  const routes = getProjectDetailRouteRecords(bundles);
+  const entries = await getCollection('projects');
+  const entryMap = new Map(entries.map((entry) => [entry.id, entry]));
+  const bundleMap = new Map<string, ProjectBundle>(bundles.map((bundle) => [bundle.id, bundle]));
+
+  return routes.map((route, index) => {
+    const bundle = bundleMap.get(route.id);
+    const entry = entryMap.get(route.id);
+    if (bundle === undefined || entry === undefined) {
+      throw new Error(`PROJECT_DETAIL_MARKDOWN_RENDER_MISSING ${route.id}`);
+    }
+    return {
+      params: { slug: route.slug },
+      props: {
+        entry,
+        project: createProjectDetailViewModel(bundle, routes, index),
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { entry, project: routeProject } = Astro.props;
+const { Content, headings } = await render(entry);
+const validatedHeadings = headings.length === 0 ? [] : validateProjectDetailHeadings(headings);
+const project = {
+  ...routeProject,
+  tableOfContents: getProjectDetailTableOfContents(validatedHeadings),
+} satisfies ProjectDetailViewModel;
+const hasNarrative = (entry.body ?? '').trim().length > 0;
+---
+
+<ProjectDetailLayout project={project}>
+  <ProjectDetail project={project} Content={Content} hasNarrative={hasNarrative} />
+</ProjectDetailLayout>

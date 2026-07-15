@@ -1,0 +1,15 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+
+interface Props { project: ProjectDetailViewModel }
+const { project } = Astro.props;
+---
+
+<nav class="project-orientation" aria-label="Project orientation">
+  <a href="/work/">Back to Work</a>
+  <p>
+    <span>{project.categoryLabel}</span>
+    {project.displayPeriod && <span> · {project.displayPeriod}</span>}
+    {project.position && <span> · Project {project.position.current} of {project.position.total}</span>}
+  </p>
+</nav>

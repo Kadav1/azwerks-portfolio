@@ -1,0 +1,33 @@
+---
+import type { ProjectDetailViewModel } from '../lib/project-detail/types.ts';
+import GlobalShell from './GlobalShell.astro';
+import '../styles/project-detail.css';
+
+interface Props {
+  project: ProjectDetailViewModel;
+}
+
+const { project } = Astro.props;
+---
+
+<GlobalShell
+  title={project.seoTitle}
+  description={project.seoDescription}
+  canonical={project.canonical}
+  noindex={project.noindex}
+  currentPath={project.href}
+  shellProfile={project.shellProfile}
+  worldProfile={project.worldProfile}
+  mainId="project-detail"
+>
+  <article
+    class="project-detail"
+    data-project-category={project.category}
+    data-project-layout-profile={project.layoutProfile}
+    data-project-theme-profile={project.themeProfile}
+    data-project-motion-profile={project.motionProfile}
+    aria-labelledby="project-title"
+  >
+    <slot />
+  </article>
+</GlobalShell>

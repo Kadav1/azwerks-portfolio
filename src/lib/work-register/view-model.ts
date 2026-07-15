@@ -1,4 +1,5 @@
 import type { ProjectBundle } from '../../content-model/types.ts';
+import { getProjectDetailHref, isProjectDetailRoutable } from '../project-detail/routes.ts';
 import { CATEGORY_LABELS, EVIDENCE_LABELS, MAINTENANCE_LABELS } from './labels.ts';
 import { normalizeSearchText } from './query-state.ts';
 import type { WorkRegisterPreview, WorkRegisterRecord } from './types.ts';
@@ -38,7 +39,6 @@ const dateSortKey = (bundle: ProjectBundle): string => {
 
 export const createWorkRegisterRecords = (
   bundles: readonly ProjectBundle[],
-  detailRoutesAvailable = false,
 ): WorkRegisterRecord[] => bundles
   .filter(({ publication, archiveState }) => publication.eligible && !archiveState)
   .map((bundle, defaultIndex) => {
@@ -77,6 +77,6 @@ export const createWorkRegisterRecords = (
       dateSortKey: dateSortKey(bundle),
       titleSortKey: normalizeSearchText(project.title),
       ...(preview === undefined ? {} : { preview }),
-      ...(detailRoutesAvailable ? { href: `/work/${bundle.id}/` } : {}),
+      ...(isProjectDetailRoutable(bundle) ? { href: getProjectDetailHref(project.slug) } : {}),
     } satisfies WorkRegisterRecord;
   });

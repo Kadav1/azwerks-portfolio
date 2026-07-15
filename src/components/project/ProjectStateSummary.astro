@@ -1,0 +1,25 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+
+interface Props { project: ProjectDetailViewModel }
+const { project } = Astro.props;
+const states = [
+  ['Category', project.categoryLabel],
+  ['Lifecycle', project.lifecycleLabel],
+  project.maintenance === 'not-applicable' ? undefined : ['Maintenance', project.maintenanceLabel],
+  project.version ? ['Version', project.version] : undefined,
+  project.displayPeriod ? ['Period', project.displayPeriod] : undefined,
+  ['Evidence', project.evidenceStateLabel],
+  ['Source', project.provenance.sourceAvailabilityLabel],
+  project.experimental ? ['Experimental', 'Yes'] : undefined,
+].filter((value): value is string[] => value !== undefined);
+---
+
+<dl class="project-state" aria-label="Project state">
+  {states.map(([term, value]) => (
+    <div>
+      <dt>{term}</dt>
+      <dd>{value}</dd>
+    </div>
+  ))}
+</dl>

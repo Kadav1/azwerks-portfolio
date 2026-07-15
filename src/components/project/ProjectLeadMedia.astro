@@ -1,0 +1,20 @@
+---
+import type { ProjectDetailMedia } from '../../lib/project-detail/types.ts';
+import ProjectMedia from './ProjectMedia.astro';
+
+interface Props {
+  lead: ProjectDetailMedia;
+  media: readonly ProjectDetailMedia[];
+}
+const { lead, media } = Astro.props;
+const additional = media.filter(({ id }) => id !== lead.id);
+---
+
+<section class="project-lead-media" aria-label="Project media">
+  <ProjectMedia media={lead} lead />
+  {additional.length > 0 && (
+    <div class="project-media-sequence" aria-label="Additional project media">
+      {additional.map((item) => <ProjectMedia media={item} />)}
+    </div>
+  )}
+</section>

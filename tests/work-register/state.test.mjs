@@ -142,7 +142,7 @@ test('summarizes total, visible count, constraints, and non-default sort in plai
   assert.equal(summary.constrained, true);
 });
 
-test('projects only public-safe bundle fields, excludes archives, and defers hrefs', () => {
+test('projects only public-safe bundle fields, excludes archives, and shares the detail href contract', () => {
   const publicBundle = {
     id: 'public-system',
     project: {
@@ -194,7 +194,7 @@ test('projects only public-safe bundle fields, excludes archives, and defers hre
   const records = createWorkRegisterRecords([publicBundle, archivedBundle]);
   assert.equal(records.length, 1);
   assert.equal(records[0].id, 'public-system');
-  assert.equal(records[0].href, undefined);
+  assert.equal(records[0].href, '/work/public-system/');
   assert.equal(records[0].preview.src, '/assets/public-system.webp');
   assert.equal(JSON.stringify(records).includes('private note'), false);
   assert.equal(JSON.stringify(records).includes('private.example'), false);
