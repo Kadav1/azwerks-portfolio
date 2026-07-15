@@ -1,0 +1,17 @@
+---
+interface Props {
+  count: number;
+}
+
+const { count } = Astro.props;
+---
+
+<header class="work-register-header">
+  <p class="work-register-header__eyebrow">Canonical Work Register</p>
+  <h1>Work</h1>
+  <p class="work-register-header__introduction">
+    {count === 0
+      ? 'The public register is ready, but no project records are published yet.'
+      : 'Browse the complete public body of current work by identity, category, state, and evidence.'}
+  </p>
+</header>

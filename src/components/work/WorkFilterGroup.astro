@@ -1,0 +1,28 @@
+---
+interface Option {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  legend: string;
+  name: string;
+  options: readonly Option[];
+}
+
+const { legend, name, options } = Astro.props;
+---
+
+{options.length > 0 && (
+  <fieldset class="work-filter-group" data-filter-group={name}>
+    <legend>{legend}</legend>
+    <div class="work-filter-group__options">
+      {options.map(({ value, label }) => (
+        <label class="work-filter-option">
+          <input type="checkbox" name={name} value={value} />
+          <span>{label}</span>
+        </label>
+      ))}
+    </div>
+  </fieldset>
+)}

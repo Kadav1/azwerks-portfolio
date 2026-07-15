@@ -1,0 +1,66 @@
+---
+import { WORK_REGISTER_CATEGORIES } from '../../lib/work-register/constants.ts';
+import { CATEGORY_LABELS } from '../../lib/work-register/labels.ts';
+import type { WorkRegisterRecord } from '../../lib/work-register/types.ts';
+import ProjectRegisterItem from './ProjectRegisterItem.astro';
+import WorkRegisterControls from './WorkRegisterControls.astro';
+import WorkRegisterEmptyState from './WorkRegisterEmptyState.astro';
+import WorkRegisterSummary from './WorkRegisterSummary.astro';
+
+interface Props {
+  records: readonly WorkRegisterRecord[];
+}
+
+const { records } = Astro.props;
+const presentCategories = WORK_REGISTER_CATEGORIES.filter((category) => records.some((record) => record.category === category));
+const seenCategories = new Set<string>();
+---
+
+<section class="work-register" data-register-root data-register-enhanced="false">
+  {records.length === 0 ? (
+    <div id="work-results" role="region" tabindex="-1" aria-label="Work results">
+      <WorkRegisterEmptyState kind="corpus-empty" />
+    </div>
+  ) : (
+    <>
+      <nav class="work-register__category-nav" aria-label="Browse Work by category">
+        <p>Browse the complete server-rendered list by category:</p>
+        <ul>
+          {presentCategories.map((category) => (
+            <li><a href={`#work-category-${category}`}>{CATEGORY_LABELS[category]}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <WorkRegisterControls records={records} />
+      <WorkRegisterSummary total={records.length} />
+      <div id="work-results" class="work-register__results" role="region" tabindex="-1" aria-labelledby="work-results-heading">
+        <h2 id="work-results-heading">Work results</h2>
+        <ol class="work-register__list" data-register-list>
+          {records.map((record) => {
+            const first = !seenCategories.has(record.category);
+            seenCategories.add(record.category);
+            return (
+              <ProjectRegisterItem
+                record={record}
+                categoryAnchor={first ? `work-category-${record.category}` : undefined}
+              />
+            );
+          })}
+        </ol>
+        <WorkRegisterEmptyState kind="filter-empty" />
+        <WorkRegisterEmptyState kind="error-block" />
+      </div>
+      <noscript>
+        <p class="work-register__noscript">
+          Search, filters, and sorting require JavaScript. The complete public register is visible in curated order, and the category links remain available.
+        </p>
+      </noscript>
+    </>
+  )}
+</section>
+
+{records.length > 0 && (
+  <script>
+    import '../../scripts/work-register.ts';
+  </script>
+)}

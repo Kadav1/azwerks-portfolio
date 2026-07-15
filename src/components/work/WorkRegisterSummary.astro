@@ -1,0 +1,19 @@
+---
+import { summarizeWorkRegisterState } from '../../lib/work-register/query-state.ts';
+import { DEFAULT_WORK_REGISTER_STATE } from '../../lib/work-register/constants.ts';
+
+interface Props {
+  total: number;
+}
+
+const { total } = Astro.props;
+const summary = summarizeWorkRegisterState(total, total, DEFAULT_WORK_REGISTER_STATE);
+---
+
+<section class="work-register-summary" aria-labelledby="work-register-summary-heading">
+  <h2 id="work-register-summary-heading" class="visually-hidden">Work result summary</h2>
+  <p data-register-count>{summary.countText}</p>
+  <ul class="work-register-summary__constraints" data-register-constraints aria-label="Active constraints"></ul>
+  <button type="button" data-summary-reset hidden>Reset constraints</button>
+  <p class="visually-hidden" aria-live="polite" aria-atomic="true" data-register-announcer></p>
+</section>

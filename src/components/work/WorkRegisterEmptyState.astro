@@ -1,0 +1,32 @@
+---
+interface Props {
+  kind: 'corpus-empty' | 'filter-empty' | 'error-block';
+}
+
+const { kind } = Astro.props;
+---
+
+{kind === 'corpus-empty' && (
+  <section class="work-empty-state" data-empty-kind="corpus-empty" aria-labelledby="work-empty-corpus-heading">
+    <h2 id="work-empty-corpus-heading">No public Work records yet</h2>
+    <p>
+      The register will list reviewed public projects here when their content and destinations are ready. No examples or private fixtures are substituted.
+    </p>
+    <p><a href="/about/">Read about azwerks</a></p>
+  </section>
+)}
+
+{kind === 'filter-empty' && (
+  <section class="work-empty-state" data-empty-kind="filter-empty" aria-labelledby="work-empty-filter-heading" hidden>
+    <h2 id="work-empty-filter-heading">No Work records match</h2>
+    <p data-filter-empty-summary>Adjust the active constraints or reset the register.</p>
+    <button type="button" data-empty-reset>Reset constraints</button>
+  </section>
+)}
+
+{kind === 'error-block' && (
+  <section class="work-empty-state" data-empty-kind="error-block" aria-labelledby="work-empty-error-heading" hidden>
+    <h2 id="work-empty-error-heading">Filters are unavailable</h2>
+    <p>The complete public register remains visible in its canonical order.</p>
+  </section>
+)}

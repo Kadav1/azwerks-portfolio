@@ -1,0 +1,6 @@
+{
+  "datasetSizes": [0, 1, 10, 50, 200],
+  "maxPureLogicMilliseconds": 100,
+  "queryParameters": ["q", "category", "maintenance", "evidence", "sort"],
+  "sortModes": ["curated", "recent", "title"]
+}
