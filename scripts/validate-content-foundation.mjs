@@ -3,6 +3,7 @@ import { dirname, extname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { loadFixtureFoundation } from '../src/content-model/fixture-contract.ts';
+import { navigationFileSchema } from '../src/content-model/schemas.ts';
 import { assertProductionHelperIsolation } from '../src/content-model/validation.ts';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -70,9 +71,16 @@ for (const directory of PRODUCTION_ROOTS) {
   if (authored.length > 0) fail('CONTENT_PRODUCTION_NOT_EMPTY', `${relative(ROOT, directory)} contains content during fixture-only foundation work.`);
 }
 
-const productionNavigation = JSON.parse(await readFile(join(ROOT, 'src', 'content', 'navigation.json'), 'utf8'));
-if (!Array.isArray(productionNavigation) || productionNavigation.length !== 0) {
-  fail('CONTENT_PRODUCTION_NOT_EMPTY', 'Production navigation must remain empty in this phase.');
+let productionNavigation = [];
+try {
+  productionNavigation = navigationFileSchema.parse(
+    JSON.parse(await readFile(join(ROOT, 'src', 'content', 'navigation.json'), 'utf8')),
+  );
+  if (productionNavigation.some(({ synthetic, visibility }) => synthetic || visibility !== 'public')) {
+    fail('CONTENT_NAVIGATION_INVALID', 'Production navigation entries must be public and non-synthetic.');
+  }
+} catch (error) {
+  fail(error.code ?? 'CONTENT_NAVIGATION_INVALID', 'Production navigation does not satisfy the merged schema.');
 }
 
 const querySource = await readFile(join(ROOT, 'src', 'content-model', 'queries.ts'), 'utf8');
@@ -112,5 +120,5 @@ if (failures.length > 0) {
   console.error(`Content foundation validation failed:\n${failures.map((failure) => `- ${failure}`).join('\n')}`);
   process.exitCode = 1;
 } else {
-  console.log(`Content foundation validation passed: ${foundation.projects.length} projects, ${foundation.companions.length} companions, ${foundation.relations.length} relations, ${foundation.publicationEligible.length} publishable fixtures.`);
+  console.log(`Content foundation validation passed: ${foundation.projects.length} projects, ${foundation.companions.length} companions, ${foundation.relations.length} relations, ${foundation.publicationEligible.length} publishable fixtures, ${productionNavigation.length} production navigation entries.`);
 }

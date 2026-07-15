@@ -1,0 +1,45 @@
+---
+import type { NormalizedNavigationItem } from '../../lib/navigation/navigation-model.ts';
+import ExternalNavigationLink from '../navigation/ExternalNavigationLink.astro';
+import NavigationLink from '../navigation/NavigationLink.astro';
+import ThemeControl from './ThemeControl.astro';
+
+interface Props {
+  currentPath: string;
+  items: readonly NormalizedNavigationItem[];
+  showThemeControl?: boolean | undefined;
+}
+
+const { currentPath, items, showThemeControl = true } = Astro.props;
+---
+
+<details class="mobile-navigation" data-mobile-navigation>
+  <summary class="mobile-navigation__trigger" aria-controls="mobile-navigation-panel">
+    <span>Menu</span>
+  </summary>
+  <div
+    class="mobile-navigation__panel"
+    id="mobile-navigation-panel"
+    aria-labelledby="mobile-navigation-title"
+    data-mobile-navigation-panel
+  >
+    <div class="mobile-navigation__heading">
+      <h2 id="mobile-navigation-title">Navigation</h2>
+      <button type="button" class="mobile-navigation__close" data-mobile-navigation-close>
+        Close
+      </button>
+    </div>
+    <nav aria-label="Mobile primary">
+      <ul class="mobile-navigation__list">
+        {items.map((item) => (
+          <li>
+            {item.external
+              ? <ExternalNavigationLink item={item} />
+              : <NavigationLink item={item} currentPath={currentPath} />}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    {showThemeControl && <ThemeControl id="theme-mobile" />}
+  </div>
+</details>

@@ -1,0 +1,10 @@
+---
+interface Props {
+  message?: string | undefined;
+  visible?: boolean | undefined;
+}
+
+const { message, visible = false } = Astro.props;
+---
+
+{visible && message ? <p class="shell-status" role="status">{message}</p> : null}

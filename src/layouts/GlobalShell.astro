@@ -1,0 +1,76 @@
+---
+import navigationSource from '../content/navigation.json';
+import GlobalFooter from '../components/shell/GlobalFooter.astro';
+import GlobalHeader from '../components/shell/GlobalHeader.astro';
+import SkipLinks from '../components/shell/SkipLinks.astro';
+import { createNavigationModel, getNavigationRegion } from '../lib/navigation/navigation-model.ts';
+import { createShellContext } from '../lib/shell/shell-context.ts';
+import type { ShellProfile, WorldProfile } from '../lib/shell/shell-types.ts';
+import BaseLayout from './BaseLayout.astro';
+import '../styles/shell.css';
+
+interface Props {
+  availabilityMessage?: string | undefined;
+  canonical?: string | URL | undefined;
+  currentPath?: string | undefined;
+  description: string;
+  mainId?: string | undefined;
+  noindex?: boolean | undefined;
+  shellProfile?: ShellProfile | undefined;
+  showAvailability?: boolean | undefined;
+  showThemeControl?: boolean | undefined;
+  title: string;
+  workResultsId?: string | undefined;
+  worldProfile?: WorldProfile | undefined;
+}
+
+const {
+  availabilityMessage,
+  canonical,
+  currentPath = Astro.url.pathname,
+  description,
+  mainId = 'main-content',
+  noindex = false,
+  shellProfile = 'standard',
+  showAvailability = false,
+  showThemeControl = true,
+  title,
+  workResultsId,
+  worldProfile,
+} = Astro.props;
+
+const context = createShellContext(shellProfile, worldProfile);
+const navigation = createNavigationModel(navigationSource);
+const primaryItems = getNavigationRegion(navigation, 'primary');
+const footerItems = getNavigationRegion(navigation, 'footer');
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  noindex={noindex}
+  {...(canonical === undefined ? {} : { canonical })}
+>
+  <div
+    class="global-shell"
+    data-shell-profile={context.profile}
+    data-world={context.world}
+    data-shell-root
+  >
+    <SkipLinks mainId={mainId} workResultsId={workResultsId} />
+    <GlobalHeader
+      items={primaryItems}
+      currentPath={currentPath}
+      showThemeControl={showThemeControl}
+      showAvailability={showAvailability}
+      availabilityMessage={availabilityMessage}
+    />
+    <main id={mainId} class="global-shell__main" tabindex="-1" data-shell-background>
+      <slot />
+    </main>
+    <GlobalFooter items={footerItems} currentPath={currentPath} />
+  </div>
+  <script>
+    import '../scripts/shell-navigation.ts';
+  </script>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import type { NormalizedNavigationItem } from '../../lib/navigation/navigation-model.ts';
+
+interface Props {
+  item: NormalizedNavigationItem;
+}
+
+const { item } = Astro.props;
+---
+
+<a class="navigation-link" href={item.target} data-navigation-id={item.id}>
+  <span>{item.label}</span>
+  <span class="external-link-label"> (external)</span>
+</a>

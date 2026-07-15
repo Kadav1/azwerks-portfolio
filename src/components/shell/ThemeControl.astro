@@ -1,0 +1,17 @@
+---
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+
+<div class="theme-control" data-theme-control>
+  <label for={id}>Theme</label>
+  <select id={id} name="theme" data-theme-select aria-describedby={`${id}-status`} disabled>
+    <option value="system">System</option>
+    <option value="dark">Dark</option>
+    <option value="light">Light</option>
+  </select>
+  <span id={`${id}-status`} class="theme-control__status visually-hidden" data-theme-status>Requires JavaScript</span>
+</div>

@@ -1,53 +1,16 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import GlobalShell from '../layouts/GlobalShell.astro';
 ---
 
-<BaseLayout
-  title="azwerks — token and theme foundation"
-  description="A neutral verification surface for the azwerks portfolio token and theme foundation."
+<GlobalShell
+  title="Home — azwerks"
+  description="The azwerks portfolio shell foundation."
+  mainId="home"
+  noindex
 >
-  <article class="foundation" data-world="software">
-    <header class="foundation__intro">
-      <p class="foundation__eyebrow">Foundation state · token contract v0.1</p>
-      <h1>azwerks</h1>
-      <p class="foundation__lede">
-        Dark, light, and system themes now share a documented semantic contract.
-        Portfolio structure and production content remain deliberately deferred.
-      </p>
-      <p class="foundation__muted">
-        This neutral page verifies surfaces, text, links, focus, state, trust,
-        code, and artwork-neutral behavior without defining the future homepage.
-      </p>
-      <a href="#technical-sample">Inspect the technical sample</a>
-    </header>
-
-    <section class="foundation__panel" aria-labelledby="state-heading">
-      <h2 id="state-heading">State and provenance</h2>
-      <div class="foundation__signals">
-        <p class="foundation__signal" data-kind="info">
-          <strong>Information</strong>
-          <span>Semantic state uses a label as well as color.</span>
-        </p>
-        <p class="foundation__signal" data-kind="verified">
-          <strong>Verified</strong>
-          <span>Trust remains distinct from selection.</span>
-        </p>
-      </div>
-    </section>
-
-    <section class="foundation__panel foundation__panel--alternate" id="technical-sample" aria-labelledby="technical-heading">
-      <h2 id="technical-heading">Code and data</h2>
-      <pre><code>theme.mode = "system"
-source.authority = "canonical documents"</code></pre>
-    </section>
-
-    <figure class="foundation__art">
-      <div class="foundation__art-sample" role="img" aria-label="Neutral media placeholder with no production artwork">
-        Artwork-neutral media field
-      </div>
-      <figcaption>
-        The art world removes tint and decorative marks around authored media.
-      </figcaption>
-    </figure>
+  <article class="route-scaffold">
+    <p class="route-scaffold__label">Foundation scaffold · Home</p>
+    <h1>azwerks portfolio</h1>
+    <p>The global shell is in place. Homepage composition and public copy arrive in a later focused phase.</p>
   </article>
-</BaseLayout>
+</GlobalShell>
