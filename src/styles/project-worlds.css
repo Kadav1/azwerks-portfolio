@@ -1,0 +1,77 @@
+@import './project-world-software.css';
+@import './project-world-visual-system.css';
+@import './project-world-art.css';
+@import './project-world-technical-system.css';
+@import './project-world-limited-media.css';
+
+@layer azw.project-worlds {
+  .project-world {
+    --_world-reading-measure: var(--azw-size-reading-measure);
+    --_world-stage-measure: var(--azw-size-full-bleed-limit);
+    --_world-section-gap: var(--azw-space-scene);
+    --_world-item-gap: var(--azw-space-section);
+    display: grid;
+    gap: var(--_world-section-gap);
+    min-inline-size: 0;
+  }
+
+  .project-world__section {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  .project-world [data-world-section='header'],
+  .project-world [data-world-section='narrative'],
+  .project-world [data-world-section='evidence'],
+  .project-world [data-world-section='limitations'],
+  .project-world [data-world-section='process'],
+  .project-world [data-world-section='releases'],
+  .project-world [data-world-section='links'],
+  .project-world [data-world-section='provenance'],
+  .project-world [data-world-section='relations'] {
+    max-inline-size: var(--_world-reading-measure);
+  }
+
+  .project-world [data-world-section='lead'] {
+    max-inline-size: var(--_world-stage-measure);
+  }
+
+  .project-world .project-media-sequence,
+  .project-world .project-evidence__items,
+  .project-world .project-process ol,
+  .project-world .project-releases ol {
+    gap: var(--_world-item-gap);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-world {
+      scroll-behavior: auto;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .project-world,
+    .project-world .project-media,
+    .project-world .project-no-media {
+      background: Canvas;
+      color: CanvasText;
+    }
+
+    .project-world .project-media,
+    .project-world .project-no-media,
+    .project-world .project-section {
+      border-color: CanvasText;
+    }
+  }
+
+  @media print {
+    .project-world {
+      display: block;
+    }
+
+    .project-world__section {
+      break-inside: avoid;
+      margin-block-end: var(--azw-space-section);
+    }
+  }
+}

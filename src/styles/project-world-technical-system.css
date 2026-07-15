@@ -1,0 +1,25 @@
+@layer azw.project-worlds {
+  .project-world--technical-system {
+    --_technical-world-reading-measure: var(--azw-size-reading-measure);
+    --_technical-world-stage-measure: var(--azw-size-full-bleed-limit);
+    --_world-reading-measure: var(--_technical-world-reading-measure);
+    --_world-stage-measure: var(--_technical-world-stage-measure);
+    --_world-item-gap: var(--azw-space-component);
+  }
+
+  .project-world--technical-system [data-world-section='limitations'],
+  .project-world--technical-system [data-world-section='evidence'] {
+    padding-inline-start: var(--azw-space-component);
+    border-inline-start: var(--azw-border-control) solid var(--azw-color-divider);
+  }
+
+  .project-world--technical-system [data-world-section='evidence'] .project-evidence__items,
+  .project-world--technical-system [data-world-section='releases'] ol {
+    display: grid;
+  }
+
+  .project-world--technical-system .project-prose pre,
+  .project-world--technical-system .project-prose code {
+    font-family: var(--azw-type-family-mono);
+  }
+}

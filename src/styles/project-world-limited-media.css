@@ -1,0 +1,25 @@
+@layer azw.project-worlds {
+  .project-world--limited-media {
+    --_limited-media-world-reading-measure: var(--azw-portfolio-reading-measure);
+    --_limited-media-world-stage-measure: var(--azw-size-reading-measure);
+    --_world-reading-measure: var(--_limited-media-world-reading-measure);
+    --_world-stage-measure: var(--_limited-media-world-stage-measure);
+  }
+
+  .project-world--limited-media [data-world-section='lead'] .project-no-media {
+    padding-block: var(--azw-space-scene);
+    border-inline-start: var(--azw-border-control) solid var(--azw-color-border-strong);
+    background: var(--azw-world-surface-emphasis);
+  }
+
+  .project-world--limited-media [data-world-section='limitations'],
+  .project-world--limited-media [data-world-section='provenance'] {
+    padding-inline-start: var(--azw-space-component);
+    border-inline-start: var(--azw-border-hairline) solid var(--azw-color-divider);
+  }
+
+  .project-world--limited-media [data-world-section='process'] ol {
+    display: grid;
+    gap: var(--azw-space-section);
+  }
+}

@@ -1,0 +1,28 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+import { getProjectWorldDefinition } from '../../lib/project-worlds/world-registry.ts';
+import { createProjectWorldViewModel } from '../../lib/project-worlds/world-view-model.ts';
+import ArtProjectWorld from './art/ArtProjectWorld.astro';
+import LimitedMediaProjectWorld from './limited-media/LimitedMediaProjectWorld.astro';
+import SoftwareProjectWorld from './software/SoftwareProjectWorld.astro';
+import TechnicalSystemProjectWorld from './technical-system/TechnicalSystemProjectWorld.astro';
+import VisualSystemProjectWorld from './visual-system/VisualSystemProjectWorld.astro';
+import '../../styles/project-worlds.css';
+
+interface Props {
+  project: ProjectDetailViewModel;
+  Content: any;
+  hasNarrative: boolean;
+}
+
+const { project, Content, hasNarrative } = Astro.props;
+const definition = getProjectWorldDefinition(project.category);
+const world = createProjectWorldViewModel(project, hasNarrative);
+const shared = { project, Content, hasNarrative, world };
+---
+
+{definition.id === 'software' && <SoftwareProjectWorld {...shared} />}
+{definition.id === 'visual-system' && <VisualSystemProjectWorld {...shared} />}
+{definition.id === 'art' && <ArtProjectWorld {...shared} />}
+{definition.id === 'technical-system' && <TechnicalSystemProjectWorld {...shared} />}
+{definition.id === 'limited-media' && <LimitedMediaProjectWorld {...shared} />}

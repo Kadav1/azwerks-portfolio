@@ -113,12 +113,23 @@ if (await exists('src/lib/project-detail/view-model.ts')) {
 
 if (await exists('src/components/project/ProjectDetail.astro')) {
   const source = await read('src/components/project/ProjectDetail.astro');
-  const order = ['ProjectOrientation', 'ProjectHeader', 'ProjectLeadMedia', 'ProjectNarrative', 'ProjectEvidence', 'ProjectLimitations', 'ProjectProcess', 'ProjectReleases', 'ProjectLinks', 'ProjectProvenance', 'ProjectRelations', 'ProjectContextNavigation'];
-  let offset = -1;
-  for (const marker of order) {
-    const index = source.indexOf(`<${marker}`, offset + 1);
-    if (index < 0 || index <= offset) fail('PROJECT_DETAIL_EMPTY_SECTION', `Invariant component ${marker} is missing or out of order.`, 'src/components/project/ProjectDetail.astro');
-    offset = index;
+  if (source.includes('ProjectWorld')) {
+    if (!(await exists('src/components/project-worlds/WorldSection.astro'))) {
+      fail('PROJECT_DETAIL_EMPTY_SECTION', 'Project-world extension renderer is missing.', 'src/components/project-worlds/WorldSection.astro');
+    } else {
+      const worldSection = await read('src/components/project-worlds/WorldSection.astro');
+      for (const marker of ['ProjectOrientation', 'ProjectHeader', 'ProjectLeadMedia', 'ProjectNarrative', 'ProjectEvidence', 'ProjectLimitations', 'ProjectProcess', 'ProjectReleases', 'ProjectLinks', 'ProjectProvenance', 'ProjectRelations', 'ProjectContextNavigation']) {
+        if (!worldSection.includes(marker)) fail('PROJECT_DETAIL_EMPTY_SECTION', `Invariant component ${marker} is missing from the governed world renderer.`, 'src/components/project-worlds/WorldSection.astro');
+      }
+    }
+  } else {
+    const order = ['ProjectOrientation', 'ProjectHeader', 'ProjectLeadMedia', 'ProjectNarrative', 'ProjectEvidence', 'ProjectLimitations', 'ProjectProcess', 'ProjectReleases', 'ProjectLinks', 'ProjectProvenance', 'ProjectRelations', 'ProjectContextNavigation'];
+    let offset = -1;
+    for (const marker of order) {
+      const index = source.indexOf(`<${marker}`, offset + 1);
+      if (index < 0 || index <= offset) fail('PROJECT_DETAIL_EMPTY_SECTION', `Invariant component ${marker} is missing or out of order.`, 'src/components/project/ProjectDetail.astro');
+      offset = index;
+    }
   }
 }
 

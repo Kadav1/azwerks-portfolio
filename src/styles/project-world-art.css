@@ -1,0 +1,27 @@
+@layer azw.project-worlds {
+  .project-world--art {
+    --_art-world-reading-measure: var(--azw-portfolio-reading-measure);
+    --_art-world-stage-measure: var(--azw-size-full-bleed-limit);
+    --_world-reading-measure: var(--_art-world-reading-measure);
+    --_world-stage-measure: var(--_art-world-stage-measure);
+    --_world-section-gap: var(--azw-space-scene);
+  }
+
+  .project-world--art [data-world-section='lead'] .project-media--artwork {
+    background: var(--azw-color-surface-art-neutral);
+  }
+
+  .project-world--art [data-world-section='lead'] img,
+  .project-world--art [data-world-section='lead'] video {
+    object-fit: contain;
+  }
+
+  .project-world--art [data-world-section='narrative'],
+  .project-world--art [data-world-section='provenance'] {
+    justify-self: center;
+  }
+
+  .project-world--art .project-media figcaption {
+    max-inline-size: var(--azw-size-reading-measure);
+  }
+}

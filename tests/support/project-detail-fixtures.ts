@@ -93,9 +93,9 @@ export const createProjectDetailBundles = (count: number): ProjectBundle[] => {
   );
 };
 
-export const createProjectDetailAuditBundles = (count = 10): ProjectBundle[] => {
+export const createProjectDetailAuditBundles = (count = 10, assetBase = '/project-detail-audit'): ProjectBundle[] => {
   const bundles = createProjectDetailBundles(count);
-  const mediaSource = '/project-detail-audit/synthetic-media.svg';
+  const mediaSource = `${assetBase}/synthetic-media.svg`;
   const availableMedia = (items: ProjectBundle['companion']['data']['media']) => ({
     mediaAvailability: 'available' as const,
     media: items,
@@ -104,7 +104,7 @@ export const createProjectDetailAuditBundles = (count = 10): ProjectBundle[] => 
     const companion = structuredClone(bundle.companion.data);
     if (index === 0) Object.assign(companion, availableMedia([
       { id: 'interface', type: 'interface', source: mediaSource, purpose: 'interface', rights: 'owned', availability: 'available', alt: 'Synthetic interface regions for isolated quality assurance.', width: 1200, height: 800, caption: 'Synthetic interface fixture.' },
-      { id: 'audio', type: 'audio', source: '/project-detail-audit/silence.wav', purpose: 'documentary', rights: 'owned', availability: 'available', alt: 'Synthetic silent audio fixture.', aspectRatio: '1:1', transcript: 'No speech. This silent fixture verifies the native audio and transcript contract.' },
+      { id: 'audio', type: 'audio', source: `${assetBase}/silence.wav`, purpose: 'documentary', rights: 'owned', availability: 'available', alt: 'Synthetic silent audio fixture.', aspectRatio: '1:1', transcript: 'No speech. This silent fixture verifies the native audio and transcript contract.' },
     ]));
     if (index === 1) Object.assign(companion, availableMedia([
       { id: 'specimen', type: 'svg', source: mediaSource, purpose: 'informative', rights: 'owned', availability: 'available', alt: 'Synthetic visual-system specimen regions.', width: 1200, height: 800 },
@@ -119,7 +119,7 @@ export const createProjectDetailAuditBundles = (count = 10): ProjectBundle[] => 
     });
     if (index === 3) Object.assign(companion, availableMedia([
       { id: 'diagram', type: 'diagram', source: mediaSource, purpose: 'diagram', rights: 'owned', availability: 'available', alt: 'Synthetic technical flow diagram.', width: 1200, height: 800, description: 'Input proceeds to inspection and then output.' },
-      { id: 'video', type: 'video', source: '/project-detail-audit/silent-video.mp4', purpose: 'documentary', rights: 'owned', availability: 'available', alt: 'Synthetic silent video fixture.', width: 320, height: 180, poster: mediaSource, transcript: 'No speech. The static poster contains the complete synthetic state.' },
+      { id: 'video', type: 'video', source: `${assetBase}/silent-video.mp4`, purpose: 'documentary', rights: 'owned', availability: 'available', alt: 'Synthetic silent video fixture.', width: 320, height: 180, poster: mediaSource, transcript: 'No speech. The static poster contains the complete synthetic state.' },
     ]));
     if (index === 4) {
       companion.mediaAvailability = 'not-applicable';

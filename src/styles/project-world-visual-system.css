@@ -1,0 +1,21 @@
+@layer azw.project-worlds {
+  .project-world--visual-system {
+    --_visual-system-world-reading-measure: var(--azw-portfolio-reading-measure);
+    --_visual-system-world-stage-measure: var(--azw-size-full-bleed-limit);
+    --_world-reading-measure: var(--_visual-system-world-reading-measure);
+    --_world-stage-measure: var(--_visual-system-world-stage-measure);
+    --_world-item-gap: var(--azw-space-component);
+  }
+
+  .project-world--visual-system [data-world-section='lead'] .project-media-sequence,
+  .project-world--visual-system [data-world-section='process'] ol,
+  .project-world--visual-system [data-world-section='evidence'] .project-evidence__items {
+    display: grid;
+  }
+
+  .project-world--visual-system [data-world-section='process'],
+  .project-world--visual-system [data-world-section='evidence'] {
+    padding-inline-start: var(--azw-space-component);
+    border-inline-start: var(--azw-border-hairline) solid var(--azw-color-divider);
+  }
+}

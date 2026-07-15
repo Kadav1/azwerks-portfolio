@@ -1,0 +1,20 @@
+---
+import type { ProjectWorldViewModel } from '../../lib/project-worlds/world-types.ts';
+
+interface Props { world: ProjectWorldViewModel }
+const { world } = Astro.props;
+---
+
+<div
+  class:list={['project-world', `project-world--${world.world}`, { 'project-world--sparse': world.isSparse }]}
+  data-project-world={world.world}
+  data-world-layout-profile={world.layoutProfile}
+  data-world-lead-strategy={world.leadStrategy}
+  data-world-narrative-strategy={world.narrativeStrategy}
+  data-world-narrative-measure={world.sectionPolicy.narrativeMeasure}
+  data-world-metadata-density={world.sectionPolicy.metadataDensity}
+  data-world-evidence-density={world.sectionPolicy.evidenceDensity}
+  data-world-authored-mark-level={world.authoredMarkLevel}
+>
+  <slot />
+</div>

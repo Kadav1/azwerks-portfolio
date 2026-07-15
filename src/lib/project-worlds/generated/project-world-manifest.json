@@ -1,0 +1,83 @@
+{
+  "modelVersion": "1.0.0",
+  "validatorVersion": "1.0.0",
+  "worldCount": 5,
+  "mappings": [
+    {
+      "category": "software",
+      "world": "software",
+      "shellProfile": "technical",
+      "worldProfile": "software",
+      "layoutProfile": "technical",
+      "themeProfile": "system",
+      "motionProfile": "none",
+      "authoredMarkLevel": 0,
+      "sectionPolicyHash": "66c8eec5834dfd4710acb4b2a94a59eb94d0f4fcc97d34a78b312f78f5d79bd1"
+    },
+    {
+      "category": "visual-system",
+      "world": "visual-system",
+      "shellProfile": "standard",
+      "worldProfile": "visual-system",
+      "layoutProfile": "specimen-led",
+      "themeProfile": "system",
+      "motionProfile": "none",
+      "authoredMarkLevel": 0,
+      "sectionPolicyHash": "b05a4135d4dc2f57e3165912464af2f7f66a655a557d837df71a2613eebe88c1"
+    },
+    {
+      "category": "art",
+      "world": "art",
+      "shellProfile": "quiet",
+      "worldProfile": "art",
+      "layoutProfile": "media-led",
+      "themeProfile": "neutral",
+      "motionProfile": "none",
+      "authoredMarkLevel": 0,
+      "sectionPolicyHash": "1b441c4affc457ce3c74a2b07e2a98d78be2bbeb3e6e982b9658cf8dc82b1b2a"
+    },
+    {
+      "category": "technical-system",
+      "world": "technical-system",
+      "shellProfile": "technical",
+      "worldProfile": "technical-system",
+      "layoutProfile": "technical",
+      "themeProfile": "system",
+      "motionProfile": "none",
+      "authoredMarkLevel": 0,
+      "sectionPolicyHash": "45b65fe5414f367b141414a9db9fb9d11a717f55b54d233c9092917dedd89995"
+    },
+    {
+      "category": "limited-media",
+      "world": "limited-media",
+      "shellProfile": "quiet",
+      "worldProfile": "limited-media",
+      "layoutProfile": "document-led",
+      "themeProfile": "system",
+      "motionProfile": "none",
+      "authoredMarkLevel": 0,
+      "sectionPolicyHash": "9db79b0c3e604259fd451a7d6adfedaa4e3609f09c0381d816cd3a96579b962c"
+    }
+  ],
+  "tokenDependencies": [
+    "--azw-world-canvas",
+    "--azw-world-surface-emphasis",
+    "--azw-world-media-surround",
+    "--azw-world-density",
+    "--azw-world-measure",
+    "--azw-world-type-emphasis"
+  ],
+  "fixtureCoverage": [
+    "rich-software",
+    "sparse-software",
+    "visual-system",
+    "art-with-image",
+    "art-without-image",
+    "technical-system",
+    "limited-media",
+    "archived-exclusion",
+    "long-content",
+    "minimum-valid"
+  ],
+  "generatedHash": "2f8f21ee7db71e86febb2fcf307e1258da604eb666ead94ce186afb67f152812"
+}
