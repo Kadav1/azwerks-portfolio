@@ -1,0 +1,25 @@
+---
+import type { ProjectDetailViewModel } from '../../../lib/project-detail/types.ts';
+import type { ProjectWorldViewModel } from '../../../lib/project-worlds/world-types.ts';
+import WorldFrame from '../WorldFrame.astro';
+import WorldSection from '../WorldSection.astro';
+
+interface Props { project: ProjectDetailViewModel; Content: any; hasNarrative: boolean; world: ProjectWorldViewModel }
+const { project, Content, hasNarrative, world } = Astro.props;
+const shared = { project, Content, hasNarrative };
+---
+
+<WorldFrame world={world}>
+  <WorldSection section="orientation" {...shared} />
+  <WorldSection section="header" {...shared} />
+  <WorldSection section="lead" {...shared} />
+  <WorldSection section="narrative" {...shared} />
+  <WorldSection section="evidence" {...shared} />
+  <WorldSection section="limitations" {...shared} />
+  <WorldSection section="process" {...shared} />
+  <WorldSection section="releases" {...shared} />
+  <WorldSection section="links" {...shared} />
+  <WorldSection section="provenance" {...shared} />
+  <WorldSection section="relations" {...shared} />
+  <WorldSection section="context-navigation" {...shared} />
+</WorldFrame>

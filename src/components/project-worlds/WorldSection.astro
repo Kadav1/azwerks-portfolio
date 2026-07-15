@@ -1,0 +1,58 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+import type { ProjectWorldSection } from '../../lib/project-worlds/world-types.ts';
+import ProjectContextNavigation from '../project/ProjectContextNavigation.astro';
+import ProjectEvidence from '../project/ProjectEvidence.astro';
+import ProjectHeader from '../project/ProjectHeader.astro';
+import ProjectLeadMedia from '../project/ProjectLeadMedia.astro';
+import ProjectLimitations from '../project/ProjectLimitations.astro';
+import ProjectLinks from '../project/ProjectLinks.astro';
+import ProjectNarrative from '../project/ProjectNarrative.astro';
+import ProjectNoMediaState from '../project/ProjectNoMediaState.astro';
+import ProjectOrientation from '../project/ProjectOrientation.astro';
+import ProjectProcess from '../project/ProjectProcess.astro';
+import ProjectProvenance from '../project/ProjectProvenance.astro';
+import ProjectRelations from '../project/ProjectRelations.astro';
+import ProjectReleases from '../project/ProjectReleases.astro';
+
+interface Props {
+  section: ProjectWorldSection;
+  project: ProjectDetailViewModel;
+  Content: any;
+  hasNarrative: boolean;
+}
+
+const { section, project, Content, hasNarrative } = Astro.props;
+const shouldRender = {
+  orientation: true,
+  header: true,
+  lead: true,
+  narrative: hasNarrative,
+  evidence: project.publicEvidence.length > 0,
+  limitations: project.limitations.length > 0,
+  process: project.process.length > 0,
+  releases: project.releases.length > 0,
+  links: project.publicLinks.length > 0,
+  provenance: true,
+  relations: project.relations.length > 0,
+  'context-navigation': true,
+}[section];
+---
+
+{shouldRender && (
+  <div class="project-world__section" data-world-section={section}>
+    {section === 'orientation' && <ProjectOrientation project={project} />}
+    {section === 'header' && <ProjectHeader project={project} />}
+    {section === 'lead' && project.leadMedia && <ProjectLeadMedia lead={project.leadMedia} media={project.allPublicMedia} />}
+    {section === 'lead' && !project.leadMedia && <ProjectNoMediaState mediaState={project.mediaState} category={project.categoryLabel} />}
+    {section === 'narrative' && hasNarrative && <ProjectNarrative Content={Content} headings={project.tableOfContents} />}
+    {section === 'evidence' && <ProjectEvidence evidence={project.publicEvidence} />}
+    {section === 'limitations' && <ProjectLimitations limitations={project.limitations} evidence={project.publicEvidence} />}
+    {section === 'process' && <ProjectProcess process={project.process} evidence={project.publicEvidence} />}
+    {section === 'releases' && <ProjectReleases releases={project.releases} evidence={project.publicEvidence} />}
+    {section === 'links' && <ProjectLinks links={project.publicLinks} />}
+    {section === 'provenance' && <ProjectProvenance provenance={project.provenance} />}
+    {section === 'relations' && <ProjectRelations relations={project.relations} />}
+    {section === 'context-navigation' && <ProjectContextNavigation project={project} />}
+  </div>
+)}

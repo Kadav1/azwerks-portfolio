@@ -1,0 +1,18 @@
+@layer azw.project-worlds {
+  .project-world--software {
+    --_software-world-reading-measure: var(--azw-size-reading-measure);
+    --_software-world-stage-measure: var(--azw-size-full-bleed-limit);
+    --_world-reading-measure: var(--_software-world-reading-measure);
+    --_world-stage-measure: var(--_software-world-stage-measure);
+  }
+
+  .project-world--software [data-world-section='header'] .project-state,
+  .project-world--software [data-world-section='releases'] ol,
+  .project-world--software [data-world-section='evidence'] .project-evidence__items {
+    display: grid;
+  }
+
+  .project-world--software [data-world-section='lead'] .project-media--interface {
+    background: var(--azw-color-surface-inset);
+  }
+}

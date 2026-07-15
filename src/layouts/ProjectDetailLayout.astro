@@ -1,5 +1,6 @@
 ---
 import type { ProjectDetailViewModel } from '../lib/project-detail/types.ts';
+import { getProjectWorldDefinition } from '../lib/project-worlds/world-registry.ts';
 import GlobalShell from './GlobalShell.astro';
 import '../styles/project-detail.css';
 
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const world = getProjectWorldDefinition(project.category);
 ---
 
 <GlobalShell
@@ -16,16 +18,16 @@ const { project } = Astro.props;
   canonical={project.canonical}
   noindex={project.noindex}
   currentPath={project.href}
-  shellProfile={project.shellProfile}
-  worldProfile={project.worldProfile}
+  shellProfile={world.shellProfile}
+  worldProfile={world.worldProfile}
   mainId="project-detail"
 >
   <article
     class="project-detail"
     data-project-category={project.category}
-    data-project-layout-profile={project.layoutProfile}
-    data-project-theme-profile={project.themeProfile}
-    data-project-motion-profile={project.motionProfile}
+    data-project-layout-profile={world.layoutProfile}
+    data-project-theme-profile={world.themeProfile}
+    data-project-motion-profile={world.motionProfile}
     aria-labelledby="project-title"
   >
     <slot />
