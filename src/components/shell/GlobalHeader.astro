@@ -1,0 +1,51 @@
+---
+import type { NormalizedNavigationItem } from '../../lib/navigation/navigation-model.ts';
+import NavigationLink from '../navigation/NavigationLink.astro';
+import BrandIdentity from './BrandIdentity.astro';
+import MobileNavigation from './MobileNavigation.astro';
+import PrimaryNavigation from './PrimaryNavigation.astro';
+import ShellStatus from './ShellStatus.astro';
+import ThemeControl from './ThemeControl.astro';
+
+interface Props {
+  availabilityMessage?: string | undefined;
+  currentPath: string;
+  items: readonly NormalizedNavigationItem[];
+  showAvailability?: boolean | undefined;
+  showThemeControl?: boolean | undefined;
+}
+
+const {
+  availabilityMessage,
+  currentPath,
+  items,
+  showAvailability = false,
+  showThemeControl = true,
+} = Astro.props;
+const workItem = items.find(({ id }) => id === 'work');
+---
+
+<header class="global-header">
+  <div class="global-header__inner">
+    <div class="global-header__identity" data-shell-background>
+      <BrandIdentity />
+    </div>
+    <div class="global-header__compact-actions">
+      {workItem && (
+        <div class="global-header__direct-work" data-shell-background>
+          <NavigationLink item={workItem} currentPath={currentPath} />
+        </div>
+      )}
+      <MobileNavigation items={items} currentPath={currentPath} showThemeControl={showThemeControl} />
+    </div>
+    <div class="global-header__primary" data-shell-background>
+      <PrimaryNavigation items={items} currentPath={currentPath} />
+    </div>
+    {showThemeControl && (
+      <div class="global-header__theme" data-shell-background>
+        <ThemeControl id="theme-desktop" />
+      </div>
+    )}
+  </div>
+  <ShellStatus visible={showAvailability} message={availabilityMessage} />
+</header>

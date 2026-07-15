@@ -14,7 +14,7 @@ const files = await walkFiles(srcRoot, new Set(['generated', 'source', 'schema']
 const productionFiles = files.filter((path) => ['.css', '.astro', '.ts', '.tsx', '.js', '.mjs'].includes(extname(path)));
 
 function declarations(content, propertyPattern) {
-  return [...content.matchAll(new RegExp(`\\b(?:${propertyPattern})\\s*:\\s*([^;}{]+)`, 'gi'))]
+  return [...content.matchAll(new RegExp(`(?<![\\w-])(?:${propertyPattern})\\s*:\\s*([^;}{]+)`, 'gi'))]
     .map((match) => match[1].trim());
 }
 
@@ -36,9 +36,9 @@ for (const path of productionFiles) {
     assert(!declarations(withoutComments, 'z-index').some((value) => /^-?\d+$/.test(value)), `${name} contains a raw z-index.`, errors);
     assert(!declarations(withoutComments, 'box-shadow').some((value) => !/^(?:var\(|none\b)/.test(value)), `${name} contains a raw box shadow.`, errors);
     assert(!declarations(withoutComments, 'border-radius').some((value) => !/^(?:var\(|0\b|inherit\b|initial\b|unset\b)/.test(value)), `${name} contains a raw radius.`, errors);
-    assert(!declarations(withoutComments, 'font-size').some((value) => !/^(?:var\(|inherit\b|100%\b)/.test(value)), `${name} contains a raw font size.`, errors);
+    assert(!declarations(withoutComments, 'font-size').some((value) => !/^(?:var\(|inherit\b|100%$)/.test(value)), `${name} contains a raw font size.`, errors);
     assert(!declarations(withoutComments, 'gap|padding|padding-block|padding-inline|margin-block|margin-inline').some((value) => !/^(?:var\(|0\b|auto\b)/.test(value)), `${name} contains raw spacing.`, errors);
-    assert(!declarations(withoutComments, 'max-width|inline-size|max-inline-size').some((value) => !/^(?:var\(|100%\b|none\b|auto\b)/.test(value)), `${name} contains a raw content width.`, errors);
+    assert(!declarations(withoutComments, 'max-width|inline-size|max-inline-size').some((value) => !/^(?:var\(|100%$|none\b|auto\b)/.test(value)), `${name} contains a raw content width.`, errors);
   }
 }
 

@@ -3,12 +3,16 @@ import '../tokens/generated/tokens.css';
 import '../styles/global.css';
 
 interface Props {
+  canonical?: string | URL;
   description?: string;
+  noindex?: boolean;
   title: string;
 }
 
 const {
+  canonical,
   description = 'The greenfield foundation for the azwerks portfolio.',
+  noindex = false,
   title,
 } = Astro.props;
 
@@ -22,12 +26,12 @@ const themeBootstrap = `(()=>{try{const v=localStorage.getItem('azwerks.portfoli
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <meta name="color-scheme" content="dark light" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical.toString()} />}
     <script is:inline set:html={themeBootstrap}></script>
     <title>{title}</title>
   </head>
   <body>
-    <main id="main-content">
-      <slot />
-    </main>
+    <slot />
   </body>
 </html>

@@ -1,1 +1,9 @@
-[]
+[
+  { "id": "work", "label": "Work", "kind": "route", "target": "/work/", "order": 10, "visibility": "public", "synthetic": false },
+  { "id": "archive", "label": "Archive", "kind": "route", "target": "/archive/", "order": 20, "visibility": "public", "synthetic": false },
+  { "id": "about", "label": "About", "kind": "route", "target": "/about/", "order": 30, "visibility": "public", "synthetic": false },
+  { "id": "contact", "label": "Contact", "kind": "route", "target": "/contact/", "order": 40, "visibility": "public", "synthetic": false },
+  { "id": "accessibility", "label": "Accessibility", "kind": "route", "target": "/accessibility/", "order": 50, "visibility": "public", "synthetic": false },
+  { "id": "privacy", "label": "Privacy", "kind": "route", "target": "/privacy/", "order": 60, "visibility": "public", "synthetic": false },
+  { "id": "colophon", "label": "Colophon", "kind": "route", "target": "/colophon/", "order": 70, "visibility": "public", "synthetic": false }
+]

@@ -1,0 +1,23 @@
+---
+import type { NormalizedNavigationItem } from '../../lib/navigation/navigation-model.ts';
+import { getCurrentRouteState } from '../../lib/navigation/current-route.ts';
+
+interface Props {
+  currentPath: string;
+  item: NormalizedNavigationItem;
+}
+
+const { currentPath, item } = Astro.props;
+const currentState = getCurrentRouteState(currentPath, item.target);
+---
+
+<a
+  class="navigation-link"
+  href={item.target}
+  aria-current={currentState === 'page' ? 'page' : undefined}
+  data-current={currentState ?? undefined}
+  data-navigation-id={item.id}
+>
+  <span>{item.label}</span>
+  {currentState === 'section' && <span class="visually-hidden"> (current section)</span>}
+</a>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  mainId: string;
+  workResultsId?: string | undefined;
+}
+
+const { mainId, workResultsId } = Astro.props;
+---
+
+<nav class="skip-links" aria-label="Skip links" data-shell-background>
+  <a href={`#${mainId}`}>Skip to main content</a>
+  {workResultsId && <a href={`#${workResultsId}`}>Skip to work results</a>}
+</nav>

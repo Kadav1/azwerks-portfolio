@@ -1,0 +1,29 @@
+---
+import type { NormalizedNavigationItem } from '../../lib/navigation/navigation-model.ts';
+import ExternalNavigationLink from '../navigation/ExternalNavigationLink.astro';
+import NavigationLink from '../navigation/NavigationLink.astro';
+
+interface Props {
+  currentPath: string;
+  items: readonly NormalizedNavigationItem[];
+}
+
+const { currentPath, items } = Astro.props;
+---
+
+<footer class="global-footer" data-shell-background>
+  <div class="global-footer__inner">
+    <p><span aria-hidden="true">azwerks</span> <span>All rights reserved.</span></p>
+    <nav aria-label="Footer">
+      <ul class="global-footer__links">
+        {items.map((item) => (
+          <li>
+            {item.external
+              ? <ExternalNavigationLink item={item} />
+              : <NavigationLink item={item} currentPath={currentPath} />}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</footer>
