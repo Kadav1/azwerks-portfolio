@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title description">
+  <title id="title">Synthetic protocol flow</title>
+  <desc id="description">Four labeled geometric nodes connected from input through fold and inspect to output.</desc>
+  <rect width="960" height="360" fill="#f4f0e8"/>
+  <g fill="#e2ded4" stroke="#2c342f" stroke-width="6">
+    <rect x="40" y="130" width="160" height="100"/>
+    <rect x="280" y="130" width="160" height="100"/>
+    <rect x="520" y="130" width="160" height="100"/>
+    <rect x="760" y="130" width="160" height="100"/>
+  </g>
+  <g stroke="#2c342f" stroke-width="6">
+    <path d="M200 180h80M440 180h80M680 180h80"/>
+  </g>
+</svg>

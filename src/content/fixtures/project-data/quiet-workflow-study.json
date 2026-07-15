@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "project": "quiet-workflow-study",
+  "mediaAvailability": "unavailable",
+  "sourceAvailability": "private",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "document-led",
+  "themeProfile": "system",
+  "motionProfile": "none",
+  "links": [],
+  "media": [],
+  "evidence": [
+    { "id": "structure-review", "type": "documentation", "title": "Synthetic structure review", "trust": "reviewed", "availability": "private", "summary": "Confirms only that the sparse fixture satisfies its declared structure." }
+  ],
+  "process": [],
+  "limitations": [
+    { "id": "private-source", "summary": "No source, demonstration, hero image, or operational result is public because the record is fictional.", "status": "accepted" }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional content",
+    "sourceAvailability": "private",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "redactionNote": "No private URL or local path exists in this fixture."
+  }
+}

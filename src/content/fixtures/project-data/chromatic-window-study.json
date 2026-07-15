@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "project": "chromatic-window-study",
+  "mediaAvailability": "available",
+  "sourceAvailability": "not-applicable",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "available",
+  "layoutProfile": "media-led",
+  "themeProfile": "neutral",
+  "motionProfile": "none",
+  "links": [],
+  "media": [
+    { "id": "portrait-window", "type": "svg", "source": "assets/art-window.svg", "purpose": "artwork", "rights": "synthetic", "availability": "available", "alt": "Four flat geometric color fields arranged as a tall synthetic window study.", "caption": "Portrait fixture view; repository-authored geometry.", "width": 800, "height": 1000 },
+    { "id": "wide-window", "type": "svg", "source": "assets/interface-grid.svg", "purpose": "artwork", "rights": "synthetic", "availability": "available", "alt": "Three neutral outlined regions used as a wide secondary synthetic art ratio.", "caption": "Wide fixture view for ratio coverage.", "width": 640, "height": 360 }
+  ],
+  "evidence": [
+    { "id": "rights-record", "type": "artifact", "title": "Synthetic rights declaration", "trust": "verified", "availability": "private", "artifact": "fixture-rights-record" }
+  ],
+  "process": [
+    { "id": "compose", "title": "Compose geometric fields", "summary": "Arrange repository-authored flat shapes solely for fixture validation.", "order": 1, "evidenceIds": ["rights-record"] }
+  ],
+  "limitations": [
+    { "id": "not-real-artwork", "summary": "The geometric fixture is not production artwork and makes no exhibition or publication claim.", "status": "accepted", "evidenceIds": ["rights-record"] }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored geometric fixture",
+    "sourceAvailability": "not-applicable",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "rightsNote": "The SVG geometry was authored for deterministic repository testing."
+  }
+}

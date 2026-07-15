@@ -18,9 +18,16 @@
     "tokens:check:generated": "node scripts/check-generated-tokens.mjs",
     "tokens:audit:browser": "node scripts/browser-token-foundation-audit.mjs",
     "tokens:check": "npm run tokens:validate:source && npm run tokens:validate:references && npm run tokens:validate:contrast && npm run tokens:validate:runtime && npm run tokens:validate:usage && npm run tokens:check:generated",
+    "content:sync": "astro sync",
+    "content:generate": "node scripts/generate-content-manifest.mjs",
+    "content:test:unit": "node --test tests/content-model/*.test.mjs",
+    "content:validate": "node scripts/validate-content-foundation.mjs",
+    "content:test:invalid": "node scripts/test-invalid-content-fixtures.mjs",
+    "content:check:generated": "node scripts/check-content-manifest.mjs",
+    "content:check": "npm run content:sync && npm run content:test:unit && npm run content:validate && npm run content:test:invalid && npm run content:check:generated",
     "check:astro": "astro check",
-    "check": "npm run tokens:check && npm run check:astro",
-    "build": "npm run tokens:check && astro build",
+    "check": "npm run tokens:check && npm run content:check && npm run check:astro",
+    "build": "npm run tokens:check && npm run content:check && astro build",
     "preview": "astro preview",
     "validate": "npm run check"
   },
@@ -29,6 +36,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.9",
+    "@types/node": "24.13.3",
     "typescript": "6.0.3"
   }
 }

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "project": "paper-signal-system",
+  "mediaAvailability": "available",
+  "sourceAvailability": "private",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "specimen-led",
+  "themeProfile": "system",
+  "motionProfile": "reduced",
+  "links": [],
+  "media": [
+    { "id": "specimen-grid", "type": "svg", "source": "assets/interface-grid.svg", "purpose": "informative", "rights": "synthetic", "availability": "available", "alt": "Outlined synthetic specimen regions with no brand or production component content.", "caption": "A neutral geometric specimen fixture.", "width": 640, "height": 360 }
+  ],
+  "evidence": [
+    { "id": "accessibility-review", "type": "test", "title": "Synthetic label and state review", "trust": "verified", "availability": "private", "method": "Inspect fixture labels and declared non-color state cues.", "result": "The fixture contract includes visible labels.", "limitations": "This is schema evidence, not a browser accessibility claim.", "artifact": "fixture-accessibility-assertion" },
+    { "id": "token-reference", "type": "documentation", "title": "Synthetic semantic token reference", "trust": "reviewed", "availability": "private", "artifact": "fixture-token-reference" }
+  ],
+  "process": [
+    { "id": "premise", "title": "Declare the specimen premise", "summary": "Keep labels primary and marks removable in the fictional system.", "order": 1, "evidenceIds": ["token-reference"] }
+  ],
+  "limitations": [
+    { "id": "no-production-system", "summary": "The fixture contains no production palette, component, mark asset, or brand claim.", "status": "accepted", "evidenceIds": ["accessibility-review"] }
+  ],
+  "releases": [
+    { "id": "release-12", "version": "1.2-fixture", "date": "2026-05-10", "status": "candidate", "summary": "Synthetic schema-coverage revision.", "evidenceIds": ["token-reference"] }
+  ],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional content",
+    "sourceAvailability": "private",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "rightsNote": "No production mark, icon, or identity asset is included."
+  }
+}

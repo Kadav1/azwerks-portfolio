@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "project": "absent-image-ledger",
+  "mediaAvailability": "unavailable",
+  "sourceAvailability": "not-applicable",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "unavailable",
+  "layoutProfile": "document-led",
+  "themeProfile": "neutral",
+  "motionProfile": "none",
+  "links": [],
+  "media": [],
+  "evidence": [
+    { "id": "provenance-note", "type": "documentation", "title": "Synthetic provenance note", "trust": "reviewed", "availability": "private", "summary": "Records the intentional absence of artwork media for this fixture." }
+  ],
+  "process": [],
+  "limitations": [
+    { "id": "image-unavailable", "summary": "Artwork imagery is intentionally unavailable, so the record remains text-led.", "status": "accepted", "evidenceIds": ["provenance-note"] }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional record",
+    "sourceAvailability": "not-applicable",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "sourceNote": "No source image exists by design."
+  }
+}

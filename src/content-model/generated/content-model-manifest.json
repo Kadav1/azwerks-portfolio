@@ -1,0 +1,215 @@
+{
+  "categoryCounts": {
+    "art": 2,
+    "limited-media": 2,
+    "software": 3,
+    "technical-system": 2,
+    "visual-system": 1
+  },
+  "collections": [
+    "projects",
+    "projectData",
+    "projectRelations",
+    "sitePages",
+    "navigation",
+    "fixtureProjects",
+    "fixtureProjectData",
+    "fixtureProjectRelations",
+    "fixtureSitePages",
+    "fixtureNavigation"
+  ],
+  "contentSourceHash": "dae25a1f02883f029b1077f1405c2169ed22382a7b8517242d5e504f26890ac8",
+  "enums": {
+    "evidenceTrustStates": [
+      "unverified",
+      "reviewed",
+      "verified",
+      "unavailable",
+      "private"
+    ],
+    "evidenceTypes": [
+      "repository",
+      "release",
+      "test",
+      "documentation",
+      "artifact",
+      "metric",
+      "publication",
+      "source",
+      "inspection"
+    ],
+    "layoutProfiles": [
+      "editorial",
+      "technical",
+      "media-led",
+      "specimen-led",
+      "document-led"
+    ],
+    "lifecycles": [
+      "draft",
+      "candidate",
+      "reviewed",
+      "approved",
+      "published",
+      "archived"
+    ],
+    "limitationStatuses": [
+      "known",
+      "accepted",
+      "mitigated",
+      "resolved"
+    ],
+    "linkTypes": [
+      "repository",
+      "demo",
+      "documentation",
+      "release",
+      "publication",
+      "external",
+      "contact"
+    ],
+    "maintenanceStates": [
+      "active",
+      "maintenance",
+      "paused",
+      "dormant",
+      "retired",
+      "not-applicable"
+    ],
+    "mediaAvailabilities": [
+      "available",
+      "unavailable",
+      "private",
+      "not-applicable"
+    ],
+    "mediaPurposes": [
+      "informative",
+      "decorative",
+      "artwork",
+      "interface",
+      "diagram",
+      "documentary"
+    ],
+    "mediaTypes": [
+      "image",
+      "svg",
+      "video",
+      "audio",
+      "document",
+      "diagram",
+      "interface"
+    ],
+    "motionProfiles": [
+      "none",
+      "reduced",
+      "system"
+    ],
+    "navigationKinds": [
+      "page",
+      "route",
+      "external"
+    ],
+    "projectCategories": [
+      "software",
+      "visual-system",
+      "art",
+      "technical-system",
+      "limited-media"
+    ],
+    "provenanceReviewStatuses": [
+      "unreviewed",
+      "reviewed",
+      "approved"
+    ],
+    "relationDirections": [
+      "directed",
+      "undirected"
+    ],
+    "relationTypes": [
+      "related",
+      "lineage",
+      "dependency",
+      "shared-method",
+      "family",
+      "supersedes",
+      "supports"
+    ],
+    "releaseStatuses": [
+      "planned",
+      "candidate",
+      "released",
+      "superseded",
+      "withdrawn"
+    ],
+    "rightsStates": [
+      "owned",
+      "licensed",
+      "permission-granted",
+      "public-domain",
+      "synthetic",
+      "private",
+      "unavailable",
+      "unknown"
+    ],
+    "sourceAvailabilities": [
+      "public",
+      "private",
+      "unavailable",
+      "not-applicable"
+    ],
+    "themeProfiles": [
+      "system",
+      "dark",
+      "light",
+      "neutral"
+    ],
+    "visibilities": [
+      "private",
+      "unlisted",
+      "public"
+    ]
+  },
+  "fixtureVersion": "synthetic-content-fixtures-v0.1",
+  "generatedFileHashes": {
+    "tests/fixtures/content-expected/invalid-summary.json": "a55629dce86ae9f70fd2004b532c1054c475d6ac547ccd17d54f12b60de3f957",
+    "tests/fixtures/content-expected/valid-summary.json": "953df21b7deb91278d1a22ffb3f03cd42ffdac682462af66ce0d29a33fd39d30"
+  },
+  "generatorHash": "220b890b2b461412df92741964baeaa86362dcf1483ca3b0bb8747de2af56a01",
+  "generatorVersion": "1.0.0",
+  "invalidFixtureCount": 36,
+  "lifecycleCounts": {
+    "approved": 0,
+    "archived": 1,
+    "candidate": 3,
+    "draft": 1,
+    "published": 0,
+    "reviewed": 5
+  },
+  "modelVersion": "1.0.0",
+  "publicationEligibleFixtureCount": 0,
+  "relationCounts": {
+    "dependency": 1,
+    "family": 1,
+    "lineage": 1,
+    "related": 1,
+    "shared-method": 1,
+    "supersedes": 1,
+    "supports": 1
+  },
+  "schemaHashes": {
+    "src/content-model/enums.ts": "e39f142ba821d0f53217b979aebbcd73f60e0be759230497ee4a3d64a1c43696",
+    "src/content-model/error-codes.ts": "84192e2ed03e322627c98944db0509ea1f67a186477cf74643446339ce700a7c",
+    "src/content-model/merge.ts": "4461415e91c0c0ab43770740d210b9c7f31a73d9ced83bab6c0c8af6660024a5",
+    "src/content-model/publication.ts": "2d50fe415ff2ca9483086a0d13196ff38180d8e2ef92802ed13d054b1c6d78ca",
+    "src/content-model/relations.ts": "1e04f87e90372803be5875ee7630295a49e0f4102d3c143332bcb9e36d45e1bc",
+    "src/content-model/schemas.ts": "36437f4bbeeb658aa89f4c7c00ee1fe14a4d3584d545ef49a65d4e9c5c6bbd8e",
+    "src/content-model/source.ts": "0de6914954b09fea51d47c4bca914fd175cbc71d3f253d763b84beadccd195a7",
+    "src/content-model/types.ts": "ac0a247fee6262dabc793ab0ca9c08df348bd2019a99f1f37b1bf8898053fedb",
+    "src/content-model/validation.ts": "1a2badc60dd5a156ba3aa95b19b689328c574a49ee9f8ac76e506f85f19a155f"
+  },
+  "schemaVersion": "1.0",
+  "sourceFileCount": 49,
+  "timestampPolicy": "No generated timestamp; identical repository sources produce identical bytes.",
+  "validFixtureCount": 10,
+  "validatorVersion": "1.0.0"
+}

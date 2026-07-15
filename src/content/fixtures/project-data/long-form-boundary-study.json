@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "project": "long-form-boundary-study",
+  "mediaAvailability": "unavailable",
+  "sourceAvailability": "private",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "technical",
+  "themeProfile": "light",
+  "motionProfile": "reduced",
+  "links": [
+    { "id": "extended-documentation-reference", "type": "documentation", "label": "Extended synthetic documentation label for bounded link-text validation without a real destination", "url": "https://example.invalid/long-form-boundary-study/documentation", "public": false }
+  ],
+  "media": [],
+  "evidence": [
+    { "id": "ordering-inspection", "type": "inspection", "title": "Deterministic ordering inspection for repeated synthetic labels", "trust": "verified", "availability": "private", "method": "Sort normalized fixture identifiers with the repository ASCII comparator.", "result": "The expected fixture identifiers retain an explicit deterministic order.", "limitations": "The result does not measure browser, user, or runtime performance.", "artifact": "fixture-ordering-inspection" },
+    { "id": "boundary-document", "type": "documentation", "title": "Synthetic boundary documentation artifact", "trust": "reviewed", "availability": "private", "summary": "Records long valid strings, arrays, code-shaped text, and table-shaped Markdown for schema stress coverage.", "artifact": "fixture-boundary-document" }
+  ],
+  "process": [
+    { "id": "normalize", "title": "Normalize the extended fictional record", "summary": "Collect the declared long labels and arrays without adding inferred values.", "order": 1, "evidenceIds": ["boundary-document"] },
+    { "id": "sort", "title": "Sort with explicit stable tie-breakers", "summary": "Apply documented lifecycle, date, title, and identifier comparisons.", "order": 2, "evidenceIds": ["ordering-inspection"] },
+    { "id": "preserve", "title": "Preserve the limitation statement", "summary": "Keep fixture-only scope visible beside every structural assertion.", "order": 3, "evidenceIds": ["boundary-document"] }
+  ],
+  "limitations": [
+    { "id": "synthetic-boundary", "summary": "All extended content is synthetic and validates structure only; it proves no real editorial, runtime, or accessibility outcome.", "status": "accepted", "scope": "Entire long-content fixture", "impact": "The record cannot be used as portfolio evidence.", "mitigation": "Keep the fixture private, noindex, and excluded from production helpers.", "evidenceIds": ["boundary-document", "ordering-inspection"] }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored long-content fixture",
+    "sourceAvailability": "private",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-07-14",
+    "reviewedBy": "Fixture validation contract",
+    "sourceNote": "All labels and evidence descriptions were authored for this fixture.",
+    "rightsNote": "No third-party or production material is present.",
+    "redactionNote": "No private path, repository, host, credential, or identifier is present."
+  }
+}

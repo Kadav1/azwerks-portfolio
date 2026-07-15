@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "project": "folded-protocol-model",
+  "mediaAvailability": "available",
+  "sourceAvailability": "private",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "technical",
+  "themeProfile": "dark",
+  "motionProfile": "reduced",
+  "links": [],
+  "media": [
+    { "id": "protocol-diagram", "type": "diagram", "source": "assets/protocol-diagram.svg", "purpose": "diagram", "rights": "synthetic", "availability": "available", "alt": "Four synthetic protocol nodes connected from input through fold and inspect to output.", "description": "Text equivalent: input flows to fold, then inspect, then output.", "width": 960, "height": 360 }
+  ],
+  "evidence": [
+    { "id": "architecture-description", "type": "documentation", "title": "Synthetic architecture description", "trust": "verified", "availability": "private", "artifact": "fixture-architecture-description", "summary": "Describes the four-node fictional flow without claiming an implementation." },
+    { "id": "compatibility-inspection", "type": "inspection", "title": "Synthetic compatibility inspection", "trust": "reviewed", "availability": "private", "method": "Review the declared fixture platform label.", "result": "The record declares only a POSIX-like fixture environment.", "limitations": "No runtime compatibility was executed." }
+  ],
+  "process": [
+    { "id": "model", "title": "Model the fictional flow", "summary": "Declare four labeled nodes and a static text alternative.", "order": 1, "evidenceIds": ["architecture-description"] }
+  ],
+  "limitations": [
+    { "id": "no-runtime", "summary": "No protocol implementation, command, dependency, or compatibility result exists.", "status": "known", "evidenceIds": ["compatibility-inspection"] }
+  ],
+  "releases": [
+    { "id": "release-20", "version": "2.0-fixture", "date": "2026-04-12", "status": "candidate", "summary": "Synthetic architecture fixture revision.", "evidenceIds": ["architecture-description"] }
+  ],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional architecture",
+    "sourceAvailability": "private",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed",
+    "sourceNote": "No executable or private repository exists."
+  }
+}

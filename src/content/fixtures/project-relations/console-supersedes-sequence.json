@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "id": "console-supersedes-sequence",
+  "from": "amber-console-study",
+  "to": "retired-sequence-engine",
+  "type": "supersedes",
+  "direction": "directed",
+  "summary": "The active fictional console supersedes the retired sequence fixture within this synthetic graph.",
+  "visibility": "private",
+  "synthetic": true
+}

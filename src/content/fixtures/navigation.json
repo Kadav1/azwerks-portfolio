@@ -1,0 +1,6 @@
+[
+  { "id": "work", "label": "Work", "kind": "route", "target": "/work/", "order": 10, "visibility": "private", "synthetic": true },
+  { "id": "archive", "label": "Archive", "kind": "route", "target": "/archive/", "order": 20, "visibility": "private", "synthetic": true },
+  { "id": "about", "label": "About", "kind": "page", "target": "/about/", "order": 30, "visibility": "private", "synthetic": true },
+  { "id": "contact", "label": "Contact", "kind": "page", "target": "/contact/", "order": 40, "visibility": "private", "synthetic": true }
+]

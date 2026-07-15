@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "project": "field-notes-index",
+  "mediaAvailability": "unavailable",
+  "sourceAvailability": "unavailable",
+  "rightsStatus": "synthetic",
+  "artworkAvailability": "not-applicable",
+  "layoutProfile": "document-led",
+  "themeProfile": "system",
+  "motionProfile": "none",
+  "links": [],
+  "media": [],
+  "evidence": [
+    { "id": "chronology-record", "type": "documentation", "title": "Synthetic chronology record", "trust": "reviewed", "availability": "private", "summary": "Records two fictional chronology points for fixture validation." }
+  ],
+  "process": [
+    { "id": "record", "title": "Record the chronology", "summary": "Preserve the two fictional dates as documentary structure.", "order": 1, "evidenceIds": ["chronology-record"] }
+  ],
+  "limitations": [
+    { "id": "no-media", "summary": "No image or source artifact is available; the record is intentionally type-led.", "status": "accepted", "evidenceIds": ["chronology-record"] }
+  ],
+  "releases": [],
+  "provenance": {
+    "owner": "azwerks portfolio synthetic fixture set",
+    "authorship": "Repository-authored fictional chronology",
+    "sourceAvailability": "unavailable",
+    "rightsStatus": "synthetic",
+    "reviewStatus": "reviewed"
+  }
+}

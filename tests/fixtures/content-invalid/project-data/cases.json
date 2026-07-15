@@ -1,0 +1,21 @@
+[
+  { "id": "missing-companion", "kind": "missing-companion", "expectedCode": "CONTENT_COMPANION_MISSING" },
+  { "id": "duplicate-companion", "kind": "duplicate-companion", "expectedCode": "CONTENT_COMPANION_DUPLICATE" },
+  { "id": "orphan-companion", "kind": "orphan-companion", "expectedCode": "CONTENT_COMPANION_ORPHAN" },
+  { "id": "local-path", "kind": "local-path", "expectedCode": "CONTENT_PRIVATE_PATH" },
+  { "id": "localhost-url", "kind": "localhost-url", "expectedCode": "CONTENT_UNSAFE_URL" },
+  { "id": "private-ip-url", "kind": "private-ip-url", "expectedCode": "CONTENT_UNSAFE_URL" },
+  { "id": "url-credentials", "kind": "url-credentials", "expectedCode": "CONTENT_UNSAFE_URL" },
+  { "id": "javascript-url", "kind": "javascript-url", "expectedCode": "CONTENT_UNSAFE_URL" },
+  { "id": "informative-media-without-alt", "kind": "media-alt", "expectedCode": "CONTENT_MEDIA_ALT_MISSING" },
+  { "id": "public-media-unknown-rights", "kind": "media-rights", "expectedCode": "CONTENT_RIGHTS_UNKNOWN" },
+  { "id": "audio-without-transcript", "kind": "media-transcript", "expectedCode": "CONTENT_MEDIA_TRANSCRIPT_MISSING" },
+  { "id": "verified-evidence-without-artifact", "kind": "evidence-artifact", "expectedCode": "CONTENT_EVIDENCE_UNSUPPORTED" },
+  { "id": "metric-without-method-unit", "kind": "metric-incomplete", "expectedCode": "CONTENT_METRIC_INCOMPLETE" },
+  { "id": "duplicate-media-id", "kind": "duplicate-media", "expectedCode": "CONTENT_MEDIA_DUPLICATE" },
+  { "id": "duplicate-evidence-id", "kind": "duplicate-evidence", "expectedCode": "CONTENT_EVIDENCE_DUPLICATE" },
+  { "id": "duplicate-process-order", "kind": "duplicate-process-order", "expectedCode": "CONTENT_ORDER_DUPLICATE" },
+  { "id": "missing-limitation-status", "kind": "limitation-status", "expectedCode": "CONTENT_LIMITATION_STATUS_MISSING" },
+  { "id": "unknown-profile", "kind": "unknown-profile", "expectedCode": "CONTENT_PROFILE_INVALID" },
+  { "id": "functional-theme-override", "kind": "functional-theme-override", "expectedCode": "CONTENT_PROFILE_INVALID" }
+]
