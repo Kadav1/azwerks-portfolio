@@ -1,0 +1,21 @@
+---
+import type { ProjectDetailEvidence } from '../../lib/project-detail/types.ts';
+
+interface Props {
+  ids: readonly string[];
+  evidence: readonly ProjectDetailEvidence[];
+}
+const { ids, evidence } = Astro.props;
+const references = ids.flatMap((id) => {
+  const item = evidence.find((candidate) => candidate.id === id && candidate.availability === 'public');
+  return item ? [item] : [];
+});
+---
+
+{references.length > 0 && (
+  <p class="project-evidence-references">
+    Evidence: {references.map((item, index) => (
+      <><a href={`#evidence-${item.id}`}>{item.title}</a>{index < references.length - 1 ? ', ' : ''}</>
+    ))}
+  </p>
+)}

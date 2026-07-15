@@ -1,0 +1,14 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+import ProjectStateSummary from './ProjectStateSummary.astro';
+
+interface Props { project: ProjectDetailViewModel }
+const { project } = Astro.props;
+---
+
+<header class="project-header">
+  <h1 id="project-title">{project.title}</h1>
+  {project.subtitle && <p class="project-header__subtitle">{project.subtitle}</p>}
+  <p class="project-header__summary">{project.summary}</p>
+  <ProjectStateSummary project={project} />
+</header>

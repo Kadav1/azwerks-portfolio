@@ -160,9 +160,27 @@ for (const [path, expectedHash] of identityAssets) {
   if (sha256(asset) !== expectedHash) fail('SHELL_WORDMARK_HASH', 'Identity asset hash differs from the verified source.', path);
 }
 
-const prohibitedRoutes = ['src/pages/work/[slug].astro', 'src/pages/search.astro'];
+const prohibitedRoutes = ['src/pages/search.astro'];
 for (const path of prohibitedRoutes) {
   if (await exists(path)) fail('SHELL_SCOPE_ROUTE', 'Deferred route was implemented during the shell phase.', path);
+}
+
+const projectDetailRoute = 'src/pages/work/[slug].astro';
+if (await exists(projectDetailRoute)) {
+  const source = await readFile(join(repositoryRoot, projectDetailRoute), 'utf8');
+  if (!source.includes("import ProjectDetailLayout from '../../layouts/ProjectDetailLayout.astro'")) {
+    fail('SHELL_PROJECT_DETAIL_LAYOUT', 'Project detail routes must delegate shell ownership to ProjectDetailLayout.', projectDetailRoute);
+  }
+
+  const projectDetailLayout = 'src/layouts/ProjectDetailLayout.astro';
+  if (!(await exists(projectDetailLayout))) {
+    fail('SHELL_PROJECT_DETAIL_LAYOUT', 'ProjectDetailLayout is missing.', projectDetailLayout);
+  } else {
+    const layoutSource = await readFile(join(repositoryRoot, projectDetailLayout), 'utf8');
+    if (!layoutSource.includes("import GlobalShell from './GlobalShell.astro'")) {
+      fail('SHELL_PROJECT_DETAIL_GLOBAL', 'ProjectDetailLayout must preserve GlobalShell as the shell owner.', projectDetailLayout);
+    }
+  }
 }
 
 if (failures.length > 0) {

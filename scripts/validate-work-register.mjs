@@ -65,6 +65,9 @@ if (await exists('src/lib/work-register/view-model.ts')) {
       fail('REGISTER_PRIVATE_FIELD', `View model exposes prohibited field ${field}.`, 'src/lib/work-register/view-model.ts');
     }
   }
+  if (!source.includes("from '../project-detail/routes.ts'") || !source.includes('getProjectDetailHref') || !source.includes('isProjectDetailRoutable')) {
+    fail('REGISTER_DETAIL_ROUTE', 'Work Register must use the shared project-detail route helper.', 'src/lib/work-register/view-model.ts');
+  }
 }
 
 const productionRoots = ['src/pages/work', 'src/components/work', 'src/lib/work-register', 'src/scripts/work-register.ts'];
@@ -150,10 +153,6 @@ for (const path of [
   'dist/work-register-audit',
 ]) {
   if (await exists(path)) fail('REGISTER_TEMPORARY_HARNESS', 'Temporary browser harness remains.', path);
-}
-
-if (await exists('src/pages/work/[slug].astro')) {
-  fail('REGISTER_DETAIL_ROUTE', 'Project-detail route is deferred.', 'src/pages/work/[slug].astro');
 }
 
 if (failures.length > 0) {

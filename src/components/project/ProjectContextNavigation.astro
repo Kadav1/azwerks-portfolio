@@ -1,0 +1,16 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+
+interface Props { project: ProjectDetailViewModel }
+const { project } = Astro.props;
+---
+
+<nav class="project-context-navigation" aria-label="Project context">
+  <a href="/work/">Back to Work</a>
+  {(project.previousProject || project.nextProject) && (
+    <ul>
+      {project.previousProject && <li><a href={project.previousProject.href}>Previous project: {project.previousProject.title}</a></li>}
+      {project.nextProject && <li><a href={project.nextProject.href}>Next project: {project.nextProject.title}</a></li>}
+    </ul>
+  )}
+</nav>

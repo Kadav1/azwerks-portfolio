@@ -1,0 +1,15 @@
+{
+  "modelVersion": "1.0.0",
+  "routeHelperVersion": "1.0.0",
+  "routeCount": 0,
+  "sourceBundleCount": 0,
+  "publicRoutes": [],
+  "excludedByReason": {
+    "archived": 0,
+    "synthetic": 0,
+    "private": 0,
+    "unlisted": 0,
+    "ineligible": 0
+  },
+  "generatedHash": "9244673ac3561024a157f491aa742f2ca3dba26b769b6ae409270a65c3a05839"
+}

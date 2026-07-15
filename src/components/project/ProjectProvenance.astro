@@ -1,0 +1,18 @@
+---
+import type { ProjectDetailProvenance } from '../../lib/project-detail/types.ts';
+
+interface Props { provenance: ProjectDetailProvenance }
+const { provenance } = Astro.props;
+---
+
+<section class="project-section project-provenance" aria-labelledby="project-provenance-heading">
+  <h2 id="project-provenance-heading">Provenance</h2>
+  <dl>
+    <div><dt>Owner</dt><dd>{provenance.owner}</dd></div>
+    <div><dt>Authorship</dt><dd>{provenance.authorship}</dd></div>
+    <div><dt>Source</dt><dd>{provenance.sourceAvailabilityLabel}</dd></div>
+    <div><dt>Rights</dt><dd>{provenance.rightsStatusLabel}</dd></div>
+    <div><dt>Review</dt><dd>{provenance.reviewStatusLabel}</dd></div>
+    {provenance.reviewedAt && <div><dt>Reviewed</dt><dd><time datetime={provenance.reviewedAt}>{provenance.reviewedAt}</time></dd></div>}
+  </dl>
+</section>

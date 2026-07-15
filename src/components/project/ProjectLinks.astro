@@ -1,0 +1,20 @@
+---
+import type { ProjectDetailLink } from '../../lib/project-detail/types.ts';
+
+interface Props { links: readonly ProjectDetailLink[] }
+const { links } = Astro.props;
+---
+
+{links.length > 0 && (
+  <section class="project-section project-links" aria-labelledby="project-links-heading">
+    <h2 id="project-links-heading">Project links</h2>
+    <ul>
+      {links.map((link) => (
+        <li>
+          <a href={link.url}>{link.label}{link.external ? ' (external)' : ''}</a>
+          {link.label !== link.typeLabel && <span> — {link.typeLabel}</span>}
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

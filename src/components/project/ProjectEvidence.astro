@@ -1,0 +1,16 @@
+---
+import type { ProjectDetailEvidence } from '../../lib/project-detail/types.ts';
+import ProjectEvidenceItem from './ProjectEvidenceItem.astro';
+
+interface Props { evidence: readonly ProjectDetailEvidence[] }
+const { evidence } = Astro.props;
+---
+
+{evidence.length > 0 && (
+  <section class="project-section project-evidence" aria-labelledby="project-evidence-heading">
+    <h2 id="project-evidence-heading">Evidence</h2>
+    <div class="project-evidence__items">
+      {evidence.map((item) => <ProjectEvidenceItem item={item} />)}
+    </div>
+  </section>
+)}

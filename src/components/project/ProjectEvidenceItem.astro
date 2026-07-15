@@ -1,0 +1,26 @@
+---
+import type { ProjectDetailEvidence } from '../../lib/project-detail/types.ts';
+
+interface Props { item: ProjectDetailEvidence }
+const { item } = Astro.props;
+const trustLabel = item.trust.replace('-', ' ').replace(/^./, (character) => character.toUpperCase());
+const availabilityLabel = item.availability.replace('-', ' ').replace(/^./, (character) => character.toUpperCase());
+---
+
+<article class="project-evidence-item" id={`evidence-${item.id}`}>
+  <h3>{item.title}</h3>
+  <dl>
+    <div><dt>Type</dt><dd>{item.type}</dd></div>
+    <div><dt>Trust</dt><dd>{trustLabel}</dd></div>
+    <div><dt>Availability</dt><dd>{availabilityLabel}</dd></div>
+    {item.summary && <div><dt>Summary</dt><dd>{item.summary}</dd></div>}
+    {item.claim && <div><dt>Claim</dt><dd>{item.claim}</dd></div>}
+    {item.method && <div><dt>Method</dt><dd>{item.method}</dd></div>}
+    {item.result && <div><dt>Result</dt><dd>{item.result}{item.unit && ` ${item.unit}`}</dd></div>}
+    {item.limitations && <div><dt>Limitations</dt><dd>{item.limitations}</dd></div>}
+    {item.version && <div><dt>Version</dt><dd>{item.version}</dd></div>}
+    {item.date && <div><dt>Date</dt><dd><time datetime={item.date}>{item.date}</time></dd></div>}
+    {item.artifact && <div><dt>Artifact</dt><dd>{item.artifact}</dd></div>}
+  </dl>
+  {item.url && <p><a href={item.url}>Inspect {item.title} (external)</a></p>}
+</article>

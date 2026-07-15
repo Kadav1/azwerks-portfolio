@@ -1,0 +1,18 @@
+---
+interface Props {
+  mediaState: 'available' | 'unavailable' | 'private' | 'not-applicable';
+  category: string;
+}
+const { mediaState, category } = Astro.props;
+const messages = {
+  unavailable: 'No public media is available for this record.',
+  private: 'Project media exists but is not public.',
+  'not-applicable': 'This project is documented without a media record.',
+  available: 'Public media is recorded but no safe lead item is available.',
+};
+---
+
+<section class="project-no-media" aria-label="Media availability">
+  <p><strong>{category}</strong></p>
+  <p>{messages[mediaState]}</p>
+</section>

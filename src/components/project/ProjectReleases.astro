@@ -1,0 +1,27 @@
+---
+import type { ProjectDetailEvidence, ProjectDetailRelease } from '../../lib/project-detail/types.ts';
+import ProjectEvidenceReferences from './ProjectEvidenceReferences.astro';
+
+interface Props {
+  releases: readonly ProjectDetailRelease[];
+  evidence: readonly ProjectDetailEvidence[];
+}
+const { releases, evidence } = Astro.props;
+---
+
+{releases.length > 0 && (
+  <section class="project-section project-releases" aria-labelledby="project-releases-heading">
+    <h2 id="project-releases-heading">Releases</h2>
+    <ol>
+      {releases.map((item) => (
+        <li>
+          <h3>{item.version}</h3>
+          <p><time datetime={item.date}>{item.date}</time> · {item.statusLabel}</p>
+          <p>{item.summary}</p>
+          {item.url && <p><a href={item.url}>Open release {item.version} (external)</a></p>}
+          <ProjectEvidenceReferences ids={item.evidenceIds} evidence={evidence} />
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

@@ -1,0 +1,49 @@
+---
+import type { ProjectDetailMedia } from '../../lib/project-detail/types.ts';
+
+interface Props {
+  media: ProjectDetailMedia;
+  lead?: boolean;
+}
+const { media, lead = false } = Astro.props;
+const figureClass = `project-media${media.purpose === 'artwork' ? ' project-media--artwork' : ''}`;
+const style = media.aspectRatio ? `--_project-media-ratio: ${media.aspectRatio.replace(':', ' / ')}` : undefined;
+---
+
+<figure class={figureClass} style={style} data-media-type={media.type}>
+  {['image', 'svg', 'interface', 'diagram'].includes(media.type) && (
+    <img
+      src={media.source}
+      alt={media.alt}
+      width={media.width}
+      height={media.height}
+      loading={lead ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  )}
+  {media.type === 'video' && (
+    <video controls preload="metadata" poster={media.poster}>
+      <source src={media.source} />
+      Your browser does not support native video playback.
+    </video>
+  )}
+  {media.type === 'audio' && (
+    <audio controls preload="metadata">
+      <source src={media.source} />
+      Your browser does not support native audio playback.
+    </audio>
+  )}
+  {media.type === 'document' && (
+    <p><a href={media.source}>Open project document</a></p>
+  )}
+  {(media.caption || media.credit || media.description) && (
+    <figcaption>
+      {media.caption && <span>{media.caption}</span>}
+      {media.description && <span>{media.description}</span>}
+      {media.credit && <span>Credit: {media.credit}</span>}
+    </figcaption>
+  )}
+  {media.transcript && (
+    <p class="project-media__transcript"><strong>Transcript:</strong> {media.transcript}</p>
+  )}
+</figure>

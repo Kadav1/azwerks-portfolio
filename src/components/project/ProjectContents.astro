@@ -1,0 +1,17 @@
+---
+import type { ProjectDetailHeading } from '../../lib/project-detail/types.ts';
+
+interface Props { headings: readonly ProjectDetailHeading[] }
+const { headings } = Astro.props;
+---
+
+{headings.length > 0 && (
+  <nav class="project-contents" aria-labelledby="project-contents-heading">
+    <h2 id="project-contents-heading">On this page</h2>
+    <ol>
+      {headings.map((heading) => (
+        <li data-heading-depth={heading.depth}><a href={`#${heading.slug}`}>{heading.text}</a></li>
+      ))}
+    </ol>
+  </nav>
+)}

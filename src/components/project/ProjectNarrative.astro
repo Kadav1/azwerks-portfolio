@@ -1,0 +1,17 @@
+---
+import type { ProjectDetailHeading } from '../../lib/project-detail/types.ts';
+import ProjectContents from './ProjectContents.astro';
+
+interface Props {
+  Content: any;
+  headings: readonly ProjectDetailHeading[];
+}
+const { Content, headings } = Astro.props;
+---
+
+<section class="project-narrative" aria-label="Project narrative">
+  <ProjectContents headings={headings} />
+  <div class="project-prose">
+    <Content />
+  </div>
+</section>

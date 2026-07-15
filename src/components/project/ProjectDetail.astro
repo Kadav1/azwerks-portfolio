@@ -1,0 +1,41 @@
+---
+import type { ProjectDetailViewModel } from '../../lib/project-detail/types.ts';
+import ProjectContextNavigation from './ProjectContextNavigation.astro';
+import ProjectEvidence from './ProjectEvidence.astro';
+import ProjectHeader from './ProjectHeader.astro';
+import ProjectLeadMedia from './ProjectLeadMedia.astro';
+import ProjectLimitations from './ProjectLimitations.astro';
+import ProjectLinks from './ProjectLinks.astro';
+import ProjectNarrative from './ProjectNarrative.astro';
+import ProjectNoMediaState from './ProjectNoMediaState.astro';
+import ProjectOrientation from './ProjectOrientation.astro';
+import ProjectProcess from './ProjectProcess.astro';
+import ProjectProvenance from './ProjectProvenance.astro';
+import ProjectRelations from './ProjectRelations.astro';
+import ProjectReleases from './ProjectReleases.astro';
+
+interface Props {
+  project: ProjectDetailViewModel;
+  Content: any;
+  hasNarrative: boolean;
+}
+
+const { project, Content, hasNarrative } = Astro.props;
+---
+
+<ProjectOrientation project={project} />
+<ProjectHeader project={project} />
+{project.leadMedia ? (
+  <ProjectLeadMedia lead={project.leadMedia} media={project.allPublicMedia} />
+) : (
+  <ProjectNoMediaState mediaState={project.mediaState} category={project.categoryLabel} />
+)}
+{hasNarrative && <ProjectNarrative Content={Content} headings={project.tableOfContents} />}
+<ProjectEvidence evidence={project.publicEvidence} />
+<ProjectLimitations limitations={project.limitations} evidence={project.publicEvidence} />
+<ProjectProcess process={project.process} evidence={project.publicEvidence} />
+<ProjectReleases releases={project.releases} evidence={project.publicEvidence} />
+<ProjectLinks links={project.publicLinks} />
+<ProjectProvenance provenance={project.provenance} />
+<ProjectRelations relations={project.relations} />
+<ProjectContextNavigation project={project} />
