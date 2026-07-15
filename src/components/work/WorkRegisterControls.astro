@@ -1,0 +1,49 @@
+---
+import {
+  WORK_REGISTER_CATEGORIES,
+} from '../../lib/work-register/constants.ts';
+import {
+  CATEGORY_LABELS,
+  EVIDENCE_LABELS,
+  MAINTENANCE_LABELS,
+} from '../../lib/work-register/labels.ts';
+import type { WorkRegisterRecord } from '../../lib/work-register/types.ts';
+import WorkFilterGroup from './WorkFilterGroup.astro';
+import WorkSearch from './WorkSearch.astro';
+import WorkSortControl from './WorkSortControl.astro';
+
+interface Props {
+  records: readonly WorkRegisterRecord[];
+}
+
+const { records } = Astro.props;
+const presentMaintenance = [...new Set(records.map(({ maintenance }) => maintenance))];
+const presentEvidence = [...new Set(records.map(({ evidenceState }) => evidenceState))];
+const categoryOptions = WORK_REGISTER_CATEGORIES.map((value) => ({ value, label: CATEGORY_LABELS[value] }));
+const maintenanceOptions = presentMaintenance.map((value) => ({ value, label: MAINTENANCE_LABELS[value] }));
+const evidenceOptions = presentEvidence.map((value) => ({ value, label: EVIDENCE_LABELS[value] }));
+---
+
+<form
+  class="work-controls"
+  action="/work/"
+  method="get"
+  data-register-controls
+  aria-label="Search, filter, and sort Work"
+  hidden
+>
+  <WorkSearch />
+  <details class="work-controls__filters" open>
+    <summary>Filter Work</summary>
+    <div class="work-controls__filter-groups">
+      <WorkFilterGroup legend="Category" name="category" options={categoryOptions} />
+      <WorkFilterGroup legend="Maintenance" name="maintenance" options={maintenanceOptions} />
+      <WorkFilterGroup legend="Evidence" name="evidence" options={evidenceOptions} />
+    </div>
+  </details>
+  <WorkSortControl />
+  <div class="work-controls__actions">
+    <button type="submit">Apply</button>
+    <button type="button" data-register-reset>Reset</button>
+  </div>
+</form>

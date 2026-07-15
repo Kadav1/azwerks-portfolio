@@ -53,13 +53,17 @@ for (const [path, mainId] of routeContract) {
   if (!/import GlobalShell from /.test(source) || !/<GlobalShell\b/.test(source)) {
     fail('SHELL_ROUTE_LAYOUT', 'Scaffold route must use GlobalShell.', path);
   }
-  if ((source.match(/<h1(?:\s|>)/g) ?? []).length !== 1) {
+  const headingSource = path === 'src/pages/work/index.astro' && await exists('src/components/work/WorkRegisterHeader.astro')
+    ? `${source}\n${await read('src/components/work/WorkRegisterHeader.astro')}`
+    : source;
+  if ((headingSource.match(/<h1(?:\s|>)/g) ?? []).length !== 1) {
     fail('SHELL_ROUTE_H1', 'Scaffold route must contain exactly one H1.', path);
   }
   if (!/\bnoindex(?:=|\s|>)/.test(source)) {
     fail('SHELL_ROUTE_NOINDEX', 'Scaffold route must set noindex.', path);
   }
-  if (!/foundation scaffold/i.test(source)) {
+  const workRegisterRoute = path === 'src/pages/work/index.astro' && /import WorkRegister from /.test(source);
+  if (!workRegisterRoute && !/foundation scaffold/i.test(source)) {
     fail('SHELL_ROUTE_DISCLOSURE', 'Scaffold route must identify itself as a foundation scaffold.', path);
   }
   const declaredMainId = source.match(/mainId=["']([^"']+)["']/)?.[1] ?? 'main-content';

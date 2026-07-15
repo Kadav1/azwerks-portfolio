@@ -1,0 +1,67 @@
+---
+import { MAX_VISIBLE_CAPABILITIES } from '../../lib/work-register/constants.ts';
+import type { WorkRegisterRecord } from '../../lib/work-register/types.ts';
+import ProjectPreview from './ProjectPreview.astro';
+
+interface Props {
+  record: WorkRegisterRecord;
+  categoryAnchor?: string | undefined;
+}
+
+const { record, categoryAnchor } = Astro.props;
+const visibleTerms = [...new Set([...record.capabilities, ...record.tags])].slice(0, MAX_VISIBLE_CAPABILITIES);
+const overflowCount = Math.max(0, [...new Set([...record.capabilities, ...record.tags])].length - visibleTerms.length);
+---
+
+<li
+  class="project-register-item"
+  data-register-item
+  data-record-id={record.id}
+  data-category={record.category}
+  data-maintenance={record.maintenance}
+  data-evidence={record.evidenceState}
+  data-search={record.searchText}
+  data-default-index={record.defaultIndex}
+  data-date-sort-key={record.dateSortKey}
+  data-title-sort-key={record.titleSortKey}
+>
+  {categoryAnchor && <span id={categoryAnchor} class="work-register__category-anchor" aria-hidden="true"></span>}
+  <article class="project-register-item__body" data-world={record.category}>
+    <div class="project-register-item__content">
+      <h3>
+        {record.href ? <a href={record.href}>{record.title}</a> : record.title}
+      </h3>
+      <p class="project-register-item__summary">{record.summary}</p>
+      <dl class="project-register-item__facts">
+        <div>
+          <dt>Category</dt>
+          <dd>{record.categoryLabel}</dd>
+        </div>
+        {record.displayPeriod && (
+          <div>
+            <dt>Period</dt>
+            <dd>{record.displayPeriod}</dd>
+          </div>
+        )}
+        {record.maintenance !== 'not-applicable' && (
+          <div>
+            <dt>Maintenance</dt>
+            <dd>{record.maintenanceLabel}</dd>
+          </div>
+        )}
+        <div>
+          <dt>Evidence</dt>
+          <dd>{record.evidenceLabel}</dd>
+        </div>
+      </dl>
+      {visibleTerms.length > 0 && (
+        <p class="project-register-item__capabilities">
+          <span class="visually-hidden">Capabilities and tags: </span>
+          {visibleTerms.join(' · ')}
+          {overflowCount > 0 && ` · ${overflowCount} more`}
+        </p>
+      )}
+    </div>
+    {record.preview && <ProjectPreview preview={record.preview} />}
+  </article>
+</li>

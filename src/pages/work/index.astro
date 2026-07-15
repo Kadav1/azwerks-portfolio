@@ -1,20 +1,24 @@
 ---
 import GlobalShell from '../../layouts/GlobalShell.astro';
+import WorkRegister from '../../components/work/WorkRegister.astro';
+import WorkRegisterHeader from '../../components/work/WorkRegisterHeader.astro';
+import { getPublicProjectBundles } from '../../content-model/queries.ts';
+import { createWorkRegisterRecords } from '../../lib/work-register/view-model.ts';
+import '../../styles/work-register.css';
+
+const bundles = await getPublicProjectBundles();
+const records = createWorkRegisterRecords(bundles);
+const hasDetailDestinations = records.some(({ href }) => href !== undefined);
 ---
 
 <GlobalShell
   title="Work — azwerks"
-  description="A foundation scaffold for the future azwerks work register."
+  description="The canonical public register of current azwerks work."
+  canonical="/work/"
   mainId="work"
   workResultsId="work-results"
-  noindex
+  noindex={records.length === 0 || !hasDetailDestinations}
 >
-  <article class="route-scaffold">
-    <p class="route-scaffold__label">Foundation scaffold · Work</p>
-    <h1>Work</h1>
-    <section class="route-scaffold__target" id="work-results" tabindex="-1" aria-labelledby="work-results-heading">
-      <h2 id="work-results-heading">Work results</h2>
-      <p>The work register arrives in the next focused phase. No fixture projects are published here.</p>
-    </section>
-  </article>
+  <WorkRegisterHeader count={records.length} />
+  <WorkRegister records={records} />
 </GlobalShell>

@@ -1,0 +1,21 @@
+---
+import type { WorkRegisterPreview } from '../../lib/work-register/types.ts';
+
+interface Props {
+  preview: WorkRegisterPreview;
+}
+
+const { preview } = Astro.props;
+---
+
+<figure class:list={['project-preview', { 'project-preview--art': preview.artwork }]}>
+  <img
+    src={preview.src}
+    alt={preview.alt}
+    width={preview.width}
+    height={preview.height}
+    loading="lazy"
+    decoding="async"
+  />
+  {preview.caption && <figcaption>{preview.caption}</figcaption>}
+</figure>
