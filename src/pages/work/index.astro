@@ -2,6 +2,7 @@
 import GlobalShell from '../../layouts/GlobalShell.astro';
 import WorkRegister from '../../components/work/WorkRegister.astro';
 import WorkRegisterHeader from '../../components/work/WorkRegisterHeader.astro';
+import AtlasViewSwitch from '../../components/work-atlas/AtlasViewSwitch.astro';
 import { getPublicProjectBundles } from '../../content-model/queries.ts';
 import { createWorkRegisterRecords } from '../../lib/work-register/view-model.ts';
 import '../../styles/work-register.css';
@@ -20,5 +21,6 @@ const hasDetailDestinations = records.some(({ href }) => href !== undefined);
   noindex={records.length === 0 || !hasDetailDestinations}
 >
   <WorkRegisterHeader count={records.length} />
+  <AtlasViewSwitch current="register" />
   <WorkRegister records={records} />
 </GlobalShell>

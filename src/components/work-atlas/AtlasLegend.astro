@@ -1,0 +1,49 @@
+---
+import { ATLAS_REGIONS } from '../../lib/work-atlas/atlas-regions.ts';
+import { ATLAS_RELATION_LANGUAGE } from '../../lib/work-atlas/atlas-relations.ts';
+import { RELATION_TYPES } from '../../content-model/enums.ts';
+---
+
+<div class="atlas-legends">
+  <section class="atlas-legend" aria-labelledby="atlas-category-legend-heading">
+    <h2 id="atlas-category-legend-heading">Category fields</h2>
+    <ul>
+      {ATLAS_REGIONS.map((region, index) => (
+        <li>
+          <span class={`atlas-legend__category atlas-legend__category--${index + 1}`} aria-hidden="true"></span>
+          <span>{region.label}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="atlas-legend" aria-labelledby="atlas-relation-legend-heading">
+    <h2 id="atlas-relation-legend-heading">Relation types</h2>
+    <ul>
+      {RELATION_TYPES.map((type) => {
+        const language = ATLAS_RELATION_LANGUAGE[type];
+        return (
+          <li>
+            <svg class="atlas-legend__relation" viewBox="0 0 72 16" aria-hidden="true">
+              {language.arrow && (
+                <defs>
+                  <marker id={`atlas-legend-arrow-${type}`} markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                    <path d="M 0 0 L 8 3 L 0 6 Z"></path>
+                  </marker>
+                </defs>
+              )}
+              <line
+                class={`atlas-relation atlas-relation--${type}`}
+                x1="2"
+                y1="8"
+                x2="68"
+                y2="8"
+                marker-end={language.arrow ? `url(#atlas-legend-arrow-${type})` : undefined}
+              ></line>
+            </svg>
+            <span>{language.legendSentence}</span>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+</div>

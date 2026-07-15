@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "publicNodeCount": 0,
+  "publicRelationCount": 0,
+  "excludedByReason": {
+    "archived": 0,
+    "synthetic": 0,
+    "private": 0,
+    "unlisted": 0,
+    "ineligible": 0,
+    "unroutable": 0,
+    "unsafeRelation": 0
+  },
+  "categoryCounts": {
+    "software": 0,
+    "visual-system": 0,
+    "art": 0,
+    "technical-system": 0,
+    "limited-media": 0
+  },
+  "relationTypeCounts": {
+    "related": 0,
+    "lineage": 0,
+    "dependency": 0,
+    "shared-method": 0,
+    "family": 0,
+    "supersedes": 0,
+    "supports": 0
+  },
+  "plane": {
+    "width": 3240,
+    "height": 332,
+    "nodeWidth": 240,
+    "nodeHeight": 88
+  },
+  "regions": [
+    {
+      "id": "software",
+      "label": "Software",
+      "x": 40,
+      "y": 40,
+      "width": 600,
+      "rankMeaning": "none",
+      "height": 252
+    },
+    {
+      "id": "visual-system",
+      "label": "Visual system",
+      "x": 680,
+      "y": 40,
+      "width": 600,
+      "rankMeaning": "none",
+      "height": 252
+    },
+    {
+      "id": "art",
+      "label": "Art",
+      "x": 1320,
+      "y": 40,
+      "width": 600,
+      "rankMeaning": "none",
+      "height": 252
+    },
+    {
+      "id": "technical-system",
+      "label": "Technical system",
+      "x": 1960,
+      "y": 40,
+      "width": 600,
+      "rankMeaning": "none",
+      "height": 252
+    },
+    {
+      "id": "limited-media",
+      "label": "Limited media",
+      "x": 2600,
+      "y": 40,
+      "width": 600,
+      "rankMeaning": "none",
+      "height": 252
+    }
+  ],
+  "nodes": [],
+  "edges": [],
+  "edgePolicy": "all",
+  "layoutAlgorithmVersion": "equal-regions-grid-1.0.0",
+  "layoutPolicyHash": "b1ff2adfef520594d022d39952cc7d35cd75f514e0277b20b6061744d74fb6b6",
+  "publicDataHash": "d4717bb6620d6e83b9e64420533eec2e79e1a0b187abde6685414cf7cfc2156f",
+  "generatedManifestHash": "0d73217a1047aa0ebd777840abb199e4ff17d41c24c37a3dca081a98c5e8a5f4"
+}

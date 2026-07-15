@@ -1,0 +1,35 @@
+---
+import type { AtlasLayoutNode, AtlasRecord } from '../../lib/work-atlas/atlas-types.ts';
+
+interface Props { record: AtlasRecord; node: AtlasLayoutNode; originX?: number; originY?: number }
+const { record, node, originX = 0, originY = 0 } = Astro.props;
+const style = `--_atlas-node-inline-start:${node.x - originX}px;--_atlas-node-block-start:${node.y - originY}px`;
+---
+
+<button
+  class="atlas-node"
+  type="button"
+  style={style}
+  data-atlas-node
+  data-record-id={record.id}
+  data-slug={record.slug}
+  data-href={record.href}
+  data-title={record.title}
+  data-summary={record.summary}
+  data-category={record.category}
+  data-category-label={record.categoryLabel}
+  data-maintenance={record.maintenance}
+  data-maintenance-label={record.maintenanceLabel}
+  data-evidence={record.evidenceState}
+  data-evidence-label={record.evidenceLabel}
+  data-display-period={record.displayPeriod}
+  data-search={record.searchText}
+  data-default-index={record.defaultIndex}
+  data-x={node.x}
+  data-y={node.y}
+  aria-pressed="false"
+  tabindex="-1"
+>
+  <span class="atlas-node__category">{record.categoryLabel}</span>
+  <span class="atlas-node__title">{record.shortTitle ?? record.title}</span>
+</button>

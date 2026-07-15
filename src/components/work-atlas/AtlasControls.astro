@@ -1,0 +1,60 @@
+---
+import { PROJECT_CATEGORIES, RELATION_TYPES } from '../../content-model/enums.ts';
+import { ATLAS_RELATION_LANGUAGE } from '../../lib/work-atlas/atlas-relations.ts';
+import type { AtlasRecord } from '../../lib/work-atlas/atlas-types.ts';
+import { CATEGORY_LABELS, EVIDENCE_LABELS, MAINTENANCE_LABELS } from '../../lib/work-register/labels.ts';
+
+interface Props { records: readonly AtlasRecord[] }
+const { records } = Astro.props;
+const maintenance = [...new Set(records.flatMap((record) => record.maintenance === undefined ? [] : [record.maintenance]))];
+const evidence = [...new Set(records.flatMap((record) => record.evidenceState === undefined ? [] : [record.evidenceState]))];
+---
+
+<form class="atlas-controls" action="/work/atlas/" method="get" data-atlas-controls aria-label="Search and filter the Work Atlas" hidden>
+  <label class="atlas-controls__search">
+    <span>Search public Work</span>
+    <input type="search" name="q" maxlength="120" autocomplete="off" data-atlas-query />
+  </label>
+  <details open>
+    <summary>Filter Atlas</summary>
+    <div class="atlas-controls__groups">
+      <fieldset>
+        <legend>Category</legend>
+        {PROJECT_CATEGORIES.map((value) => (
+          <label><input type="checkbox" name="category" value={value} /> <span>{CATEGORY_LABELS[value]}</span></label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Maintenance</legend>
+        {maintenance.map((value) => (
+          <label><input type="checkbox" name="maintenance" value={value} /> <span>{MAINTENANCE_LABELS[value]}</span></label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Evidence</legend>
+        {evidence.map((value) => (
+          <label><input type="checkbox" name="evidence" value={value} /> <span>{EVIDENCE_LABELS[value]}</span></label>
+        ))}
+      </fieldset>
+      <fieldset>
+        <legend>Relation type</legend>
+        {RELATION_TYPES.map((value) => (
+          <label><input type="checkbox" name="relation" value={value} /> <span>{ATLAS_RELATION_LANGUAGE[value].label}</span></label>
+        ))}
+      </fieldset>
+    </div>
+  </details>
+  <div class="atlas-controls__actions">
+    <button type="submit">Apply</button>
+    <button type="button" data-atlas-reset>Reset</button>
+  </div>
+  <fieldset class="atlas-controls__view">
+    <legend>Spatial view</legend>
+    <button type="button" data-atlas-zoom-in>Zoom in</button>
+    <button type="button" data-atlas-zoom-out>Zoom out</button>
+    <button type="button" data-atlas-reset-view>Reset view</button>
+    <button type="button" data-atlas-center-selected disabled>Center selected</button>
+    <button type="button" data-atlas-enter-map>Enter map navigation</button>
+    <label><input type="checkbox" data-atlas-show-all-relations /> <span>Show all visible relation lines</span></label>
+  </fieldset>
+</form>

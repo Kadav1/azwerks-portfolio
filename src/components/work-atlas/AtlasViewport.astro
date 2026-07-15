@@ -1,0 +1,24 @@
+---
+import type { AtlasLayout, AtlasRecord, AtlasRelation } from '../../lib/work-atlas/atlas-types.ts';
+import AtlasPlane from './AtlasPlane.astro';
+
+interface Props { records: readonly AtlasRecord[]; relations: readonly AtlasRelation[]; layout: AtlasLayout }
+const { records, relations, layout } = Astro.props;
+---
+
+<section class="atlas-spatial" aria-labelledby="atlas-spatial-heading" data-atlas-spatial hidden>
+  <h2 id="atlas-spatial-heading">Spatial project map</h2>
+  <p id="atlas-map-instructions">
+    The map scrolls internally. Use the visible zoom controls, or enter map navigation and use arrow keys. Press Escape to leave map navigation.
+  </p>
+  <div
+    class="atlas-viewport"
+    role="region"
+    aria-label="Scrollable Work Atlas viewport"
+    aria-describedby="atlas-map-instructions"
+    tabindex="0"
+    data-atlas-viewport
+  >
+    <AtlasPlane records={records} relations={relations} layout={layout} />
+  </div>
+</section>

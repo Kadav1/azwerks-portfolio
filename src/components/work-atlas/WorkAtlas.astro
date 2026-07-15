@@ -1,0 +1,45 @@
+---
+import type { AtlasLayout, AtlasRecord, AtlasRelation } from '../../lib/work-atlas/atlas-types.ts';
+import AtlasControls from './AtlasControls.astro';
+import AtlasEmptyState from './AtlasEmptyState.astro';
+import AtlasHeader from './AtlasHeader.astro';
+import AtlasHelp from './AtlasHelp.astro';
+import AtlasIndex from './AtlasIndex.astro';
+import AtlasInspector from './AtlasInspector.astro';
+import AtlasLegend from './AtlasLegend.astro';
+import AtlasViewSwitch from './AtlasViewSwitch.astro';
+import AtlasViewport from './AtlasViewport.astro';
+
+interface Props { records: readonly AtlasRecord[]; relations: readonly AtlasRelation[]; layout: AtlasLayout }
+const { records, relations, layout } = Astro.props;
+---
+
+<article class="work-atlas" data-atlas-root data-atlas-enhanced="false" data-edge-policy={layout.edgePolicy}>
+  <AtlasHeader count={records.length} relationCount={relations.length} />
+  <AtlasViewSwitch current="atlas" />
+  <AtlasHelp />
+  {records.length === 0 ? <AtlasEmptyState /> : (
+    <>
+      <AtlasLegend />
+      <AtlasControls records={records} />
+      <p class="atlas-summary" aria-live="polite" data-atlas-summary>{records.length} public Work {records.length === 1 ? 'record' : 'records'}.</p>
+      <p class="atlas-enhancement-error" data-atlas-error hidden>
+        The spatial view is unavailable. The complete project and relation indexes remain below.
+      </p>
+      <div class="atlas-workspace">
+        <AtlasViewport records={records} relations={relations} layout={layout} />
+        <AtlasInspector />
+      </div>
+      <AtlasIndex records={records} relations={relations} />
+      <noscript>
+        <p class="atlas-noscript">The complete Atlas indexes are available. Spatial controls require JavaScript.</p>
+      </noscript>
+    </>
+  )}
+</article>
+
+{records.length > 0 && (
+  <script>
+    import '../../scripts/work-atlas.ts';
+  </script>
+)}

@@ -1,0 +1,34 @@
+---
+import type { AtlasLayout, AtlasRelation } from '../../lib/work-atlas/atlas-types.ts';
+
+interface Props { relations: readonly AtlasRelation[]; layout: AtlasLayout }
+const { relations, layout } = Astro.props;
+const relationMap = new Map(relations.map((relation) => [relation.id, relation]));
+---
+
+{layout.edges.length > 0 && (
+  <svg class="atlas-relations" viewBox={`0 0 ${layout.width} ${layout.height}`} aria-hidden="true" data-atlas-relations>
+    <defs>
+      <marker id="atlas-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+        <path d="M 0 0 L 10 4 L 0 8 z"></path>
+      </marker>
+    </defs>
+    {layout.edges.map((edge) => {
+      const relation = relationMap.get(edge.id);
+      return relation === undefined ? null : (
+        <path
+          class={`atlas-relation atlas-relation--${edge.type}`}
+          d={edge.path}
+          marker-end={edge.directional ? 'url(#atlas-arrow)' : undefined}
+          data-atlas-relation
+          data-relation-id={edge.id}
+          data-source-id={edge.sourceId}
+          data-target-id={edge.targetId}
+          data-relation-type={edge.type}
+          data-relation-label={relation.label}
+          data-relation-summary={relation.summary}
+        ></path>
+      );
+    })}
+  </svg>
+)}

@@ -1,0 +1,55 @@
+---
+import { ATLAS_REGIONS } from '../../lib/work-atlas/atlas-regions.ts';
+import { getAtlasRelationSentence } from '../../lib/work-atlas/atlas-relations.ts';
+import type { AtlasRecord, AtlasRelation } from '../../lib/work-atlas/atlas-types.ts';
+
+interface Props { records: readonly AtlasRecord[]; relations: readonly AtlasRelation[] }
+const { records, relations } = Astro.props;
+const recordMap = new Map(records.map((record) => [record.id, record]));
+---
+
+<details class="atlas-indexes" open data-atlas-indexes>
+  <summary>Complete accessible project and relation indexes</summary>
+  <section id="atlas-project-index" class="atlas-project-index" aria-labelledby="atlas-project-index-heading" data-atlas-project-index tabindex="-1">
+    <h2 id="atlas-project-index-heading">Projects by category</h2>
+    {ATLAS_REGIONS.map((region) => {
+      const categoryRecords = records.filter(({ category }) => category === region.id);
+      return (
+        <section aria-labelledby={`atlas-index-${region.id}`}>
+          <h3 id={`atlas-index-${region.id}`}>{region.label}</h3>
+          {categoryRecords.length === 0 ? <p>No public projects in this field.</p> : (
+            <ol>
+              {categoryRecords.map((record) => (
+                <li data-atlas-index-record={record.id}>
+                  <h4><a href={record.href}>{record.title}</a></h4>
+                  <p>{record.summary}</p>
+                  <p>{record.categoryLabel}{record.displayPeriod ? ` · ${record.displayPeriod}` : ''}</p>
+                </li>
+              ))}
+            </ol>
+          )}
+        </section>
+      );
+    })}
+  </section>
+  <section class="atlas-relation-index" aria-labelledby="atlas-relation-index-heading" data-atlas-relation-index>
+    <h2 id="atlas-relation-index-heading">Documented project relations</h2>
+    {relations.length === 0 ? <p>No safe public project relations are currently available.</p> : (
+      <ol>
+        {relations.map((relation) => {
+          const source = recordMap.get(relation.sourceId);
+          const target = recordMap.get(relation.targetId);
+          if (source === undefined || target === undefined) return null;
+          return (
+            <li data-atlas-index-relation={relation.id} data-relation-type={relation.type}>
+              <strong>{relation.label}:</strong>{' '}
+              <span>{getAtlasRelationSentence(relation.type, source.title, target.title)}</span>{' '}
+              <a href={source.href}>{source.title}</a>{relation.directional ? ' → ' : ' — '}
+              <a href={target.href}>{target.title}</a> — {relation.summary}
+            </li>
+          );
+        })}
+      </ol>
+    )}
+  </section>
+</details>
