@@ -1,0 +1,24 @@
+---
+import GlobalShell from '../../../layouts/GlobalShell.astro';
+import WorkAtlas from '../../../components/work-atlas/WorkAtlas.astro';
+import { getPublicProjectBundles } from '../../../content-model/queries.ts';
+import { createAtlasLayout } from '../../../lib/work-atlas/atlas-layout.ts';
+import { createAtlasViewModel } from '../../../lib/work-atlas/atlas-view-model.ts';
+import '../../../styles/work-atlas.css';
+
+const bundles = await getPublicProjectBundles();
+const { records, relations } = createAtlasViewModel(bundles);
+const layout = createAtlasLayout(records, relations);
+---
+
+<GlobalShell
+  title="Work Atlas — azwerks"
+  description="An optional spatial index of public azwerks projects and their documented relations."
+  canonical="/work/atlas/"
+  currentPath="/work/atlas/"
+  mainId="work-atlas"
+  workResultsId="atlas-project-index"
+  noindex={records.length === 0}
+>
+  <WorkAtlas records={records} relations={relations} layout={layout} />
+</GlobalShell>

@@ -7,6 +7,7 @@ import {
 import { sortWorkRegisterRecords } from '../lib/work-register/sort.ts';
 import type { WorkRegisterRecord, WorkRegisterState } from '../lib/work-register/types.ts';
 import { serializeWorkRegisterState } from '../lib/work-register/url.ts';
+import { getAtlasHrefFromRegister } from '../lib/work-atlas/atlas-url.ts';
 
 interface RegisterRow {
   element: HTMLElement;
@@ -120,6 +121,9 @@ for (const root of roots) {
       : `No records match. Active constraints: ${summary.constraints.join('; ')}.`;
     if (announce) {
       announcer.textContent = `${summary.countText}${summary.constraints.length > 0 ? ` ${summary.constraints.join('; ')}.` : ''}`;
+    }
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-atlas-view-link]')) {
+      link.href = getAtlasHrefFromRegister(state);
     }
   };
 

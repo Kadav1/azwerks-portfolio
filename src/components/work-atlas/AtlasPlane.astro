@@ -1,0 +1,14 @@
+---
+import type { AtlasLayout, AtlasRecord, AtlasRelation } from '../../lib/work-atlas/atlas-types.ts';
+import AtlasRegion from './AtlasRegion.astro';
+import AtlasRelations from './AtlasRelations.astro';
+
+interface Props { records: readonly AtlasRecord[]; relations: readonly AtlasRelation[]; layout: AtlasLayout }
+const { records, relations, layout } = Astro.props;
+const style = `--_atlas-plane-inline-size:${layout.width}px;--_atlas-plane-block-size:${layout.height}px;--_atlas-node-inline-size:${layout.nodeWidth}px;--_atlas-node-block-size:${layout.nodeHeight}px;--_atlas-zoom:1`;
+---
+
+<div class="atlas-plane" style={style} data-atlas-plane data-edge-policy={layout.edgePolicy}>
+  <AtlasRelations relations={relations} layout={layout} />
+  {layout.regions.map((region) => <AtlasRegion region={region} records={records} nodes={layout.nodes} />)}
+</div>

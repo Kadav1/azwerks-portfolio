@@ -1,0 +1,75 @@
+---
+interface Props {
+  current: 'register' | 'atlas';
+  registerHref?: string | undefined;
+  atlasHref?: string | undefined;
+}
+
+const { current, registerHref = '/work/', atlasHref = '/work/atlas/' } = Astro.props;
+---
+
+<nav class="atlas-view-switch" aria-label="Work view" data-atlas-view-switch>
+  <p>View Work as:</p>
+  <ul>
+    <li>
+      <a href={registerHref} aria-current={current === 'register' ? 'page' : undefined} data-register-view-link>
+        Register
+      </a>
+    </li>
+    <li>
+      <a href={atlasHref} aria-current={current === 'atlas' ? 'page' : undefined} data-atlas-view-link>
+        Atlas
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .atlas-view-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--azw-space-inline) var(--azw-space-component);
+    padding-block: var(--azw-space-component);
+    border-block: var(--azw-border-hairline) solid var(--azw-color-divider);
+  }
+
+  .atlas-view-switch ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--azw-space-inline);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .atlas-view-switch a {
+    display: inline-flex;
+    min-block-size: var(--azw-size-control-min);
+    align-items: center;
+    padding-inline: var(--azw-space-component);
+    border: var(--azw-border-control) solid var(--azw-color-border-strong);
+    border-radius: var(--azw-radius-small);
+  }
+
+  .atlas-view-switch a[aria-current='page'] {
+    background: var(--azw-color-action-primary);
+    color: var(--azw-color-action-primary-text);
+    font-weight: var(--azw-type-weight-strong);
+    text-decoration: none;
+  }
+
+  @media (forced-colors: active) {
+    .atlas-view-switch a[aria-current='page'] {
+      border-style: double;
+      background: Canvas;
+      color: CanvasText;
+    }
+  }
+
+  @media print {
+    .atlas-view-switch {
+      display: none;
+    }
+  }
+</style>

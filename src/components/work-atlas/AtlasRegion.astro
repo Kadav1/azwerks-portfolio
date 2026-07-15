@@ -1,0 +1,17 @@
+---
+import type { AtlasLayoutNode, AtlasLayoutRegion, AtlasRecord } from '../../lib/work-atlas/atlas-types.ts';
+import AtlasNode from './AtlasNode.astro';
+
+interface Props { region: AtlasLayoutRegion; records: readonly AtlasRecord[]; nodes: readonly AtlasLayoutNode[] }
+const { region, records, nodes } = Astro.props;
+const recordMap = new Map(records.map((record) => [record.id, record]));
+const style = `--_atlas-region-inline-start:${region.x}px;--_atlas-region-block-start:${region.y}px;--_atlas-region-inline-size:${region.width}px;--_atlas-region-block-size:${region.height}px`;
+---
+
+<section class="atlas-region" style={style} data-atlas-region={region.id} aria-labelledby={`atlas-region-${region.id}`}>
+  <h3 id={`atlas-region-${region.id}`}>{region.label}</h3>
+  {nodes.filter(({ regionId }) => regionId === region.id).map((node) => {
+    const record = recordMap.get(node.id);
+    return record === undefined ? null : <AtlasNode record={record} node={node} originX={region.x} originY={region.y} />;
+  })}
+</section>

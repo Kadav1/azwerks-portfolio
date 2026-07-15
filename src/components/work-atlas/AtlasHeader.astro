@@ -1,0 +1,14 @@
+---
+interface Props { count: number; relationCount: number }
+const { count, relationCount } = Astro.props;
+---
+
+<header class="atlas-header">
+  <p class="atlas-header__eyebrow">Optional spatial Work view</p>
+  <h1>Work Atlas</h1>
+  <p class="atlas-header__introduction">
+    {count === 0
+      ? 'The Atlas is ready, but there are no public routable project records to map yet.'
+      : `Explore ${count} public ${count === 1 ? 'project' : 'projects'} and ${relationCount} documented ${relationCount === 1 ? 'relation' : 'relations'} by category.`}
+  </p>
+</header>
